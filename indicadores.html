@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex,nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Indicadores para decidir. ITERAR Consulting</title>
+<meta name="description" content="Dólar, inflación, riesgo país, UVA y tasas de plazo fijo, en vivo desde fuentes públicas. Los números que mira una pyme argentina antes de decidir.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icono-180.png">
+<link rel="manifest" href="site.webmanifest">
+<meta name="theme-color" content="#2340E8">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ITERAR Consulting">
+<meta property="og:title" content="ITERAR Consulting. Tu empresa mejora por vueltas.">
+<meta property="og:description" content="Inteligencia artificial, tableros de control y análisis financiero implementados en ciclos cortos, para pymes y grandes empresas. Buenos Aires.">
+<meta property="og:image" content="og-image.png">
+<meta property="og:locale" content="es_AR">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"ITERAR Consulting","description":"Consultora de implementación de inteligencia artificial, tableros de control de gestión, análisis financiero y pensamiento estratégico para pymes y grandes empresas.","url":"https://iterarconsulting.com.ar/","areaServed":"AR","address":{"@type":"PostalAddress","addressLocality":"Buenos Aires","addressCountry":"AR"},"founder":[{"@type":"Person","name":"Luciano Rodríguez"},{"@type":"Person","name":"Matías Gabrenja"}],"knowsAbout":["Inteligencia artificial para empresas","Tableros de control de gestión","Análisis financiero","Planificación estratégica"]}</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --fondo:#0B0D14; --panel:#11141F; --tx:#F3F4F8; --tx-2:#AEB3C7; --tx-3:#7A8099; --linea:rgba(243,244,248,.12); --grid:rgba(243,244,248,.08);
+  --dato:#5C84FF; --dato-suave:rgba(92,132,255,.12); --cielo:#8FB0FF; --ok:#3DBE8B; --mal:#F0705A;
+  --d:"Bricolage Grotesque",sans-serif; --t:"Instrument Sans",system-ui,sans-serif;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--fondo);color:var(--tx);font-family:var(--t);font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+h1,h2,h3{margin:0;font-family:var(--d);font-weight:600;letter-spacing:-.02em;line-height:1.05}
+.w{max-width:1200px;margin:0 auto;padding:0 clamp(20px,4vw,48px)}
+header.top{padding:28px 0 0}
+header.top .w{display:flex;justify-content:space-between;align-items:center;gap:20px}
+.marca{display:flex;align-items:center;gap:12px;text-decoration:none}
+.marca .logo-mark{width:34px;height:34px;overflow:visible}
+.marca b{font-family:var(--d);font-weight:700;font-size:19px}
+header.top a.v{font-size:14.5px;color:var(--tx-2);text-decoration:none;border-bottom:1px solid var(--linea)}
+.cab{padding:clamp(40px,8vh,80px) 0 30px}
+.cab h1{font-size:clamp(34px,5vw,64px);max-width:14em}
+.cab p{color:var(--tx-2);font-size:18px;max-width:40em;margin:18px 0 0}
+.estado{font-size:13.5px;color:var(--tx-3);margin-top:14px}
+.estado b{color:var(--cielo);font-weight:600}
+
+.grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:14px;padding-bottom:70px}
+.c{background:var(--panel);border:1px solid var(--linea);border-radius:12px;padding:20px 22px;min-width:0;display:flex;flex-direction:column;gap:10px}
+.c>header{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+.c>header h2{font-size:17px;font-weight:600}
+.c>header small{color:var(--tx-3);font-size:12.5px;white-space:nowrap}
+.s12{grid-column:span 12}.s8{grid-column:span 8}.s6{grid-column:span 6}.s4{grid-column:span 4}.s3{grid-column:span 3}
+.num{font-family:var(--d);font-weight:600;font-size:clamp(30px,3.4vw,46px);line-height:1;letter-spacing:-.03em}
+.sub{color:var(--tx-2);font-size:13.5px}
+.delta{font-size:13px;font-weight:600}
+.delta.s{color:var(--ok)}.delta.b{color:var(--mal)}
+.fuente{margin-top:auto;padding-top:10px;border-top:1px solid var(--linea);font-size:12px;color:var(--tx-3)}
+.fuente a{text-decoration:none;border-bottom:1px solid var(--linea)}
+.plot{position:relative}
+.plot svg{display:block;width:100%;height:auto;overflow:visible}
+.plot .tip{position:absolute;pointer-events:none;background:#1A1E2E;border:1px solid var(--linea);border-radius:8px;padding:8px 10px;font-size:13px;white-space:nowrap;opacity:0;transform:translate(-50%,-110%);transition:opacity .12s;z-index:2}
+.plot .tip b{display:block;font-size:15px;font-weight:600;font-variant-numeric:tabular-nums}
+.plot .tip span{color:var(--tx-2)}
+.plot text{font-family:var(--t);font-size:11px;fill:var(--tx-3)}
+table{width:100%;border-collapse:collapse;font-size:14px;font-variant-numeric:tabular-nums}
+th{text-align:left;font-weight:600;color:var(--tx-3);font-size:12px;letter-spacing:.04em;text-transform:uppercase;padding:6px 8px 8px 0;border-bottom:1px solid var(--linea)}
+td{padding:9px 8px 9px 0;border-bottom:1px solid var(--grid)}
+td.n,th.n{text-align:right}
+tr.hoy td{color:var(--tx);font-weight:600}
+details{font-size:13px;color:var(--tx-3)}
+details summary{cursor:pointer}
+details table{margin-top:8px;font-size:13px}
+.vacio{color:var(--tx-3);font-size:14px}
+footer{padding:20px 0 50px;font-size:13px;color:var(--tx-3);border-top:1px solid var(--linea)}
+@media (max-width:980px){.s8,.s6,.s4,.s3{grid-column:span 12}}
+@media (max-width:600px){.num{font-size:30px}.c{padding:16px}}
+</style>
+</head>
+<body>
+<header class="top"><div class="w"><a class="marca" href="./"><span class="lg"></span><b>ITERAR</b></a><a class="v" href="./">Volver al sitio</a></div></header>
+
+<main class="w">
+  <div class="cab">
+    <h1>Los números que mira una pyme argentina antes de decidir.</h1>
+    <p>Dólar, inflación, riesgo país, UVA y tasas, leídos en vivo desde fuentes públicas. Ningún número de esta página lo escribió una persona: así funcionan los tableros que armamos.</p>
+    <div class="estado" id="estado">Conectando con las fuentes…</div>
+  </div>
+
+  <div class="grid">
+    <section class="c s3"><header><h2>Dólar oficial</h2><small>venta</small></header><div class="num" id="d-of">…</div><div class="sub" id="d-of-s"></div><div class="fuente">Fuente: <a href="https://dolarapi.com" target="_blank" rel="noopener">dolarapi.com</a></div></section>
+    <section class="c s3"><header><h2>Dólar blue</h2><small>venta</small></header><div class="num" id="d-bl">…</div><div class="sub" id="d-bl-s"></div><div class="fuente">Fuente: <a href="https://dolarapi.com" target="_blank" rel="noopener">dolarapi.com</a></div></section>
+    <section class="c s3"><header><h2>Inflación mensual</h2><small id="inf-mes"></small></header><div class="num" id="inf">…</div><div class="sub" id="inf-s"></div><div class="fuente">Fuente: INDEC vía <a href="https://argentinadatos.com" target="_blank" rel="noopener">argentinadatos.com</a></div></section>
+    <section class="c s3"><header><h2>Riesgo país</h2><small id="rp-f"></small></header><div class="num" id="rp">…</div><div class="sub" id="rp-s"></div><div class="fuente">Fuente: <a href="https://argentinadatos.com" target="_blank" rel="noopener">argentinadatos.com</a></div></section>
+
+    <section class="c s8"><header><h2>Inflación mensual, últimos 24 meses</h2><small>% mensual, INDEC</small></header><div class="plot" id="p-inf"></div><details><summary>Ver tabla</summary><div id="t-inf"></div></details><div class="fuente">Fuente: INDEC vía argentinadatos.com</div></section>
+    <section class="c s4"><header><h2>Todos los dólares</h2><small>hoy</small></header><div id="t-dol"></div><div class="fuente">Fuente: dolarapi.com</div></section>
+
+    <section class="c s6"><header><h2>Riesgo país, últimos 12 meses</h2><small>puntos básicos</small></header><div class="plot" id="p-rp"></div><details><summary>Ver tabla</summary><div id="t-rp"></div></details><div class="fuente">Fuente: argentinadatos.com</div></section>
+    <section class="c s6"><header><h2>UVA, últimos 24 meses</h2><small>valor en pesos</small></header><div class="plot" id="p-uva"></div><details><summary>Ver tabla</summary><div id="t-uva"></div></details><div class="fuente">Fuente: BCRA vía argentinadatos.com</div></section>
+
+    <section class="c s12"><header><h2>Plazo fijo a 30 días: las mejores tasas para clientes</h2><small>TNA</small></header><div id="t-pf"></div><div class="fuente">Fuente: BCRA vía argentinadatos.com. Tasas informadas por cada entidad; verificá antes de decidir.</div></section>
+  </div>
+</main>
+<footer><div class="w">ITERAR Consulting · Buenos Aires · Los datos se leen al cargar la página; si una fuente no responde, el número no se muestra.</div></footer>
+
+<script src="marks.js"></script>
+<script src="comun.js"></script>
+<script>
+document.querySelectorAll('.lg').forEach(e=>e.outerHTML=COMUN.logo('A'));
+document.querySelectorAll('.logo-mark').forEach(s=>s.style.setProperty('--accent','#8FB0FF'));
+const $=id=>document.getElementById(id);
+const fAR=(n,d=0)=>n.toLocaleString('es-AR',{minimumFractionDigits:d,maximumFractionDigits:d});
+const fecha=s=>new Date(s+'T12:00:00').toLocaleDateString('es-AR',{day:'numeric',month:'short',year:'2-digit'});
+const mesCorto=s=>{const d=new Date(s+'T12:00:00');return d.toLocaleDateString('es-AR',{month:'short'}).replace('.','')+(d.getMonth()===0?' '+String(d.getFullYear()).slice(2):'');};
+const get=async u=>{const r=await fetch(u,{cache:'no-store'});if(!r.ok)throw new Error(r.status);return r.json();};
+const txt=(el,s)=>{el.textContent=s;};
+
+/* ---- gráfico de columnas (una serie) con tooltip por marca ---- */
+function columnas(cont,serie,fmt,etiq){
+  const W=640,H=220,pl=36,pr=8,pt=14,pb=26,n=serie.length;
+  const vals=serie.map(s=>s.valor),mx=Math.max(...vals)*1.15,mn=Math.min(0,...vals);
+  const x=i=>pl+(W-pl-pr)*(i/n),bw=Math.min(24,(W-pl-pr)/n-3),y=v=>pt+(H-pt-pb)*(1-(v-mn)/(mx-mn));
+  const ticks=[0,mx/2,mx].map(v=>Math.round(v*10)/10);
+  let g=ticks.map(v=>`<line x1="${pl}" x2="${W-pr}" y1="${y(v)}" y2="${y(v)}" stroke="var(--grid)"/><text x="${pl-6}" y="${y(v)+4}" text-anchor="end">${fmt(v)}</text>`).join('');
+  let b=serie.map((s,i)=>{const h=Math.max(0,y(mn)-y(s.valor));const cx=x(i)+((W-pl-pr)/n-bw)/2;return `<g class="m" data-i="${i}"><rect x="${x(i)}" y="${pt}" width="${(W-pl-pr)/n}" height="${H-pt-pb}" fill="transparent"/><path d="M${cx} ${y(mn)} v${-h+4} a4 4 0 0 1 4 -4 h${bw-8} a4 4 0 0 1 4 4 v${h-4} z" fill="var(--dato)"/>${i%6===0||i===n-1?`<text x="${cx+bw/2}" y="${H-8}" text-anchor="middle">${etiq(s)}</text>`:''}</g>`;}).join('');
+  const last=serie[n-1],cxl=x(n-1)+((W-pl-pr)/n-bw)/2+bw/2;
+  b+=`<text x="${cxl}" y="${y(last.valor)-6}" text-anchor="middle" style="fill:var(--tx);font-weight:600">${fmt(last.valor)}</text>`;
+  cont.innerHTML=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Gráfico de columnas">${g}${b}</svg><div class="tip"></div>`;
+  const tip=cont.querySelector('.tip'),svg=cont.querySelector('svg');
+  cont.querySelectorAll('.m').forEach(m=>{m.addEventListener('pointerenter',()=>{const s=serie[+m.dataset.i];const r=m.querySelector('path').getBoundingClientRect(),c=cont.getBoundingClientRect();tip.innerHTML='';const bb=document.createElement('b');bb.textContent=fmt(s.valor);const sp=document.createElement('span');sp.textContent=etiq(s,true);tip.append(bb,sp);tip.style.left=(r.left+r.width/2-c.left)+'px';tip.style.top=(r.top-c.top)+'px';tip.style.opacity=1;m.querySelector('path').style.fill='var(--cielo)';});m.addEventListener('pointerleave',()=>{tip.style.opacity=0;m.querySelector('path').style.fill='';});});
+}
+/* ---- línea (una serie) con crosshair ---- */
+function linea(cont,serie,fmt,etiq){
+  const W=640,H=220,pl=44,pr=10,pt=14,pb=26,n=serie.length;
+  const vals=serie.map(s=>s.valor),mx=Math.max(...vals),mn=Math.min(...vals),pad=(mx-mn)*.12||1;
+  const x=i=>pl+(W-pl-pr)*(i/(n-1)),y=v=>pt+(H-pt-pb)*(1-(v-(mn-pad))/((mx+pad)-(mn-pad)));
+  const ticks=[mn,(mn+mx)/2,mx];
+  let g=ticks.map(v=>`<line x1="${pl}" x2="${W-pr}" y1="${y(v)}" y2="${y(v)}" stroke="var(--grid)"/><text x="${pl-6}" y="${y(v)+4}" text-anchor="end">${fmt(v)}</text>`).join('');
+  const d=serie.map((s,i)=>(i?'L':'M')+x(i).toFixed(1)+' '+y(s.valor).toFixed(1)).join('');
+  const area=d+`L${x(n-1).toFixed(1)} ${y(mn-pad)}L${x(0).toFixed(1)} ${y(mn-pad)}Z`;
+  const lab=[0,Math.floor(n/2),n-1].map(i=>`<text x="${x(i)}" y="${H-8}" text-anchor="${i===0?'start':i===n-1?'end':'middle'}">${etiq(serie[i])}</text>`).join('');
+  const last=serie[n-1];
+  cont.innerHTML=`<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Gráfico de línea">${g}${lab}<path d="${area}" fill="var(--dato-suave)"/><path d="${d}" fill="none" stroke="var(--dato)" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/><circle cx="${x(n-1)}" cy="${y(last.valor)}" r="5" fill="var(--dato)" stroke="var(--panel)" stroke-width="2"/><text x="${x(n-1)-8}" y="${y(last.valor)-10}" text-anchor="end" style="fill:var(--tx);font-weight:600">${fmt(last.valor)}</text><line class="cross" x1="0" x2="0" y1="${pt}" y2="${H-pb}" stroke="var(--tx-3)" opacity="0"/><circle class="pt" r="5" fill="var(--dato)" stroke="var(--panel)" stroke-width="2" opacity="0"/></svg><div class="tip"></div>`;
+  const svg=cont.querySelector('svg'),tip=cont.querySelector('.tip'),cross=svg.querySelector('.cross'),ptc=svg.querySelector('.pt');
+  svg.addEventListener('pointermove',e=>{const r=svg.getBoundingClientRect();const px=(e.clientX-r.left)/r.width*W;const i=Math.max(0,Math.min(n-1,Math.round((px-pl)/(W-pl-pr)*(n-1))));const s=serie[i];cross.setAttribute('x1',x(i));cross.setAttribute('x2',x(i));cross.setAttribute('opacity',1);ptc.setAttribute('cx',x(i));ptc.setAttribute('cy',y(s.valor));ptc.setAttribute('opacity',1);tip.innerHTML='';const bb=document.createElement('b');bb.textContent=fmt(s.valor);const sp=document.createElement('span');sp.textContent=etiq(s,true);tip.append(bb,sp);tip.style.left=(x(i)/W*r.width)+'px';tip.style.top=(y(s.valor)/H*r.height)+'px';tip.style.opacity=1;});
+  svg.addEventListener('pointerleave',()=>{cross.setAttribute('opacity',0);ptc.setAttribute('opacity',0);tip.style.opacity=0;});
+}
+function tabla(cont,filas,cols){
+  const t=document.createElement('table');const th=document.createElement('tr');cols.forEach(c=>{const e=document.createElement('th');e.textContent=c.t;if(c.n)e.className='n';th.append(e);});t.append(th);
+  filas.forEach(f=>{const tr=document.createElement('tr');if(f.hoy)tr.className='hoy';cols.forEach(c=>{const td=document.createElement('td');td.textContent=c.v(f);if(c.n)td.className='n';tr.append(td);});t.append(tr);});
+  cont.innerHTML='';cont.append(t);
+}
+
+(async()=>{
+  const ok=[],fail=[];
+  const tryGet=async(nombre,u)=>{try{const d=await get(u);ok.push(nombre);return d;}catch(e){fail.push(nombre);return null;}};
+  const [dol,inf,rp,uva,pf,intera]=await Promise.all([
+    tryGet('dólar','https://dolarapi.com/v1/dolares'),
+    tryGet('inflación','https://api.argentinadatos.com/v1/finanzas/indices/inflacion'),
+    tryGet('riesgo país','https://api.argentinadatos.com/v1/finanzas/indices/riesgo-pais'),
+    tryGet('UVA','https://api.argentinadatos.com/v1/finanzas/indices/uva'),
+    tryGet('plazo fijo','https://api.argentinadatos.com/v1/finanzas/tasas/plazoFijo'),
+    tryGet('interanual','https://api.argentinadatos.com/v1/finanzas/indices/inflacionInteranual')
+  ]);
+  const hora=new Date().toLocaleTimeString('es-AR',{hour:'2-digit',minute:'2-digit'});
+  $('estado').innerHTML=`<b>Actualizado ${hora}</b> · fuentes que respondieron: ${ok.join(', ')||'ninguna'}${fail.length?' · sin respuesta: '+fail.join(', '):''}`;
+
+  if(dol){
+    const of=dol.find(d=>d.casa==='oficial'),bl=dol.find(d=>d.casa==='blue');
+    if(of){txt($('d-of'),'$'+fAR(of.venta));txt($('d-of-s'),'Compra $'+fAR(of.compra)+' · '+new Date(of.fechaActualizacion).toLocaleString('es-AR',{day:'numeric',month:'short',hour:'2-digit',minute:'2-digit'}));}
+    if(bl){txt($('d-bl'),'$'+fAR(bl.venta));const br=of?((bl.venta/of.venta-1)*100):null;txt($('d-bl-s'),br!==null?'Brecha con el oficial: '+fAR(br,1)+'%':'');}
+    tabla($('t-dol'),dol,[{t:'Cotización',v:d=>d.nombre},{t:'Compra',n:1,v:d=>'$'+fAR(d.compra)},{t:'Venta',n:1,v:d=>'$'+fAR(d.venta)}]);
+  }
+  if(inf){
+    const s=inf.slice(-24),l=s[s.length-1],p=s[s.length-2];
+    txt($('inf'),fAR(l.valor,1)+'%');txt($('inf-mes'),new Date(l.fecha+'T12:00:00').toLocaleDateString('es-AR',{month:'long'}));
+    const ia=intera?intera[intera.length-1]:null;
+    $('inf-s').innerHTML='';const dl=document.createElement('span');dl.className='delta '+(l.valor<=p.valor?'s':'b');dl.textContent=(l.valor-p.valor>0?'▲ +':'▼ ')+fAR(l.valor-p.valor,1)+' pts vs. mes anterior';$('inf-s').append(dl);if(ia){$('inf-s').append(document.createTextNode(' · interanual '+fAR(ia.valor,1)+'%'));}
+    columnas($('p-inf'),s,v=>fAR(v,1)+'%',(x,largo)=>largo?new Date(x.fecha+'T12:00:00').toLocaleDateString('es-AR',{month:'long',year:'numeric'}):mesCorto(x.fecha));
+    tabla($('t-inf'),[...s].reverse(),[{t:'Mes',v:x=>new Date(x.fecha+'T12:00:00').toLocaleDateString('es-AR',{month:'long',year:'numeric'})},{t:'% mensual',n:1,v:x=>fAR(x.valor,1)}]);
+  }
+  if(rp){
+    const s=rp.slice(-260).filter((_,i,a)=>i%Math.ceil(a.length/60)===0||i===a.length-1),l=rp[rp.length-1],ant=rp[Math.max(0,rp.length-22)];
+    txt($('rp'),fAR(l.valor));txt($('rp-f'),fecha(l.fecha));
+    $('rp-s').innerHTML='';const dl=document.createElement('span');dl.className='delta '+(l.valor<=ant.valor?'s':'b');dl.textContent=(l.valor-ant.valor>0?'▲ +':'▼ ')+fAR(l.valor-ant.valor)+' pb en un mes';$('rp-s').append(dl);
+    linea($('p-rp'),s,v=>fAR(Math.round(v)),(x,largo)=>largo?fecha(x.fecha):mesCorto(x.fecha));
+    tabla($('t-rp'),[...s].reverse().slice(0,12),[{t:'Fecha',v:x=>fecha(x.fecha)},{t:'Puntos',n:1,v:x=>fAR(x.valor)}]);
+  }
+  if(uva){
+    const s=uva.slice(-730).filter((_,i,a)=>i%Math.ceil(a.length/60)===0||i===a.length-1);
+    linea($('p-uva'),s,v=>'$'+fAR(Math.round(v)),(x,largo)=>largo?fecha(x.fecha):mesCorto(x.fecha));
+    tabla($('t-uva'),[...s].reverse().slice(0,12),[{t:'Fecha',v:x=>fecha(x.fecha)},{t:'UVA',n:1,v:x=>'$'+fAR(x.valor,2)}]);
+  }
+  if(pf){
+    const top=pf.filter(b=>b.tnaClientes>0).sort((a,b)=>b.tnaClientes-a.tnaClientes).slice(0,10);
+    tabla($('t-pf'),top,[{t:'Entidad',v:b=>b.entidad.replace(/BANCO DE LA NACION ARGENTINA/,'Banco Nación')},{t:'TNA clientes',n:1,v:b=>fAR(b.tnaClientes*100,2)+'%'},{t:'TNA no clientes',n:1,v:b=>b.tnaNoClientes?fAR(b.tnaNoClientes*100,2)+'%':'sin dato'}]);
+  } else $('t-pf').innerHTML='<p class="vacio">La fuente de tasas no respondió.</p>';
+})();
+</script>
+</body>
+</html>

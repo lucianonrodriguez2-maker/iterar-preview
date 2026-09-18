@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex,nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contacto. ITERAR Consulting</title>
+<meta name="description" content="Empezá por el diagnóstico gratuito o escribinos. Respondemos en menos de 48 horas hábiles.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--fondo:#0B0D14;--panel:#11141F;--tx:#F3F4F8;--tx-2:#AEB3C7;--tx-3:#7A8099;--linea:rgba(243,244,248,.14);--azul:#2F4CFF;--azul-2:#2340E8;--cielo:#8FB0FF;--ok:#3DBE8B;--mal:#F0705A;--d:"Bricolage Grotesque",sans-serif;--t:"Instrument Sans",system-ui,sans-serif}
+*{box-sizing:border-box}
+body{margin:0;background:var(--fondo);color:var(--tx);font-family:var(--t);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+h1,h2{margin:0;font-family:var(--d);font-weight:600;letter-spacing:-.02em;line-height:1.05}
+.w{max-width:1160px;margin:0 auto;padding:0 clamp(20px,4vw,48px)}
+header.top{padding:28px 0 0}
+header.top .w{display:flex;justify-content:space-between;align-items:center;gap:20px}
+.marca{display:flex;align-items:center;gap:12px;text-decoration:none}
+.marca .logo-mark{width:34px;height:34px;overflow:visible}
+.marca b{font-family:var(--d);font-weight:700;font-size:19px}
+header.top a.v{font-size:14.5px;color:var(--tx-2);text-decoration:none;border-bottom:1px solid var(--linea)}
+main .w{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(30px,5vw,80px);padding:clamp(50px,9vh,100px) clamp(20px,4vw,48px) 90px;align-items:start}
+h1{font-size:clamp(34px,4.6vw,60px)}
+.lead{color:var(--tx-2);font-size:18px;margin:20px 0 28px;max-width:26em}
+.cta{display:inline-flex;align-items:center;gap:10px;background:var(--tx);color:var(--fondo);text-decoration:none;font-weight:600;padding:14px 20px;border-radius:999px}
+.cta:hover{background:#fff}
+.datos{margin-top:34px;padding-top:22px;border-top:1px solid var(--linea);display:grid;gap:8px;font-size:15px;color:var(--tx-2)}
+.datos b{color:var(--tx);font-weight:600}
+.datos a{text-decoration:none}
+form{background:var(--panel);border:1px solid var(--linea);border-radius:14px;padding:clamp(20px,3vw,34px);display:grid;gap:16px}
+form h2{font-size:22px;margin-bottom:4px}
+label{display:grid;gap:6px;font-size:14px;font-weight:600}
+input,select,textarea{font:inherit;font-size:15.5px;color:var(--tx);background:#0E1119;border:1px solid var(--linea);border-radius:8px;padding:12px 14px;width:100%}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--azul);border-color:var(--azul)}
+select option{color:#000}
+.dos{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+button{font:inherit;font-weight:600;font-size:16px;background:var(--azul);color:#fff;border:0;padding:15px;border-radius:999px;cursor:pointer}
+button:hover{background:var(--azul-2)}
+button[disabled]{opacity:.6;cursor:wait}
+.msg{font-size:14px;min-height:1.4em}
+.msg.ok{color:var(--ok)}.msg.mal{color:var(--mal)}
+small.p{color:var(--tx-3);font-size:12.5px}
+.trampa{position:absolute;left:-9999px;opacity:0;height:0;overflow:hidden}
+@media (max-width:900px){main .w{grid-template-columns:1fr}.dos{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header class="top"><div class="w"><a class="marca" href="./"><span class="lg"></span><b>ITERAR</b></a><a class="v" href="./">Volver al sitio</a></div></header>
+<main><div class="w">
+  <div>
+    <h1>Empecemos por entender tu negocio.</h1>
+    <p class="lead">La forma más rápida es el diagnóstico: once preguntas, cinco minutos, y una devolución nuestra por mail en dos o tres días, gratis. Si preferís contarnos con tus palabras, usá el formulario.</p>
+    <a class="cta ctad" href="#">Hacer el diagnóstico gratuito</a>
+    <div class="datos"><span><b>Mail</b> <a href="mailto:hola@iterarconsulting.com.ar">hola@iterarconsulting.com.ar</a></span><span><b>Ubicación</b> Buenos Aires, Argentina. Presencial y remoto.</span><span><b>Respuesta</b> en menos de 48 horas hábiles.</span></div>
+  </div>
+  <form id="f" novalidate>
+    <h2>Contanos qué te pasa</h2>
+    <div class="dos"><label>Nombre<input name="nombre" required autocomplete="name"></label><label>Empresa<input name="empresa" autocomplete="organization"></label></div>
+    <div class="dos"><label>Mail<input name="mail" type="email" required autocomplete="email"></label><label>Tamaño de la empresa<select name="tamano"><option>Menos de 10 personas</option><option>10 a 50</option><option>50 a 200</option><option>Más de 200</option></select></label></div>
+    <label>¿Cuál es el problema principal?<select name="problema"><option>No sé si estoy ganando plata / no tengo tablero</option><option>Quiero implementar IA en la operación</option><option>Necesito ordenar las finanzas y la caja</option><option>Quiero trabajar la estrategia con mi equipo</option><option>Otro</option></select></label>
+    <label>Mensaje<textarea name="mensaje" rows="5" placeholder="Qué te pasa hoy y qué querrías que cambie"></textarea></label>
+    <label class="trampa" aria-hidden="true">Web<input name="web" tabindex="-1" autocomplete="off"></label>
+    <button type="submit">Enviar consulta</button>
+    <div class="msg" id="msg" aria-live="polite"></div>
+    <small class="p">No compartimos tus datos con nadie. Si el envío falla, el botón te abre tu programa de mail con la consulta ya escrita.</small>
+  </form>
+</div></main>
+<script src="marks.js"></script>
+<script src="comun.js"></script>
+<script>
+document.querySelectorAll('.lg').forEach(e=>e.outerHTML=COMUN.logo('A'));
+document.querySelectorAll('.logo-mark').forEach(s=>s.style.setProperty('--accent','#8FB0FF'));
+document.querySelectorAll('.ctad').forEach(a=>{a.href=COMUN.DIAGNOSTICO_URL;a.target='_blank';a.rel='noopener';});
+const f=document.getElementById('f'),msg=document.getElementById('msg');
+f.addEventListener('submit',async e=>{
+  e.preventDefault();
+  const d=Object.fromEntries(new FormData(f).entries());
+  if(!d.nombre.trim()||!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(d.mail)){msg.className='msg mal';msg.textContent='Necesitamos tu nombre y un mail válido.';return;}
+  const b=f.querySelector('button');b.disabled=true;msg.className='msg';msg.textContent='Enviando…';
+  try{
+    const r=await fetch('/api/contacto',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(d)});
+    const j=await r.json().catch(()=>({}));
+    if(!r.ok||!j.ok) throw new Error(j.error||'sin servicio');
+    msg.className='msg ok';msg.textContent='Recibido. Te escribimos en menos de 48 horas hábiles.';f.reset();
+  }catch(err){
+    // sin backend (maqueta local) o falla del servicio: se abre el mail con todo escrito
+    const cuerpo=encodeURIComponent(`Nombre: ${d.nombre}\nEmpresa: ${d.empresa}\nMail: ${d.mail}\nTamaño: ${d.tamano}\nProblema: ${d.problema}\n\n${d.mensaje}`);
+    location.href=`mailto:hola@iterarconsulting.com.ar?subject=${encodeURIComponent('Consulta de '+d.nombre)}&body=${cuerpo}`;
+    msg.className='msg';msg.textContent='Se abrió tu programa de mail con la consulta lista para enviar.';
+  }finally{b.disabled=false;}
+});
+</script>
+</body>
+</html>

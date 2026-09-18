@@ -1,0 +1,494 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex,nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ITERAR Consulting. Iterar es mejorar en cada intento.</title>
+<!-- Sitio definitivo: base ruta 7 (oscura) + comparador de la ruta 6 + pico del logo de la ruta 5 -->
+<meta name="description" content="Consultora en Buenos Aires: inteligencia artificial, tableros de control, análisis financiero y pensamiento estratégico en ciclos cortos.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icono-180.png">
+<link rel="manifest" href="site.webmanifest">
+<meta name="theme-color" content="#2340E8">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ITERAR Consulting">
+<meta property="og:title" content="ITERAR Consulting. Tu empresa mejora por vueltas.">
+<meta property="og:description" content="Inteligencia artificial, tableros de control y análisis financiero implementados en ciclos cortos, para pymes y grandes empresas. Buenos Aires.">
+<meta property="og:image" content="og-image.png">
+<meta property="og:locale" content="es_AR">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"ITERAR Consulting","description":"Consultora de implementación de inteligencia artificial, tableros de control de gestión, análisis financiero y pensamiento estratégico para pymes y grandes empresas.","url":"https://iterarconsulting.com.ar/","areaServed":"AR","address":{"@type":"PostalAddress","addressLocality":"Buenos Aires","addressCountry":"AR"},"founder":[{"@type":"Person","name":"Luciano Rodríguez"},{"@type":"Person","name":"Matías Gabrenja"}],"knowsAbout":["Inteligencia artificial para empresas","Tableros de control de gestión","Análisis financiero","Planificación estratégica"]}</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lenis@1.3.26/dist/lenis.css">
+<style>
+:root{
+  --fondo:#0B0D14; --panel:#11141F; --panel-2:#171B29; --tx:#F3F4F8; --tx-2:#AEB3C7; --tx-3:#7A8099; --linea:rgba(243,244,248,.12);
+  --azul:#2F4CFF; --azul-2:#2340E8; --cielo:#8FB0FF; --claro:#EEF0F6;
+  --d:"Bricolage Grotesque",sans-serif; --t:"Instrument Sans",system-ui,sans-serif;
+  --ease-out:cubic-bezier(.23,1,.32,1);
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--fondo);color:var(--tx);font-family:var(--t);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit}
+img{display:block;max-width:100%;height:auto}
+h1,h2,h3{margin:0;font-family:var(--d);font-weight:600;letter-spacing:-.03em;line-height:1;text-wrap:balance}
+p{text-wrap:pretty}
+.w{max-width:1280px;margin:0 auto;padding:0 clamp(20px,4vw,56px)}
+#bg{position:fixed;inset:0;width:100%;height:100%;z-index:0;display:block}
+main{position:relative;z-index:1}
+.grano{position:fixed;inset:0;pointer-events:none;z-index:60;opacity:.05;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:200px 200px}
+
+/* nav */
+.nav{position:fixed;top:0;left:0;right:0;z-index:50;transition:transform .5s var(--ease-out)}
+.nav.oculto{transform:translateY(-110%)}
+.nav .w{display:flex;align-items:center;justify-content:space-between;height:76px}
+.marca{display:flex;align-items:center;gap:12px;text-decoration:none}
+.marca .logo-mark{width:36px;height:36px;overflow:visible}
+.marca .logo-mark .c{transform-box:view-box;transform-origin:0 0}
+.marca:hover .logo-mark .c{animation:vuelta 1.2s cubic-bezier(.6,0,.15,1) 1}
+@keyframes vuelta{from{transform:rotate(0)}to{transform:rotate(360deg)}}
+.marca b{font-family:var(--d);font-weight:700;font-size:20px;letter-spacing:.02em}
+.nav nav{display:flex;align-items:center;gap:clamp(16px,2.2vw,30px);font-size:15px;font-weight:500;background:rgba(17,20,31,.55);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid var(--linea);border-radius:999px;padding:6px 8px 6px 20px}
+.nav nav a{text-decoration:none;color:var(--tx-2);transition:color .2s}
+.nav nav a:hover{color:var(--tx)}
+.nav nav .cta{color:var(--fondo);background:var(--tx);border-radius:999px;padding:9px 14px;font-weight:600}
+.nav nav .cta:hover{background:#fff;color:var(--fondo)}
+.menu{display:none}
+.cta{display:inline-flex;align-items:center;gap:12px;background:var(--tx);color:var(--fondo);text-decoration:none;font-weight:600;padding:15px 22px;border-radius:999px;will-change:transform;transition:background .2s}
+.cta:hover{background:#fff}
+.cta.az{background:var(--azul);color:#fff}.cta.az:hover{background:var(--azul-2)}
+.cta small{font-weight:400;opacity:.7}
+
+/* hero */
+.hero{min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;padding-top:120px}
+.hero .w{padding-bottom:clamp(30px,6vh,60px)}
+.hero h1{font-size:clamp(44px,6.6vw,108px);font-weight:500}
+.hero h1 .l{display:block;min-height:1em}
+.hero h1 .l{white-space:nowrap}
+.hero h1 .l b{font-weight:700;color:var(--cielo)}
+.hero .fila{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:32px;align-items:end;margin-top:34px}
+.hero .bajada{font-size:clamp(17px,1.35vw,21px);color:var(--tx-2);max-width:30em;margin:0}
+.hero .acc{display:flex;gap:14px;flex-wrap:wrap;justify-content:flex-end}
+.hero .acc .sec{display:inline-flex;align-items:center;padding:15px 22px;border:1px solid var(--linea);border-radius:999px;text-decoration:none;font-weight:600;color:var(--tx);transition:border-color .2s}
+.hero .acc .sec:hover{border-color:var(--tx)}
+.senal{margin-top:clamp(30px,6vh,60px);border-top:1px solid var(--linea);padding-top:18px;display:flex;gap:14px 40px;flex-wrap:wrap;font-size:14px;color:var(--tx-3)}
+.senal b{color:var(--tx);font-weight:600;font-variant-numeric:tabular-nums}
+.senal .vivo{color:var(--cielo);font-weight:600}
+
+/* ¿te pasa? */
+.pasa{background:var(--panel);color:var(--tx);padding:clamp(90px,14vh,170px) 0;border-top:1px solid var(--linea)}
+.pasa .w{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(30px,5vw,80px);align-items:start}
+.pasa h2{font-size:clamp(40px,6vw,92px);font-weight:700}
+.pasa .lead{font-size:19px;color:var(--tx-2);max-width:24em;margin:22px 0 0}
+.lista{border-top:1px solid var(--linea)}
+.lista label{display:flex;gap:18px;align-items:center;padding:18px 4px;border-bottom:1px solid var(--linea);cursor:pointer;transition:color .2s;font-size:clamp(18px,1.9vw,24px);font-weight:500;line-height:1.25;font-family:var(--d)}
+.lista input{appearance:none;width:26px;height:26px;border:2px solid var(--tx-3);border-radius:50%;flex:none;margin:0;cursor:pointer;display:grid;place-items:center;transition:background .15s}
+.lista input:checked{background:var(--azul);border-color:var(--azul)}
+.lista input:checked::after{content:"";width:10px;height:6px;border-left:2.5px solid #fff;border-bottom:2.5px solid #fff;transform:rotate(-45deg) translate(1px,-1px)}
+.sigue{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;margin-top:26px}
+.sigue span{color:var(--tx-2);font-size:16px}
+.lista label:has(input:checked){color:var(--cielo)}
+@media (hover:hover) and (pointer:fine){.lista label:hover input{border-color:var(--tx)}}
+
+
+/* comparador (oscuro) */
+.comp{background:var(--fondo);padding:clamp(90px,14vh,170px) 0 0}
+.comp .cab{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,6fr);gap:clamp(20px,4vw,60px);align-items:end;margin-bottom:40px}
+.comp h2{font-size:clamp(34px,4.8vw,70px)}
+.comp h2 b{font-weight:700;color:var(--cielo)}
+.comp .cab p{margin:0;font-size:18px;color:var(--tx-2);max-width:32em}
+.slider{position:relative;aspect-ratio:16/9;background:#E9EBF2;color:#0B0D14;border:1px solid var(--linea);border-radius:14px;overflow:hidden;user-select:none;touch-action:pan-y}
+.capa{position:absolute;inset:0;padding:clamp(14px,2.4vw,34px)}
+.capa.b{clip-path:inset(0 0 0 50%);background:var(--panel);color:var(--tx)}
+.capa .et{position:absolute;top:14px;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:6px 10px;border-radius:999px}
+.capa.a .et{left:14px;background:#0B0D14;color:#fff}
+.capa.b .et{right:14px;background:var(--azul);color:#fff}
+.manija{position:absolute;top:0;bottom:0;left:50%;width:2px;background:var(--cielo);transform:translateX(-1px);cursor:ew-resize}
+.manija::after{content:"";position:absolute;top:50%;left:50%;width:54px;height:54px;border-radius:50%;background:var(--azul);transform:translate(-50%,-50%);box-shadow:0 10px 30px -8px rgba(47,76,255,.7);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2.2'%3E%3Cpath d='M8 7l-4 5 4 5M16 7l4 5-4 5'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:center;background-size:22px}
+table.crudo{width:100%;border-collapse:collapse;font-size:clamp(11px,1.15vw,15px);font-variant-numeric:tabular-nums;margin-top:44px}
+table.crudo th,table.crudo td{border:1px solid rgba(11,13,20,.16);padding:.5em .7em;text-align:right}
+table.crudo th:first-child,table.crudo td:first-child{text-align:left}
+table.crudo th{background:#DADDE8;font-weight:600}
+.tab{margin-top:44px;display:grid;gap:12px}
+.kp{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.kp div{border:1px solid var(--linea);border-radius:10px;padding:10px 12px}
+.kp small{display:block;font-size:11.5px;color:var(--tx-3)}
+.kp b{font-family:var(--d);font-size:clamp(20px,2.4vw,34px);font-weight:600;letter-spacing:-.02em;line-height:1.1}
+.kp i{font-style:normal;font-size:12px;font-weight:600;color:#3DBE8B}
+.gr{border:1px solid var(--linea);border-radius:10px;padding:10px 12px}
+.gr svg{display:block;width:100%;height:auto}
+.gr figcaption{font-size:12px;color:var(--tx-3);margin-bottom:4px;display:flex;justify-content:space-between}
+.alerta{background:var(--azul);color:#fff;padding:10px 12px;font-size:13.5px;font-weight:600;border-radius:10px}
+.comp .nota{margin:16px 0 0;font-size:14px;color:var(--tx-3)}
+
+/* pico: el logo se dibuja */
+.pico{background:var(--panel);position:relative}
+.pico .esc{height:100svh;padding-top:70px;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);align-items:center;gap:clamp(20px,4vw,60px);overflow:hidden}
+.pico .txt h2{font-size:clamp(34px,4.6vw,68px)}
+.pico .txt h2 b{font-weight:700;color:var(--cielo)}
+.pico .momentos{margin:34px 0 0;padding:0;list-style:none}
+.pico .momentos li{display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:baseline;padding:14px 0;border-top:1px solid var(--linea);opacity:.25;transform:translateX(-8px);transition:opacity .4s,transform .5s var(--ease-out)}
+.pico .momentos li.on{opacity:1;transform:none}
+.pico .momentos b{font-family:var(--d);font-weight:600;font-size:clamp(24px,2.6vw,36px);line-height:1;letter-spacing:-.02em}
+.pico .momentos span{font-size:15.5px;color:var(--tx-2)}
+.pico .otra{margin:28px 0 0;font-family:var(--d);font-size:clamp(20px,2.1vw,28px);color:var(--cielo);opacity:0;transform:translateY(10px);max-width:22em}
+.pico .rueda{position:relative;width:100%;max-height:88svh;aspect-ratio:1}
+.pico .rueda svg{width:100%;height:100%;overflow:visible}
+.pico .rueda .cen{position:absolute;inset:0;display:grid;place-items:center;text-align:center;pointer-events:none}
+.pico .rueda .cen b{display:block;font-family:var(--d);font-weight:600;font-size:clamp(22px,2.7vw,40px);line-height:1;letter-spacing:-.03em}
+.pico .rueda .cen small{display:block;margin-top:10px;font-size:14px;color:var(--tx-3)}
+
+/* servicios con índice pegajoso */
+.serv{padding:clamp(90px,14vh,170px) 0;background:var(--fondo)}
+.serv .w{display:grid;grid-template-columns:minmax(0,4fr) minmax(0,8fr);gap:clamp(30px,5vw,90px);align-items:start}
+.indice{position:sticky;top:110px}
+.indice h2{font-size:clamp(30px,3.6vw,52px);margin-bottom:26px}
+.indice ol{list-style:none;margin:0;padding:0;border-top:1px solid var(--linea)}
+.indice li{padding:14px 0;border-bottom:1px solid var(--linea);font-family:var(--d);font-size:clamp(18px,1.6vw,22px);color:var(--tx-3);display:flex;gap:14px;align-items:baseline;transition:color .3s}
+.indice li i{font-style:normal;font-size:12px;width:20px;color:var(--tx-3)}
+.indice li.on{color:var(--tx)}.indice li.on i{color:var(--cielo)}
+.bloque{padding:clamp(30px,5vh,60px) 0;border-top:1px solid var(--linea)}
+.bloque:first-child{border-top:0;padding-top:0}
+.bloque .img{aspect-ratio:16/9;overflow:hidden;border-radius:10px;margin-bottom:26px;background:var(--panel)}
+.bloque .img img{width:100%;height:100%;object-fit:cover;transform:scale(1.08)}
+.bloque h3{font-size:clamp(28px,3.2vw,46px);margin-bottom:14px}
+.bloque h3 b{font-weight:700;color:var(--cielo)}
+.bloque p{margin:0 0 16px;color:var(--tx-2);font-size:18px;max-width:34em}
+.bloque ul{margin:0;padding:0;list-style:none;display:grid;gap:8px;font-size:15.5px;color:var(--tx-2);max-width:34em}
+.bloque li{padding-left:18px;position:relative}
+.bloque .mas{display:inline-block;margin-top:18px;font-weight:600;color:var(--cielo);text-decoration:none;border-bottom:1px solid var(--linea);padding-bottom:2px}
+.bloque .mas:hover{border-color:var(--cielo)}
+.bloque li::before{content:"";position:absolute;left:0;top:.6em;width:8px;height:8px;border-radius:50%;border:1.5px solid var(--cielo)}
+
+/* método: línea de tiempo horizontal */
+.met{background:var(--panel);overflow:hidden;position:relative}
+.met .cab{padding:clamp(80px,12vh,140px) 0 30px}
+.met .cab h2{font-size:clamp(36px,5vw,76px);max-width:14em}
+.met .cab p{color:var(--tx-2);font-size:19px;max-width:36em;margin:18px 0 0}
+.met .esc{position:relative;height:100svh;display:flex;align-items:center}
+.met .aro{position:absolute;right:-8vw;top:50%;width:min(70vh,760px);height:min(70vh,760px);transform:translateY(-50%);opacity:.14;pointer-events:none}
+.met .aro svg{width:100%;height:100%;overflow:visible}
+.met .pista{display:flex;gap:clamp(20px,3vw,48px);padding:0 clamp(20px,4vw,56px);width:max-content;position:relative}
+.mom{width:min(78vw,560px);flex:none;padding:30px 0;border-top:1px solid var(--linea)}
+.mom .k{font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--cielo);font-weight:600;margin-bottom:16px}
+.mom h3{font-size:clamp(44px,6vw,96px);font-weight:600;margin-bottom:18px}
+.mom p{margin:0;color:var(--tx-2);font-size:18px;max-width:28em}
+.mom .q{margin:16px 0 0;color:var(--tx);font-weight:600;font-size:16px}
+.mom.otra h3{color:var(--cielo)}
+
+/* casos con zoom parallax */
+.caso{position:relative;min-height:100svh;display:flex;align-items:flex-end;overflow:hidden}
+.caso .img{position:absolute;inset:0}
+.caso .img img{width:100%;height:100%;object-fit:cover;transform:scale(1.18);will-change:transform}
+.caso .velo{position:absolute;inset:0;background:linear-gradient(to top,rgba(11,13,20,.92) 0%,rgba(11,13,20,.35) 55%,rgba(11,13,20,.15) 100%)}
+.caso .w{position:relative;padding-bottom:clamp(40px,8vh,90px);padding-top:120px;display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:30px;align-items:end}
+.caso .quien{font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--cielo);font-weight:600;margin-bottom:14px}
+.caso h3{font-size:clamp(34px,5vw,76px);font-weight:600;max-width:12em}
+.caso .paso{color:var(--tx-2);font-size:16.5px;margin:0 0 12px}
+.caso .res{font-family:var(--d);font-size:clamp(20px,2vw,28px);font-weight:500;line-height:1.25;margin:0;border-top:1px solid var(--linea);padding-top:16px}
+.casos .tit{padding:clamp(80px,12vh,140px) 0 clamp(30px,5vh,50px)}
+.casos .tit h2{font-size:clamp(36px,5vw,76px)}
+.casos .tit p{color:var(--tx-2);font-size:19px;max-width:36em;margin:18px 0 0}
+
+/* equipo + puerta sobre el shader */
+.fin{padding:clamp(100px,16vh,200px) 0 clamp(40px,7vh,70px)}
+.fin .eq{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(24px,4vw,80px);align-items:start;padding-bottom:clamp(70px,10vh,130px)}
+.fin h2{font-size:clamp(36px,5vw,76px)}
+.fin .eq p.l{color:var(--tx-2);font-size:18px;max-width:26em;margin:18px 0 0}
+.socios{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.socio{background:rgba(17,20,31,.6);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid var(--linea);border-radius:12px;padding:22px}
+.socio .f{aspect-ratio:4/3;border-radius:8px;overflow:hidden;margin-bottom:16px;background:var(--panel-2)}
+.socio .f img{width:100%;height:100%;object-fit:cover}
+.socio h3{font-size:24px;font-weight:600}
+.socio .rol{color:var(--cielo);font-weight:600;font-size:14px;margin:6px 0 10px}
+.socio p{margin:0;font-size:15px;color:var(--tx-2)}
+.puerta{text-align:center;padding:clamp(60px,10vh,120px) 0 0}
+.puerta h2{font-size:clamp(44px,8vw,132px);font-weight:600;max-width:9em;margin:0 auto}
+.puerta h2 b{font-weight:700;color:var(--cielo)}
+.puerta p{color:var(--tx-2);font-size:18px;max-width:30em;margin:24px auto 34px}
+.pie{margin-top:clamp(70px,10vh,120px);display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;border-top:1px solid var(--linea);padding-top:26px;font-size:14px;color:var(--tx-3)}
+.pie .firma{font-family:var(--d);font-weight:700;font-size:clamp(56px,7vw,110px);line-height:.9;letter-spacing:-.04em;color:var(--tx)}
+.oi{position:relative;display:inline-block}
+.oi .orb{position:absolute;left:50%;top:.02em;width:.17em;height:.17em;margin-left:-.085em;border-radius:50%;background:var(--azul);transform-origin:50% -.2em;animation:loop 5s cubic-bezier(.6,0,.3,1) infinite}
+@keyframes loop{0%,34%{transform:rotate(0)}78%,100%{transform:rotate(360deg)}}
+
+.rv{opacity:1}
+@media (max-width:980px){
+  .hero .fila,.pasa .w,.serv .w,.fin .eq,.caso .w{grid-template-columns:1fr}
+  .hero .acc{justify-content:flex-start}
+  .comp .cab{grid-template-columns:1fr}
+  .pico .esc{grid-template-columns:1fr;align-content:center;gap:24px;height:auto;min-height:100svh;padding:70px 0 50px}
+  .pico .rueda{max-width:min(86vw,440px);margin:0 auto}
+  .indice{position:static}
+  .indice ol{display:none}
+  .met .esc{height:auto;padding:20px 0 60px}
+  .met .pista{width:auto;flex-direction:column;padding:0}
+  .mom{width:100%}
+  .met .aro{display:none}
+  .socios{grid-template-columns:1fr}
+  .nav nav{display:none}
+  .menu{display:inline-flex;font:inherit;font-weight:600;background:none;color:inherit;border:1px solid var(--linea);border-radius:999px;padding:8px 14px;cursor:pointer}
+  .nav nav.abierto{display:flex;position:absolute;left:16px;right:16px;top:70px;flex-direction:column;align-items:flex-start;gap:16px;padding:20px;border-radius:16px;background:rgba(17,20,31,.96)}
+}
+@media (max-width:600px){
+  body{font-size:16px}
+  .hero h1{font-size:clamp(34px,10.4vw,52px)}
+  .cta small{display:none}
+  .slider{aspect-ratio:4/5}.capa{padding:12px}
+  .kp{grid-template-columns:1fr 1fr}.kp div:last-child{grid-column:span 2}
+  .caso{min-height:90svh}
+  .pie .firma{font-size:56px}
+}
+@media (prefers-reduced-motion:reduce){
+  #bg{display:none}body{background:#0F1424}
+  .bloque .img img,.caso .img img{transform:none}
+  .oi .orb,.marca .logo-mark .c{animation:none!important}
+  .pico .momentos li{opacity:1;transform:none}.pico .otra{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+<canvas id="bg" aria-hidden="true"></canvas>
+<div class="grano" aria-hidden="true"></div>
+
+<header class="nav" id="nav"><div class="w">
+  <a class="marca" href="#"><span class="lg"></span><b>ITERAR</b></a>
+  <button class="menu" aria-expanded="false" onclick="const n=document.getElementById('menu');n.classList.toggle('abierto');this.setAttribute('aria-expanded',n.classList.contains('abierto'))">Menú</button>
+  <nav id="menu"><a href="#antes">Antes y después</a><a href="#servicios">Servicios</a><a href="#metodo">Método</a><a href="#casos">Situaciones</a><a href="#equipo">Equipo</a><a href="indicadores.html">Indicadores</a><a class="cta ctad" href="#">Diagnóstico</a></nav>
+</div></header>
+
+<main>
+<section class="hero" id="inicio"><div class="w">
+  <h1 id="h1"><span class="l" data-t="Decidí con datos.">Decidí con datos.</span><span class="l" data-t="Ejecutá con">Ejecutá con</span><span class="l" data-t="inteligencia artificial.">inteligencia artificial.</span><span class="l" data-t="Iterar es mejorar"><b>Iterar es mejorar</b></span><span class="l" data-t="en cada intento."><b>en cada intento.</b></span></h1>
+  <div class="fila">
+    <p class="bajada rv">Tableros de control, análisis financiero, herramientas de IA y pensamiento estratégico para pymes y grandes empresas. En ciclos cortos: cada vuelta deja algo funcionando.</p>
+    <div class="acc rv"><a class="cta ctad mag" href="#">Hacer el diagnóstico <small>5 min</small></a><a class="sec" href="#metodo">Cómo trabajamos</a></div>
+  </div>
+  <div class="senal rv" id="senal"><span><span class="vivo">En vivo</span> Hoy en Argentina</span><span>Dólar oficial <b id="dolar">…</b></span><span>Inflación mensual <b id="inf">…</b> <span id="infmes"></span></span><span id="fuente" style="flex-basis:100%;font-size:12.5px">Conectando con las fuentes…</span></div>
+</div></section>
+
+<section class="pasa" id="pasa"><div class="w">
+  <div><h2 class="rv">¿Te pasa?</h2><p class="lead rv">Marcá lo que te suene. Son las cosas que escuchamos todas las semanas, y las que vivimos en nuestras propias empresas.</p></div>
+  <div>
+    <div class="lista" id="lista">
+      <label><input type="checkbox">Cierro el mes y no sé si gané plata.</label>
+      <label><input type="checkbox">Cada gerencia trae su planilla y los números no coinciden.</label>
+      <label><input type="checkbox">Pagamos licencias de IA y nadie sabe para qué usarlas.</label>
+      <label><input type="checkbox">El reporte llega cuando la decisión ya se tomó.</label>
+      <label><input type="checkbox">Todo pasa por mí. Si me voy una semana, se frena.</label>
+      <label><input type="checkbox">Probé ChatGPT, me gustó, y ahí quedó.</label>
+    </div>
+    <div class="sigue"><span id="cuenta">Todo esto tiene arreglo, y casi nunca es caro.</span><a class="cta az ctad mag" href="#">Seguir en el diagnóstico</a></div>
+  </div>
+</div></section>
+
+<section class="comp" id="antes"><div class="w">
+  <div class="cab"><h2 class="rv">Los mismos números, <b>una vuelta después.</b></h2><p class="rv">A la izquierda, como estaban: una tabla que nadie miraba. A la derecha, después de la primera vuelta: se lee en diez segundos y avisa solo. Arrastrá para comparar. Datos de ejemplo.</p></div>
+  <div class="slider" id="slider">
+    <div class="capa a"><span class="et">Antes</span><table class="crudo" id="crudo"></table></div>
+    <div class="capa b" id="capab"><span class="et">Después</span><div class="tab" id="tab"></div></div>
+    <div class="manija" id="manija" role="slider" aria-label="Comparar antes y después" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" tabindex="0"></div>
+  </div>
+  <p class="nota">Comercial Ejemplo S.A. es una empresa inventada para mostrar la idea sin exponer a ningún cliente.</p>
+</div></section>
+<section class="serv" id="servicios"><div class="w">
+  <div class="indice"><h2>Cuatro cosas que quedan funcionando</h2><ol id="indice"><li class="on"><i>01</i>Un tablero que se mira</li><li><i>02</i>Números que se entienden</li><li><i>03</i>IA que trabaja</li><li><i>04</i>Criterio que queda adentro</li></ol></div>
+  <div class="bloques">
+    <div class="bloque" data-i="0"><div class="img"><img src="img/tablero-noche.webp" srcset="img/tablero-noche-800.webp 800w, img/tablero-noche.webp 1536w" sizes="(max-width: 900px) 100vw, 60vw" alt="" loading="lazy"></div><h3>Un tablero <b>que se mira</b></h3><p>Los indicadores que importan para dirigir, conectados a tus datos y en una sola pantalla. Con una reunión fija para mirarlos, porque un tablero que nadie abre es una planilla más.</p><ul><li>Conectado a facturación, banco y sistema de gestión</li><li>Alertas automáticas cuando algo se desvía</li><li>Una rutina semanal de revisión, con dueño y agenda</li></ul><a class="mas" href="servicio.html?s=tableros">Ver el servicio completo</a></div>
+    <div class="bloque" data-i="1"><div class="img"><img src="img/sala-reunion.webp" srcset="img/sala-reunion-800.webp 800w, img/sala-reunion.webp 1536w" sizes="(max-width: 900px) 100vw, 60vw" alt="" loading="lazy"></div><h3>Números <b>que se entienden</b></h3><p>Rentabilidad por línea, cliente o sucursal. Caja proyectada a noventa días. Costos que crecieron sin que nadie lo decidiera. Explicado en castellano, no en jerga contable.</p><ul><li>El mapa de dónde se gana y dónde se pierde</li><li>Proyección de caja y escenarios para decidir</li><li>Información lista para bancos, socios o inversores</li></ul><a class="mas" href="servicio.html?s=finanzas">Ver el servicio completo</a></div>
+    <div class="bloque" data-i="2"><div class="img"><img src="img/fibra.webp" srcset="img/fibra-800.webp 800w, img/fibra.webp 1536w" sizes="(max-width: 900px) 100vw, 60vw" alt="" loading="lazy"></div><h3>Inteligencia artificial <b>que trabaja</b></h3><p>Asistentes que responden sobre los datos de la empresa. Automatización de carga, conciliación y seguimiento. Atención a clientes con supervisión humana. Herramientas funcionando, no demos.</p><ul><li>Casos de uso elegidos por impacto, no por moda</li><li>La herramienta en producción y el equipo capacitado</li><li>Política de uso y seguridad de la información</li></ul><a class="mas" href="servicio.html?s=ia">Ver el servicio completo</a></div>
+    <div class="bloque" data-i="3"><div class="img"><img src="img/socios-trabajo.webp" srcset="img/socios-trabajo-800.webp 800w, img/socios-trabajo.webp 1536w" sizes="(max-width: 900px) 100vw, 60vw" alt="" loading="lazy"></div><h3>Criterio <b>que queda adentro</b></h3><p>Sesiones de trabajo con dueños, directorios y equipos gerenciales para ordenar prioridades y decidir con método. Que después no nos necesiten para pensar.</p><ul><li>Prioridades escritas, con responsable y fecha</li><li>Un lenguaje común para discutir con números</li><li>Mandos medios formados en gestión con datos</li></ul><a class="mas" href="servicio.html?s=estrategia">Ver el servicio completo</a></div>
+  </div>
+</div></section>
+
+<section class="pico" id="metodo">
+  <div class="w esc">
+    <div class="txt">
+      <h2>Una vuelta tiene <b>cuatro momentos.</b></h2>
+      <ul class="momentos" id="momentos">
+        <li><b>Medir</b><span>Juntamos lo que está repartido entre planillas, sistemas y la cabeza de alguien.</span></li>
+        <li><b>Entender</b><span>Buscamos dónde se gana y dónde se pierde, con los números a la vista.</span></li>
+        <li><b>Decidir</b><span>Qué cambiar primero y qué dejar de hacer. Con vos y con tu equipo.</span></li>
+        <li><b>Ajustar</b><span>Implementamos el cambio: automatizaciones, tablero, herramientas de IA.</span></li>
+      </ul>
+      <p class="otra" id="otra">Y otra vez, un poco más afuera. La segunda vuelta arranca donde terminó la primera.</p>
+    </div>
+    <div class="rueda"><svg viewBox="-82 -82 164 164" id="rueda" aria-hidden="true"></svg><div class="cen"><div><b id="rn">Medir</b><small id="rs">momento 1 de 4</small></div></div></div>
+  </div>
+</section>
+
+<section class="casos" id="casos">
+  <div class="w tit"><h2 class="rv">Así se ve una primera vuelta</h2><p class="rv">Tres situaciones típicas con las que llegan las empresas y qué queda funcionando después.</p></div>
+  <article class="caso"><div class="img"><img src="img/retrato-duena.webp" srcset="img/retrato-duena-800.webp 800w, img/retrato-duena.webp 1536w" sizes="(max-width: 900px) 100vw, 60vw" alt="" loading="lazy"></div><div class="velo"></div><div class="w"><div><div class="quien">Distribuidora, 60 personas</div><h3>Las ventas subían y el margen no se movía.</h3></div><div><p class="paso">Tablero de margen por línea y por cliente, conectado a la facturación, con revisión semanal.</p><p class="res">En la primera reunión apareció una línea con margen negativo. Cambiaron la lista de precios esa semana.</p></div></div></article>
+  <article class="caso"><div class="img"><img src="img/tablero-noche.webp" srcset="img/tablero-noche-800.webp 800w, img/tablero-noche.webp 1536w" sizes="(max-width: 900px) 100vw, 60vw" alt="" loading="lazy"></div><div class="velo"></div><div class="w"><div><div class="quien">Empresa de servicios, gerencia de administración</div><h3>Diez días por mes cerrando a mano.</h3></div><div><p class="paso">Lectura de comprobantes y conciliación con IA, con control humano de las excepciones.</p><p class="res">El cierre pasó a ser una revisión de excepciones. El equipo dejó de cargar y empezó a analizar.</p></div></div></article>
+  <article class="caso"><div class="img"><img src="img/tablero.webp" srcset="img/tablero-800.webp 800w, img/tablero.webp 1536w" sizes="(max-width: 900px) 100vw, 60vw" alt="" loading="lazy"></div><div class="velo"></div><div class="w"><div><div class="quien">Fábrica familiar, segunda generación</div><h3>Todo estaba en la cabeza del fundador.</h3></div><div><p class="paso">Cinco indicadores, una reunión mensual de dirección y prioridades escritas con responsable y fecha.</p><p class="res">Hoy el equipo discute con los mismos números.</p></div></div></article>
+</section>
+
+<section class="fin" id="equipo"><div class="w">
+  <div class="eq">
+    <div><h2 class="rv">Vas a hablar con quien hace el trabajo.</h2><p class="l rv">Dos socios, presentes en cada proyecto de principio a fin. Sin equipos junior que aprenden con tu empresa. Antes de vender algo, lo usamos en nuestras propias empresas.</p></div>
+    <div class="socios">
+      <div class="socio rv"><div class="f"><img src="img/reunion.webp" srcset="img/reunion-800.webp 800w, img/reunion.webp 1536w" sizes="(max-width: 900px) 100vw, 40vw" alt="Foto provisoria de Luciano" style="object-position:50% 30%;transform:scale(1.9);transform-origin:57% 38%"></div><h3>Luciano Rodríguez</h3><div class="rol">Socio. Estrategia, finanzas y control de gestión.</div><p>Dirige empresas de transporte y logística, donde implementó tableros de control, análisis financiero y un sistema de gestión propio.</p></div>
+      <div class="socio rv"><div class="f"><img src="img/socios-trabajo.webp" srcset="img/socios-trabajo-800.webp 800w, img/socios-trabajo.webp 1536w" sizes="(max-width: 900px) 100vw, 60vw" alt="Foto provisoria de Matías" style="object-position:30% center;transform:scale(2.3);transform-origin:36% 40%"></div><h3>Matías Gabrenja</h3><div class="rol">Socio. Inteligencia artificial y automatización.</div><p>Diseña e implementa herramientas de IA para negocios. Creó el diagnóstico con el que empieza cada proyecto.</p></div>
+    </div>
+  </div>
+  <div class="puerta" id="contacto">
+    <h2 class="rv">La primera vuelta son <b>once preguntas.</b></h2>
+    <p class="rv">Cinco minutos, casi todas de un click. Se guarda solo. Te respondemos por mail en dos o tres días, gratis, y no te llama ningún vendedor.</p>
+    <a class="cta ctad mag rv" href="#">Hacer el diagnóstico</a>
+  </div>
+  <div class="pie"><div class="firma"><span class="oi">ı<i class="orb"></i></span>terar</div><div>ITERAR Consulting · Buenos Aires<br><a href="mailto:hola@iterarconsulting.com.ar" style="text-decoration:none">hola@iterarconsulting.com.ar</a><br>© 2026</div></div>
+</div></section>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/ScrambleTextPlugin.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.3.26/dist/lenis.min.js"></script>
+<script src="marks.js"></script>
+<script src="comun.js"></script>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.186.0/build/three.module.min.js","https://cdn.jsdelivr.net/npm/three@0.186.0/build/three.core.js":"https://cdn.jsdelivr.net/npm/three@0.186.0/build/three.core.min.js"}}</script>
+<script>
+if('scrollRestoration' in history) history.scrollRestoration='manual'; scrollTo(0,0);
+const {DIAGNOSTICO_URL,indicadores,logo}=COMUN;
+document.querySelectorAll('.lg').forEach(e=>e.outerHTML=logo('A'));
+document.querySelectorAll('.logo-mark').forEach(s=>s.style.setProperty('--accent','#8FB0FF'));
+document.querySelectorAll('.ctad').forEach(a=>{a.href=DIAGNOSTICO_URL;a.target='_blank';a.rel='noopener';});
+const REDUCIDO=matchMedia('(prefers-reduced-motion: reduce)').matches;
+gsap.registerPlugin(ScrollTrigger,ScrambleTextPlugin);
+let lenis=null;
+if(!REDUCIDO){lenis=new Lenis({lerp:.1,anchors:true});lenis.on('scroll',ScrollTrigger.update);gsap.ticker.add(t=>lenis.raf(t*1000));gsap.ticker.lagSmoothing(0);}
+
+/* Fondo: un solo shader detrás de toda la página (ruido fluido en la paleta) */
+if(!REDUCIDO){
+import('three').then(THREE=>{
+  const cv=document.getElementById('bg');
+  const r=new THREE.WebGLRenderer({canvas:cv,antialias:false,powerPreference:'high-performance'});
+  r.setPixelRatio(Math.min(devicePixelRatio,1.5));
+  const sc=new THREE.Scene(),cam=new THREE.OrthographicCamera(-1,1,1,-1,0,1);
+  const u={uT:{value:0},uR:{value:new THREE.Vector2(1,1)},uM:{value:new THREE.Vector2(.5,.5)},uS:{value:0}};
+  const m=new THREE.ShaderMaterial({uniforms:u,vertexShader:`void main(){gl_Position=vec4(position,1.);}`,
+    fragmentShader:`precision highp float;uniform float uT,uS;uniform vec2 uR,uM;
+    vec3 hash(vec3 p){p=vec3(dot(p,vec3(127.1,311.7,74.7)),dot(p,vec3(269.5,183.3,246.1)),dot(p,vec3(113.5,271.9,124.6)));return -1.+2.*fract(sin(p)*43758.5453123);}
+    float noise(vec3 p){vec3 i=floor(p),f=fract(p),u=f*f*(3.-2.*f);
+      return mix(mix(mix(dot(hash(i),f),dot(hash(i+vec3(1,0,0)),f-vec3(1,0,0)),u.x),mix(dot(hash(i+vec3(0,1,0)),f-vec3(0,1,0)),dot(hash(i+vec3(1,1,0)),f-vec3(1,1,0)),u.x),u.y),
+      mix(mix(dot(hash(i+vec3(0,0,1)),f-vec3(0,0,1)),dot(hash(i+vec3(1,0,1)),f-vec3(1,0,1)),u.x),mix(dot(hash(i+vec3(0,1,1)),f-vec3(0,1,1)),dot(hash(i+vec3(1,1,1)),f-vec3(1,1,1)),u.x),u.y),u.z);}
+    float fbm(vec3 p){float v=0.,a=.5;for(int i=0;i<5;i++){v+=a*noise(p);p*=2.02;a*=.5;}return v;}
+    void main(){vec2 uv=gl_FragCoord.xy/uR;vec2 q=uv;q.x*=uR.x/uR.y;float t=uT*.05;
+      vec2 mm=(uM-.5)*.25;
+      float n1=fbm(vec3(q*1.3+mm,t));float n2=fbm(vec3(q*2.2-n1*.8,t*1.4+3.));
+      float band=smoothstep(-.35,.75,n1+n2*.6+ (uv.y-.55)*.9 - uS*.6);
+      vec3 ink=vec3(.043,.051,.078),cob=vec3(.137,.251,.91),cielo=vec3(.56,.69,1.);
+      vec3 c=mix(ink,cob,band*.85);c=mix(c,cielo,pow(max(0.,n2*1.2-.35),2.)*band*.55);
+      c+= (fract(sin(dot(gl_FragCoord.xy,vec2(12.9898,78.233)))*43758.5453)-.5)*.02;
+      gl_FragColor=vec4(c,1.);}`});
+  sc.add(new THREE.Mesh(new THREE.PlaneGeometry(2,2),m));
+  const tam=()=>{r.setSize(innerWidth,innerHeight,false);u.uR.value.set(innerWidth*r.getPixelRatio(),innerHeight*r.getPixelRatio());};
+  tam();addEventListener('resize',tam);
+  let mx=.5,my=.5,tx=.5,ty=.5;
+  if(matchMedia('(hover:hover) and (pointer:fine)').matches) addEventListener('pointermove',e=>{tx=e.clientX/innerWidth;ty=1-e.clientY/innerHeight;},{passive:true});
+  let visible=true;
+  // solo renderiza cuando alguna sección transparente está en pantalla (hero o cierre)
+  const obs=new IntersectionObserver(en=>{visible=en.some(x=>x.isIntersecting);},{threshold:0});
+  obs.observe(document.querySelector('.hero'));obs.observe(document.querySelector('.fin'));
+  gsap.ticker.add(t=>{if(!visible)return;mx+=(tx-mx)*.04;my+=(ty-my)*.04;u.uM.value.set(mx,my);u.uT.value=t;r.render(sc,cam);});
+  ScrollTrigger.create({trigger:'.hero',start:'top top',end:'bottom top',scrub:true,onUpdate:s=>{u.uS.value=s.progress*.35;}});
+});
+}
+
+/* Hero: el titular se descifra */
+if(!REDUCIDO){
+  gsap.set('.rv',{opacity:0,y:14});
+  const ls=[...document.querySelectorAll('#h1 .l')];
+  const tl=gsap.timeline({delay:.3});
+  ls.forEach((l,i)=>{const el=l.querySelector('b')||l;tl.to(el,{duration:.9,scrambleText:{text:l.dataset.t,chars:'iterar',speed:.6,revealDelay:.25,tweenLength:false}},i*.28);});
+  tl.to('.hero .rv',{opacity:1,y:0,duration:.8,stagger:.12,ease:'power3.out'},'-=.6');
+  document.querySelectorAll('.rv').forEach(el=>{if(el.closest('.hero'))return;ScrollTrigger.create({trigger:el,start:'top 88%',once:true,onEnter:()=>gsap.to(el,{opacity:1,y:0,duration:.8,ease:'power3.out'})});});
+}
+
+/* Indicadores reales (dólar oficial e inflación) */
+indicadores().then(d=>{
+  const f=[];
+  if(d.dolar){dolar.textContent='$'+d.dolar.venta.toLocaleString('es-AR');f.push(d.dolar.fuente);} else dolar.textContent='sin conexión';
+  if(d.inflacion){const s=d.inflacion.serie,l=s[s.length-1];inf.textContent=l.valor.toLocaleString('es-AR')+'%';infmes.textContent='('+new Date(l.fecha+'T12:00:00').toLocaleDateString('es-AR',{month:'long'})+')';f.push(d.inflacion.fuente);} else inf.textContent='sin conexión';
+  fuente.textContent=f.length?'Fuentes: '+f.join(' y ')+'. Se actualiza solo, como nuestros tableros.':'No se pudo conectar con las fuentes; no mostramos números que no sean reales.';
+});
+
+/* Nav */
+ScrollTrigger.create({start:0,end:'max',onUpdate:s=>document.getElementById('nav').classList.toggle('oculto',s.direction===1&&s.scroll()>200)});
+
+/* ¿Te pasa? */
+lista.addEventListener('change',()=>{const n=lista.querySelectorAll(':checked').length;cuenta.textContent=n===0?'Todo esto tiene arreglo, y casi nunca es caro.':n===1?'Una sola ya alcanza para empezar.':`Marcaste ${n}. Contanos un poco más y te decimos por cuál empezar.`;});
+
+/* Servicios: índice pegajoso que sigue el scroll + zoom suave de imágenes */
+{
+  const items=[...document.querySelectorAll('#indice li')];
+  document.querySelectorAll('.bloque').forEach(b=>{
+    ScrollTrigger.create({trigger:b,start:'top 55%',end:'bottom 55%',onToggle:s=>{if(s.isActive)items.forEach((li,i)=>li.classList.toggle('on',i==b.dataset.i));}});
+    if(!REDUCIDO) gsap.to(b.querySelector('.img img'),{scale:1,ease:'none',scrollTrigger:{trigger:b,start:'top bottom',end:'top 30%',scrub:true}});
+  });
+}
+
+/* Método (pico): el logo se dibuja con el scroll y arranca la segunda vuelta */
+{
+  const rueda=document.getElementById('rueda');
+  window.dibujarRueda=function(p){
+    const p1=Math.min(1,p/0.72), p2=Math.max(0,(p-0.72)/0.28), d0=-28, giro=360*1.17;
+    let out=`<path d="${ITERAR.taper({r0:21,r1:40,d0,d1:d0+giro,w0:2.2,w1:12,n:160})}" fill="#F3F4F8" opacity=".07"/>`;
+    if(p1>0.01){
+      const end=d0+giro*p1, r1=21+19*p1, w1=2.2+9.8*p1, e=ITERAR.pt(r1,end);
+      out+=`<path d="${ITERAR.taper({r0:21,r1,d0,d1:end,w0:2.2,w1,n:160})}" fill="#F3F4F8"/>`;
+      for(let i=0;i<4;i++){const a=d0+90*i+45,t=(a-d0)/giro;if(p1>=t){const r=21+19*t,q=ITERAR.pt(r,a);out+=`<circle cx="${q[0].toFixed(2)}" cy="${q[1].toFixed(2)}" r="${(1.6+2.2*t).toFixed(2)}" fill="#11141F" stroke="#F3F4F8" stroke-width="1.2"/>`;}}
+      out+=`<circle cx="${e[0].toFixed(2)}" cy="${e[1].toFixed(2)}" r="${(w1/2+.6).toFixed(2)}" fill="#5C84FF"/>`;
+    }
+    if(p2>0){
+      const s0=d0+giro, end2=s0+360*1.05*p2, r2=40+30*p2, e2=ITERAR.pt(r2,end2);
+      out+=`<path d="${ITERAR.taper({r0:40,r1:r2,d0:s0,d1:end2,w0:3,w1:3+11*p2,n:160})}" fill="#5C84FF"/><circle cx="${e2[0].toFixed(2)}" cy="${e2[1].toFixed(2)}" r="${(2.1+5.5*p2).toFixed(2)}" fill="#5C84FF"/>`;
+    }
+    rueda.innerHTML=out;
+    const li=[...document.querySelectorAll('#momentos li')],idx=Math.min(3,Math.floor(p1*4.6));
+    li.forEach((l,i)=>l.classList.toggle('on',p1>0.02&&i<=idx));
+    const nombres=['Medir','Entender','Decidir','Ajustar'];
+    if(p2>0.05){rn.textContent='Otra vez';rs.textContent='la segunda vuelta, más amplia';}else{rn.textContent=nombres[idx];rs.textContent='momento '+(idx+1)+' de 4';}
+    gsap.set('#otra',{opacity:p2>0.15?1:0,y:p2>0.15?0:10});
+  };
+  dibujarRueda(REDUCIDO?1:0.001);
+  if(!REDUCIDO) ScrollTrigger.create({trigger:'.pico',start:'top top',end:innerWidth<800?'+=220%':'+=320%',pin:true,scrub:.5,onUpdate:s=>dibujarRueda(s.progress)});
+}
+
+/* Comparador antes / después */
+{
+  const E=COMUN.EJEMPLO,n=E.meses.length,u=n-1,c=x=>x.toFixed(1).replace('.',',');
+  crudo.innerHTML=`<thead><tr><th>Mes</th><th>Ventas</th><th>Costos</th><th>Margen</th><th>%</th></tr></thead><tbody>${E.meses.slice(-8).map((m,i)=>{const j=n-8+i;return `<tr><td>${m}</td><td>${E.ventas[j]}</td><td>${E.costos[j]}</td><td>${E.ventas[j]-E.costos[j]}</td><td>${c(E.margen[j])}</td></tr>`}).join('')}</tbody>`;
+  const W=520,H=150,min=110,max=250,x=i=>8+(W-16)*(i/(n-1)),y=v=>H-8-(H-16)*((v-min)/(max-min)),path=s=>s.map((v,i)=>(i?'L':'M')+x(i).toFixed(1)+' '+y(v).toFixed(1)).join('');
+  tab.innerHTML=`<div class="kp"><div><small>Ventas de septiembre</small><b>$${E.ventas[u]} M</b> <i>▲ ${c(100*(E.ventas[u]/E.ventas[u-1]-1))}%</i></div><div><small>Margen bruto</small><b>${c(E.margen[u])}%</b> <i>▲ ${c(E.margen[u]-E.margen[u-1])} pts</i></div><div><small>Cobranzas pendientes</small><b>$${E.cobranzasPendientes} M</b></div></div><figure class="gr" style="margin:0"><figcaption><span>Ventas y costos, 12 meses</span><span>$ M</span></figcaption><svg viewBox="0 0 ${W} ${H}"><path d="${path(E.costos)}" fill="none" stroke="#7A8099" stroke-width="1.6"/><path d="${path(E.ventas)}" fill="none" stroke="#F3F4F8" stroke-width="2.4"/><circle cx="${x(u)}" cy="${y(E.ventas[u])}" r="4" fill="#5C84FF"/></svg></figure><div class="alerta">Aviso automático. Línea B: el margen cayó 4,1 puntos en dos meses con ventas en alza. Revisar lista de precios.</div>`;
+  const sl=document.getElementById('slider'),capa=document.getElementById('capab'),man=document.getElementById('manija');
+  let pos=50,arr=false;
+  const setPos=p=>{pos=Math.max(4,Math.min(96,p));capa.style.clipPath=`inset(0 0 0 ${pos}%)`;man.style.left=pos+'%';man.setAttribute('aria-valuenow',Math.round(pos));};
+  const fromEvent=e=>{const r=sl.getBoundingClientRect();setPos((e.clientX-r.left)/r.width*100);};
+  sl.addEventListener('pointerdown',e=>{arr=true;sl.setPointerCapture(e.pointerId);fromEvent(e);});
+  sl.addEventListener('pointermove',e=>{if(arr)fromEvent(e);});
+  sl.addEventListener('pointerup',()=>arr=false);sl.addEventListener('pointercancel',()=>arr=false);
+  man.addEventListener('keydown',e=>{if(e.key==='ArrowLeft')setPos(pos-4);if(e.key==='ArrowRight')setPos(pos+4);});
+  if(!REDUCIDO) ScrollTrigger.create({trigger:sl,start:'top 70%',once:true,onEnter:()=>{const o={p:50};gsap.fromTo(o,{p:96},{p:34,duration:1.6,ease:'power3.inOut',onUpdate:()=>setPos(o.p)});}});
+}
+
+/* Casos: zoom parallax */
+if(!REDUCIDO) document.querySelectorAll('.caso').forEach(c=>gsap.to(c.querySelector('.img img'),{scale:1,ease:'none',scrollTrigger:{trigger:c,start:'top bottom',end:'bottom top',scrub:true}}));
+
+/* Botones magnéticos */
+if(matchMedia('(hover:hover) and (pointer:fine)').matches && !REDUCIDO){
+  document.querySelectorAll('.mag').forEach(b=>{
+    b.addEventListener('pointermove',e=>{const r=b.getBoundingClientRect();gsap.to(b,{x:(e.clientX-r.left-r.width/2)*.25,y:(e.clientY-r.top-r.height/2)*.25,duration:.35,ease:'power3.out'});});
+    b.addEventListener('pointerleave',()=>gsap.to(b,{x:0,y:0,duration:.5,ease:'elastic.out(1,.5)'}));
+  });
+}
+addEventListener('load',()=>ScrollTrigger.refresh());
+</script>
+</body>
+</html>

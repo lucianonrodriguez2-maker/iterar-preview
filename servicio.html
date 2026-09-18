@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex,nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Servicios. ITERAR Consulting</title>
+<meta name="description" content="Tableros de control, análisis financiero, inteligencia artificial y pensamiento estratégico para pymes y grandes empresas.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lenis@1.3.26/dist/lenis.css">
+<style>
+:root{--fondo:#0B0D14;--panel:#11141F;--tx:#F3F4F8;--tx-2:#AEB3C7;--tx-3:#7A8099;--linea:rgba(243,244,248,.12);--azul:#2F4CFF;--azul-2:#2340E8;--cielo:#8FB0FF;--claro:#EEF0F6;--d:"Bricolage Grotesque",sans-serif;--t:"Instrument Sans",system-ui,sans-serif;--ease-out:cubic-bezier(.23,1,.32,1)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--fondo);color:var(--tx);font-family:var(--t);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit}
+img{display:block;max-width:100%;height:auto}
+h1,h2,h3{margin:0;font-family:var(--d);font-weight:600;letter-spacing:-.03em;line-height:1.02;text-wrap:balance}
+p{text-wrap:pretty}
+.w{max-width:1200px;margin:0 auto;padding:0 clamp(20px,4vw,48px)}
+.nav{position:sticky;top:0;z-index:50;background:rgba(11,13,20,.7);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--linea)}
+.nav .w{display:flex;align-items:center;justify-content:space-between;height:70px;gap:16px}
+.marca{display:flex;align-items:center;gap:12px;text-decoration:none}
+.marca .logo-mark{width:34px;height:34px;overflow:visible}
+.marca b{font-family:var(--d);font-weight:700;font-size:19px}
+.nav nav{display:flex;gap:6px;flex-wrap:wrap}
+.nav nav a{text-decoration:none;font-size:14px;color:var(--tx-2);padding:8px 12px;border-radius:999px;border:1px solid transparent}
+.nav nav a.on{color:var(--tx);border-color:var(--linea);background:var(--panel)}
+.nav nav a:hover{color:var(--tx)}
+.cta{display:inline-flex;align-items:center;gap:10px;background:var(--tx);color:var(--fondo);text-decoration:none;font-weight:600;padding:14px 20px;border-radius:999px;transition:background .2s}
+.cta:hover{background:#fff}
+.hero{padding:clamp(60px,10vh,120px) 0 clamp(40px,7vh,80px);display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(24px,4vw,72px);align-items:end}
+.hero .k{font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--cielo);font-weight:600;margin-bottom:16px}
+.hero h1{font-size:clamp(40px,6.4vw,92px)}
+.hero h1 b{font-weight:700;color:var(--cielo)}
+.hero .lead{font-size:clamp(17px,1.4vw,21px);color:var(--tx-2);max-width:32em;margin:22px 0 28px}
+.hero .img{aspect-ratio:4/5;overflow:hidden;border-radius:14px}
+.hero .img img{width:100%;height:100%;object-fit:cover}
+section.b{padding:clamp(60px,10vh,110px) 0;border-top:1px solid var(--linea)}
+section.b h2{font-size:clamp(30px,4vw,54px);max-width:14em;margin-bottom:26px}
+.dos{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(24px,4vw,72px);align-items:start}
+.dos .fijo{position:sticky;top:96px}
+.lista{margin:0;padding:0;list-style:none;display:grid;gap:0;border-top:1px solid var(--linea)}
+.lista li{padding:18px 0;border-bottom:1px solid var(--linea);display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:start}
+.lista li b{font-family:var(--d);font-size:20px;font-weight:600;line-height:1.2}
+.lista li span{color:var(--tx-2);font-size:16px}
+.lista li i{font-style:normal;color:var(--cielo);font-size:14px;font-weight:600;padding-top:4px;min-width:26px}
+.queda{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.queda div{background:var(--panel);border:1px solid var(--linea);border-radius:12px;padding:22px}
+.queda h3{font-size:20px;margin-bottom:8px}
+.queda p{margin:0;color:var(--tx-2);font-size:15.5px}
+.vuelta{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--linea);border-radius:14px;overflow:hidden}
+.vuelta div{padding:22px;border-right:1px solid var(--linea)}
+.vuelta div:last-child{border-right:0}
+.vuelta b{display:block;font-family:var(--d);font-size:22px;margin-bottom:8px}
+.vuelta p{margin:0;color:var(--tx-2);font-size:15px}
+.faq details{border-top:1px solid var(--linea)}
+.faq details:last-child{border-bottom:1px solid var(--linea)}
+.faq summary{cursor:pointer;list-style:none;padding:20px 40px 20px 0;font-family:var(--d);font-size:20px;position:relative}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";position:absolute;right:4px;top:16px;font-size:26px;color:var(--cielo)}
+.faq details[open] summary::after{content:"–"}
+.faq p{margin:0 0 22px;color:var(--tx-2);max-width:60em}
+.puerta{padding:clamp(70px,12vh,140px) 0;text-align:center;border-top:1px solid var(--linea)}
+.puerta h2{font-size:clamp(36px,6vw,84px);max-width:11em;margin:0 auto 22px}
+.puerta p{color:var(--tx-2);max-width:30em;margin:0 auto 30px}
+.otros{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;padding-bottom:70px}
+.otros a{text-decoration:none;background:var(--panel);border:1px solid var(--linea);border-radius:12px;padding:20px;display:grid;gap:6px}
+.otros a b{font-family:var(--d);font-size:20px}
+.otros a span{color:var(--tx-3);font-size:14px}
+footer{padding:24px 0 50px;font-size:13.5px;color:var(--tx-3);border-top:1px solid var(--linea)}
+@media (max-width:900px){.hero,.dos{grid-template-columns:1fr}.hero .img{aspect-ratio:16/10}.dos .fijo{position:static}.queda,.vuelta,.otros{grid-template-columns:1fr}.vuelta div{border-right:0;border-bottom:1px solid var(--linea)}.nav nav{display:none}}
+</style>
+</head>
+<body>
+<header class="nav"><div class="w"><a class="marca" href="./"><span class="lg"></span><b>ITERAR</b></a><nav id="tabs"></nav><a class="cta ctad" href="#" style="padding:10px 16px;font-size:14.5px">Diagnóstico</a></div></header>
+<main class="w">
+  <section class="hero"><div><div class="k" id="k"></div><h1 id="h1"></h1><p class="lead" id="lead"></p><a class="cta ctad" href="#">Empezar por el diagnóstico</a></div><div class="img"><img id="img" alt=""></div></section>
+  <section class="b"><div class="dos"><div class="fijo"><h2>Si te pasa esto, es para vos</h2></div><ul class="lista" id="pasa"></ul></div></section>
+  <section class="b"><div class="dos"><div class="fijo"><h2>Qué hacemos</h2></div><ul class="lista" id="hacemos"></ul></div></section>
+  <section class="b"><h2>Qué queda funcionando</h2><div class="queda" id="queda"></div></section>
+  <section class="b"><h2>Cómo es la primera vuelta</h2><div class="vuelta" id="vuelta"></div></section>
+  <section class="b faq"><h2>Preguntas frecuentes</h2><div id="faq"></div></section>
+  <section class="puerta"><h2>La primera vuelta son once preguntas.</h2><p>Cinco minutos, gratis, con devolución nuestra por mail. Sin vendedores.</p><a class="cta ctad" href="#">Hacer el diagnóstico</a></section>
+  <div class="otros" id="otros"></div>
+</main>
+<footer><div class="w">ITERAR Consulting · Buenos Aires · <a href="mailto:hola@iterarconsulting.com.ar" style="text-decoration:none">hola@iterarconsulting.com.ar</a></div></footer>
+<script src="marks.js"></script>
+<script src="comun.js"></script>
+<script>
+document.querySelectorAll('.lg').forEach(e=>e.outerHTML=COMUN.logo('A'));
+document.querySelectorAll('.logo-mark').forEach(s=>s.style.setProperty('--accent','#8FB0FF'));
+document.querySelectorAll('.ctad').forEach(a=>{a.href=COMUN.DIAGNOSTICO_URL;a.target='_blank';a.rel='noopener';});
+const S={
+ tableros:{k:'Tableros de control de gestión',h:'Un tablero <b>que se mira.</b>',lead:'Los indicadores que importan para dirigir, conectados a tus datos y en una sola pantalla. Con una reunión fija para mirarlos, porque un tablero que nadie abre es una planilla más.',img:'img/tablero-noche.webp',
+  pasa:['Cerrás el mes y te enterás tarde de cómo fue.','Cada área tiene su planilla y los números no coinciden entre sí.','Sabés cuánto vendiste, pero no cuánto ganaste ni con qué.','Tomás decisiones con el saldo del banco como único dato.'],
+  hacemos:[['Definimos los indicadores','Cinco a diez, no cincuenta. Los que cambian una decisión si se mueven.'],['Conectamos las fuentes','Facturación, banco, sistema de gestión, planillas. Sin que nadie copie y pegue.'],['Construimos el tablero','Una pantalla, legible en diez segundos, con alertas cuando algo se desvía.'],['Instalamos la rutina','Una reunión fija, con dueño y agenda, para que el tablero se use.']],
+  queda:[['Tablero conectado','Se actualiza solo. Si una fuente falla, avisa; nunca muestra un número viejo como si fuera nuevo.'],['Alertas automáticas','Un margen que cae, una cobranza que se atrasa, un costo que se dispara: llega antes de que sea problema.'],['Reunión de gestión','Semanal o mensual, con los mismos números para todos. Discusión corta, decisiones anotadas.']],
+  vuelta:[['Medir','Relevamos qué datos existen, dónde están y qué decisiones se toman con ellos.'],['Diseñar','Elegimos los indicadores y las fuentes. Acordamos el tablero mínimo.'],['Construir','Conectamos, armamos la pantalla y probamos con datos reales.'],['Usar','Primera reunión con el tablero. Ajustamos lo que no se entiende.']],
+  faq:[['¿Necesito un sistema de gestión?','No. Muchas empresas arrancan con planillas. Ordenar las fuentes es parte de la primera vuelta.'],['¿Qué herramienta usan?','La que mejor se adapte a tus datos y a tu equipo. No vendemos licencias de ninguna.'],['¿Quién lo mantiene después?','Tu equipo, capacitado por nosotros. Si querés, seguimos con un abono mensual de revisión y mejora.']]},
+ finanzas:{k:'Análisis financiero',h:'Números <b>que se entienden.</b>',lead:'Rentabilidad real por línea, cliente o sucursal. Caja proyectada a noventa días. Costos que crecieron sin que nadie lo decidiera. Todo explicado en castellano, no en jerga contable.',img:'img/sala-reunion.webp',
+  pasa:['Vendés más y ganás lo mismo, o menos.','No sabés qué producto o cliente te deja margen y cuál te lo come.','La caja te sorprende cada mes.','Necesitás presentar números a un banco, un socio o un inversor y no sabés por dónde empezar.'],
+  hacemos:[['Rentabilidad por unidad','Línea, producto, cliente, sucursal. Dónde se gana y dónde se pierde, con números.'],['Caja proyectada','Noventa días hacia adelante, con escenarios. Para decidir antes, no para explicar después.'],['Estructura de costos','Fijos, variables, punto de equilibrio. Qué costos crecieron solos.'],['Información para terceros','Carpeta para bancos, socios o inversores, con los números que van a pedir.']],
+  queda:[['Mapa de rentabilidad','Un documento vivo que muestra dónde se gana y dónde se pierde, actualizado cada mes.'],['Modelo de caja','Una proyección que tu equipo puede actualizar y que muestra qué pasa si cambian los supuestos.'],['Un lenguaje común','Margen, contribución, caja: los mismos conceptos para el dueño, el contador y el gerente.']],
+  vuelta:[['Medir','Tomamos la contabilidad y la facturación tal como están.'],['Entender','Reconstruimos la rentabilidad real por unidad y la caja de los últimos meses.'],['Decidir','Identificamos las tres decisiones que más impacto tienen.'],['Ajustar','Dejamos el modelo funcionando y una rutina para actualizarlo.']],
+  faq:[['¿Reemplazan al contador?','No. El contador liquida y presenta; nosotros convertimos esa información en decisiones. Trabajamos con tu contador.'],['¿Trabajan con empresas chicas?','Sí. En una pyme de diez personas el análisis es más simple, pero las decisiones pesan más.'],['¿Cuánto lleva?','La primera vuelta se piensa en semanas, no en meses. Depende de cómo estén los datos.']]},
+ ia:{k:'Inteligencia artificial',h:'Inteligencia artificial <b>que trabaja.</b>',lead:'Asistentes que responden sobre los datos de la empresa. Automatización de carga, conciliación y seguimiento. Atención a clientes con supervisión humana. Herramientas funcionando, no demos.',img:'img/fibra.webp',
+  pasa:['Pagás licencias de IA y nadie sabe para qué usarlas.','Probaste ChatGPT, te gustó, y ahí quedó.','Hay tareas que alguien hace a mano todos los días y que una máquina podría hacer.','Te preocupa la seguridad de los datos de la empresa.'],
+  hacemos:[['Elegimos los casos de uso','Por impacto y por facilidad, no por moda. Tres o cuatro, no veinte.'],['Implementamos sobre tus datos','Asistentes internos, automatizaciones de carga y conciliación, atención supervisada.'],['Capacitamos al equipo','Quien va a usar la herramienta la aprende con nosotros, con sus casos reales.'],['Definimos reglas','Qué se automatiza, qué revisa una persona, qué datos no salen de la empresa.']],
+  queda:[['Herramienta en producción','Funcionando todos los días, con alguien responsable de que siga andando.'],['Equipo capacitado','Sabe usarla, sabe qué revisar y sabe cuándo desconfiar.'],['Política de uso','Un documento corto: qué se puede hacer con IA en la empresa y qué no.']],
+  vuelta:[['Medir','Relevamos las tareas repetidas y el tiempo que se llevan.'],['Decidir','Elegimos el primer caso de uso: el de más impacto con menos riesgo.'],['Construir','Implementamos y probamos con el equipo, sobre datos reales.'],['Usar','Un mes en producción. Medimos el tiempo ahorrado y los errores.']],
+  faq:[['¿Qué modelos usan?','Los que mejor rindan para cada caso. No estamos casados con ningún proveedor.'],['¿Es seguro?','Definimos qué datos pueden salir de la empresa y cuáles no, y elegimos las herramientas en función de eso.'],['¿Reemplaza gente?','Reemplaza tareas. La gente pasa a hacer el trabajo que antes no llegaba a hacer.']]},
+ estrategia:{k:'Pensamiento estratégico',h:'Criterio <b>que queda adentro.</b>',lead:'Sesiones de trabajo con dueños, directorios y equipos gerenciales para ordenar prioridades y decidir con método. El objetivo es que después no nos necesiten para pensar.',img:'img/socios-trabajo.webp',
+  pasa:['Todo pasa por vos. Si te vas una semana, se frena.','Tu equipo gerencial no tiene con qué discutir prioridades.','Hay mil cosas para hacer y ninguna termina.','Las decisiones importantes se toman en el pasillo, sin números.'],
+  hacemos:[['Sesiones de planificación','Con datos en la mesa, foco en decisiones y no en presentaciones.'],['Objetivos e indicadores','Tres a cinco objetivos, cada uno con un número que dice si se cumplió.'],['Acompañamiento a la dirección','Una reunión mensual para revisar el tablero, corregir y decidir la próxima vuelta.'],['Formación de mandos medios','Que lean números, discutan con ellos y decidan sin escalar todo.']],
+  queda:[['Prioridades escritas','Con responsable y fecha. Lo que no está en la lista, no se hace este trimestre.'],['Reunión de dirección','Mensual, corta, con los mismos números para todos y decisiones anotadas.'],['Criterio en el equipo','Gente que sabe qué mirar y cómo decidir cuando el dueño no está.']],
+  vuelta:[['Medir','Entrevistas cortas con dueños y gerentes; tablero mínimo si no existe.'],['Entender','Dónde se va el tiempo y la plata; qué decisiones se posponen.'],['Decidir','Sesión de prioridades: qué hacer primero y qué dejar de hacer.'],['Ajustar','Primera reunión mensual con el método. Corregimos sobre la marcha.']],
+  faq:[['¿Es un curso?','No. Es trabajo sobre tu empresa, con tus números. Lo que se aprende, se aprende haciendo.'],['¿Para empresas grandes también?','Sí. Cambia la escala: equipos gerenciales por área, no un dueño.'],['¿Cuánto dura el acompañamiento?','Se contrata por vuelta o por abono mensual. Se corta cuando el equipo no nos necesita.']]}
+};
+const nombres={tableros:'Tableros',finanzas:'Finanzas',ia:'Inteligencia artificial',estrategia:'Estrategia'};
+const id=new URLSearchParams(location.search).get('s')||'tableros';const d=S[id]||S.tableros;
+document.title=d.k+'. ITERAR Consulting';
+document.getElementById('tabs').innerHTML=Object.keys(S).map(k=>`<a href="?s=${k}" class="${k===id?'on':''}">${nombres[k]}</a>`).join('');
+k.textContent=d.k;h1.innerHTML=d.h;lead.textContent=d.lead;img.src=d.img;
+pasa.innerHTML=d.pasa.map(t=>`<li><i>·</i><div><b>${t}</b></div></li>`).join('');
+hacemos.innerHTML=d.hacemos.map(([t,s])=>`<li><i>·</i><div><b>${t}</b><br><span>${s}</span></div></li>`).join('');
+queda.innerHTML=d.queda.map(([t,s])=>`<div><h3>${t}</h3><p>${s}</p></div>`).join('');
+vuelta.innerHTML=d.vuelta.map(([t,s])=>`<div><b>${t}</b><p>${s}</p></div>`).join('');
+faq.innerHTML=d.faq.map(([q,a],i)=>`<details${i===0?' open':''}><summary>${q}</summary><p>${a}</p></details>`).join('');
+otros.innerHTML=Object.keys(S).filter(k=>k!==id).map(k=>`<a href="?s=${k}"><span>También</span><b>${S[k].h.replace(/<[^>]+>/g,'')}</b></a>`).join('');
+</script>
+</body>
+</html>
