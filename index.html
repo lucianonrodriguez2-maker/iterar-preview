@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="robots" content="noindex,nofollow">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>ITERAR Consulting. Iterar es mejorar en cada intento.</title>
+<title>ITERAR Consulting. Tu competencia ya usa inteligencia artificial.</title>
 <!-- Sitio definitivo: base ruta 7 (oscura) + comparador de la ruta 6 + pico del logo de la ruta 5 -->
 <meta name="description" content="Consultora en Buenos Aires: inteligencia artificial, tableros de control, análisis financiero y pensamiento estratégico en ciclos cortos.">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
@@ -80,6 +80,17 @@ main{position:relative;z-index:1}
 .senal b{color:var(--tx);font-weight:600;font-variant-numeric:tabular-nums}
 .senal .vivo{color:var(--cielo);font-weight:600}
 
+
+/* datos reales: el costo de esperar */
+.datos{background:var(--fondo);padding:clamp(80px,12vh,150px) 0;border-top:1px solid var(--linea)}
+.datos h2{font-size:clamp(30px,4.2vw,62px);max-width:17em}
+.datos h2 b{font-weight:700;color:var(--cielo)}
+.cifras{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(20px,3vw,48px);margin-top:clamp(36px,6vh,70px)}
+.cifras div{border-top:1px solid var(--linea);padding-top:22px}
+.cifras b{display:block;font-family:var(--d);font-weight:600;font-size:clamp(52px,6.4vw,104px);line-height:.95;letter-spacing:-.04em;color:var(--tx)}
+.cifras p{margin:16px 0 0;color:var(--tx-2);font-size:17px;max-width:24em}
+.fuente-d{margin:clamp(30px,5vh,50px) 0 0;font-size:13px;color:var(--tx-3);max-width:60em}
+
 /* ¿te pasa? */
 .pasa{background:var(--panel);color:var(--tx);padding:clamp(90px,14vh,170px) 0;border-top:1px solid var(--linea)}
 .pasa .w{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(30px,5vw,80px);align-items:start}
@@ -131,7 +142,8 @@ table.crudo th{background:#DADDE8;font-weight:600}
 .pico .esc{height:100svh;padding-top:70px;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);align-items:center;gap:clamp(20px,4vw,60px);overflow:hidden}
 .pico .txt h2{font-size:clamp(34px,4.6vw,68px)}
 .pico .txt h2 b{font-weight:700;color:var(--cielo)}
-.pico .momentos{margin:34px 0 0;padding:0;list-style:none}
+.pico .sub-met{color:var(--tx-2);font-size:17px;max-width:26em;margin:18px 0 0}
+.pico .momentos{margin:26px 0 0;padding:0;list-style:none}
 .pico .momentos li{display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:baseline;padding:14px 0;border-top:1px solid var(--linea);opacity:.25;transform:translateX(-8px);transition:opacity .4s,transform .5s var(--ease-out)}
 .pico .momentos li.on{opacity:1;transform:none}
 .pico .momentos b{font-family:var(--d);font-weight:600;font-size:clamp(24px,2.6vw,36px);line-height:1;letter-spacing:-.02em}
@@ -208,7 +220,7 @@ table.crudo th{background:#DADDE8;font-weight:600}
 .socio .rol{color:var(--cielo);font-weight:600;font-size:14px;margin:6px 0 10px}
 .socio p{margin:0;font-size:15px;color:var(--tx-2)}
 .puerta{text-align:center;padding:clamp(60px,10vh,120px) 0 0}
-.puerta h2{font-size:clamp(44px,8vw,132px);font-weight:600;max-width:9em;margin:0 auto}
+.puerta h2{font-size:clamp(40px,6.6vw,108px);font-weight:600;max-width:11em;margin:0 auto}
 .puerta h2 b{font-weight:700;color:var(--cielo)}
 .puerta p{color:var(--tx-2);font-size:18px;max-width:30em;margin:24px auto 34px}
 .pie{margin-top:clamp(70px,10vh,120px);display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;border-top:1px solid var(--linea);padding-top:26px;font-size:14px;color:var(--tx-3)}
@@ -222,6 +234,7 @@ table.crudo th{background:#DADDE8;font-weight:600}
   .hero .fila,.pasa .w,.serv .w,.fin .eq,.caso .w{grid-template-columns:1fr}
   .hero .acc{justify-content:flex-start}
   .comp .cab{grid-template-columns:1fr}
+  .cifras{grid-template-columns:1fr}
   .pico .esc{grid-template-columns:1fr;align-content:center;gap:24px;height:auto;min-height:100svh;padding:70px 0 50px}
   .pico .rueda{max-width:min(86vw,440px);margin:0 auto}
   .indice{position:static}
@@ -237,7 +250,8 @@ table.crudo th{background:#DADDE8;font-weight:600}
 }
 @media (max-width:600px){
   body{font-size:16px}
-  .hero h1{font-size:clamp(34px,10.4vw,52px)}
+  .hero h1{font-size:clamp(32px,9.6vw,50px)}
+  .hero h1 .l{white-space:normal}
   .cta small{display:none}
   .slider{aspect-ratio:4/5}.capa{padding:12px}
   .kp{grid-template-columns:1fr 1fr}.kp div:last-child{grid-column:span 2}
@@ -259,36 +273,46 @@ table.crudo th{background:#DADDE8;font-weight:600}
 <header class="nav" id="nav"><div class="w">
   <a class="marca" href="#"><span class="lg"></span><b>ITERAR</b></a>
   <button class="menu" aria-expanded="false" onclick="const n=document.getElementById('menu');n.classList.toggle('abierto');this.setAttribute('aria-expanded',n.classList.contains('abierto'))">Menú</button>
-  <nav id="menu"><a href="#antes">Antes y después</a><a href="#servicios">Servicios</a><a href="#metodo">Método</a><a href="#casos">Situaciones</a><a href="#equipo">Equipo</a><a href="indicadores.html">Indicadores</a><a class="cta ctad" href="#">Diagnóstico</a></nav>
+  <nav id="menu"><a href="#pasa">¿Te suena?</a><a href="#antes">Antes y después</a><a href="#servicios">Servicios</a><a href="#metodo">Método</a><a href="#casos">Situaciones</a><a href="#equipo">Equipo</a><a href="indicadores.html">Indicadores</a><a class="cta ctad" href="#">Diagnóstico</a></nav>
 </div></header>
 
 <main>
 <section class="hero" id="inicio"><div class="w">
-  <h1 id="h1"><span class="l" data-t="Decidí con datos.">Decidí con datos.</span><span class="l" data-t="Ejecutá con">Ejecutá con</span><span class="l" data-t="inteligencia artificial.">inteligencia artificial.</span><span class="l" data-t="Iterar es mejorar"><b>Iterar es mejorar</b></span><span class="l" data-t="en cada intento."><b>en cada intento.</b></span></h1>
+  <h1 id="h1"><span class="l" data-t="Tu competencia ya usa">Tu competencia ya usa</span><span class="l" data-t="inteligencia artificial.">inteligencia artificial.</span><span class="l" data-t="¿Vos qué estás"><b>¿Vos qué estás</b></span><span class="l" data-t="esperando?"><b>esperando?</b></span></h1>
   <div class="fila">
-    <p class="bajada rv">Tableros de control, análisis financiero, herramientas de IA y pensamiento estratégico para pymes y grandes empresas. En ciclos cortos: cada vuelta deja algo funcionando.</p>
-    <div class="acc rv"><a class="cta ctad mag" href="#">Hacer el diagnóstico <small>5 min</small></a><a class="sec" href="#metodo">Cómo trabajamos</a></div>
+    <p class="bajada rv">Cuatro de cada diez pymes argentinas ya la usan. Si vos no, tus márgenes quedan donde están mientras los de ellos mejoran. ¿Cómo pensás competir? Nosotros la ponemos a trabajar en tu empresa, junto con los números para decidir.</p>
+    <div class="acc rv"><a class="cta ctad mag" href="#">Ver por dónde empezar <small>5 min, gratis</small></a><a class="sec" href="#metodo">Cómo trabajamos</a></div>
   </div>
   <div class="senal rv" id="senal"><span><span class="vivo">En vivo</span> Hoy en Argentina</span><span>Dólar oficial <b id="dolar">…</b></span><span>Inflación mensual <b id="inf">…</b> <span id="infmes"></span></span><span id="fuente" style="flex-basis:100%;font-size:12.5px">Conectando con las fuentes…</span></div>
 </div></section>
 
+<section class="datos" id="datos"><div class="w">
+  <h2 class="rv">La ventaja no es tener inteligencia artificial. <b>Es usarla bien antes que el de al lado.</b></h2>
+  <div class="cifras">
+    <div class="rv"><b>41,6%</b><p>de las pymes argentinas ya usa inteligencia artificial. Más de la mitad de ellas empezó en 2025.</p></div>
+    <div class="rv"><b>46%</b><p>de las que todavía no la usan piensa sumarla en los próximos dos años. El que espera no queda igual: queda último.</p></div>
+    <div class="rv"><b>57,4%</b><p>de las que la usan no mide si le sirve. Tenerla no alcanza: hay que ponerla a trabajar y mirar el resultado.</p></div>
+  </div>
+  <p class="fuente-d rv">Fuente: Encuesta nacional sobre adopción de IA en pymes argentinas, nadIA (CEPE Di Tella y Fundar, con apoyo del BID y la Fundación Observatorio PyME). 402 empresas, noviembre y diciembre de 2025.</p>
+</div></section>
+
 <section class="pasa" id="pasa"><div class="w">
-  <div><h2 class="rv">¿Te pasa?</h2><p class="lead rv">Marcá lo que te suene. Son las cosas que escuchamos todas las semanas, y las que vivimos en nuestras propias empresas.</p></div>
+  <div><h2 class="rv">¿Te suena?</h2><p class="lead rv">Marcá las que sean tuyas. Las escuchamos todas las semanas, y las vivimos en nuestras propias empresas.</p></div>
   <div>
     <div class="lista" id="lista">
-      <label><input type="checkbox">Cierro el mes y no sé si gané plata.</label>
-      <label><input type="checkbox">Cada gerencia trae su planilla y los números no coinciden.</label>
-      <label><input type="checkbox">Pagamos licencias de IA y nadie sabe para qué usarlas.</label>
-      <label><input type="checkbox">El reporte llega cuando la decisión ya se tomó.</label>
-      <label><input type="checkbox">Todo pasa por mí. Si me voy una semana, se frena.</label>
-      <label><input type="checkbox">Probé ChatGPT, me gustó, y ahí quedó.</label>
+      <label><input type="checkbox" id="p1">Sé que mi competencia ya usa IA y yo todavía no arranqué.</label>
+      <label><input type="checkbox" id="p2">Vendo más que el año pasado y me queda lo mismo.</label>
+      <label><input type="checkbox" id="p3">Cierro el mes y no sé si gané plata.</label>
+      <label><input type="checkbox" id="p4">Decido mirando el saldo del banco.</label>
+      <label><input type="checkbox" id="p5">Todo pasa por mí. Si me voy una semana, se frena.</label>
+      <label><input type="checkbox" id="p6">Pagamos licencias de IA y nadie sabe para qué usarlas.</label>
     </div>
-    <div class="sigue"><span id="cuenta">Todo esto tiene arreglo, y casi nunca es caro.</span><a class="cta az ctad mag" href="#">Seguir en el diagnóstico</a></div>
+    <div class="sigue"><span id="cuenta">Cada una de estas te cuesta plata todos los meses. Ninguna se arregla sola.</span><a class="cta az ctad mag" href="#">Ver por dónde empezar</a></div>
   </div>
 </div></section>
 
 <section class="comp" id="antes"><div class="w">
-  <div class="cab"><h2 class="rv">Los mismos números, <b>una vuelta después.</b></h2><p class="rv">A la izquierda, como estaban: una tabla que nadie miraba. A la derecha, después de la primera vuelta: se lee en diez segundos y avisa solo. Arrastrá para comparar. Datos de ejemplo.</p></div>
+  <div class="cab"><h2 class="rv">Mientras vos armás la planilla, <b>otro ya decidió.</b></h2><p class="rv">A la izquierda, como están los números en la mayoría de las empresas: una tabla que nadie mira. A la derecha, los mismos números después de una primera vuelta: se leen en diez segundos y avisan solos cuando algo se desvía. Arrastrá para comparar. Datos de ejemplo.</p></div>
   <div class="slider" id="slider">
     <div class="capa a"><span class="et">Antes</span><table class="crudo" id="crudo"></table></div>
     <div class="capa b" id="capab"><span class="et">Después</span><div class="tab" id="tab"></div></div>
@@ -297,19 +321,19 @@ table.crudo th{background:#DADDE8;font-weight:600}
   <p class="nota">Comercial Ejemplo S.A. es una empresa inventada para mostrar la idea sin exponer a ningún cliente.</p>
 </div></section>
 <section class="serv" id="servicios"><div class="w">
-  <div class="indice"><h2>Cuatro cosas que quedan funcionando</h2><ol id="indice"><li class="on"><i>01</i>Un tablero que se mira</li><li><i>02</i>Números que se entienden</li><li><i>03</i>IA que trabaja</li><li><i>04</i>Criterio que queda adentro</li></ol></div>
+  <div class="indice"><h2>Lo que queda funcionando en tu empresa</h2><ol id="indice"><li class="on"><i>01</i>Tu negocio en una pantalla</li><li><i>02</i>Saber dónde ganás y dónde perdés</li><li><i>03</i>IA trabajando, no en prueba</li><li><i>04</i>Un equipo que decide sin vos</li></ol></div>
   <div class="bloques">
-    <div class="bloque" data-i="0"><div class="img"><img src="img/tablero-noche.webp" srcset="img/tablero-noche-800.webp 800w, img/tablero-noche.webp 1536w" sizes="(max-width: 900px) 100vw, 60vw" alt="" loading="lazy"></div><h3>Un tablero <b>que se mira</b></h3><p>Los indicadores que importan para dirigir, conectados a tus datos y en una sola pantalla. Con una reunión fija para mirarlos, porque un tablero que nadie abre es una planilla más.</p><ul><li>Conectado a facturación, banco y sistema de gestión</li><li>Alertas automáticas cuando algo se desvía</li><li>Una rutina semanal de revisión, con dueño y agenda</li></ul><a class="mas" href="servicio.html?s=tableros">Ver el servicio completo</a></div>
-    <div class="bloque" data-i="1"><div class="img"><img src="img/sala-reunion.webp" srcset="img/sala-reunion-800.webp 800w, img/sala-reunion.webp 1536w" sizes="(max-width: 900px) 100vw, 60vw" alt="" loading="lazy"></div><h3>Números <b>que se entienden</b></h3><p>Rentabilidad por línea, cliente o sucursal. Caja proyectada a noventa días. Costos que crecieron sin que nadie lo decidiera. Explicado en castellano, no en jerga contable.</p><ul><li>El mapa de dónde se gana y dónde se pierde</li><li>Proyección de caja y escenarios para decidir</li><li>Información lista para bancos, socios o inversores</li></ul><a class="mas" href="servicio.html?s=finanzas">Ver el servicio completo</a></div>
-    <div class="bloque" data-i="2"><div class="img"><img src="img/fibra.webp" srcset="img/fibra-800.webp 800w, img/fibra.webp 1536w" sizes="(max-width: 900px) 100vw, 60vw" alt="" loading="lazy"></div><h3>Inteligencia artificial <b>que trabaja</b></h3><p>Asistentes que responden sobre los datos de la empresa. Automatización de carga, conciliación y seguimiento. Atención a clientes con supervisión humana. Herramientas funcionando, no demos.</p><ul><li>Casos de uso elegidos por impacto, no por moda</li><li>La herramienta en producción y el equipo capacitado</li><li>Política de uso y seguridad de la información</li></ul><a class="mas" href="servicio.html?s=ia">Ver el servicio completo</a></div>
-    <div class="bloque" data-i="3"><div class="img"><img src="img/socios-trabajo.webp" srcset="img/socios-trabajo-800.webp 800w, img/socios-trabajo.webp 1536w" sizes="(max-width: 900px) 100vw, 60vw" alt="" loading="lazy"></div><h3>Criterio <b>que queda adentro</b></h3><p>Sesiones de trabajo con dueños, directorios y equipos gerenciales para ordenar prioridades y decidir con método. Que después no nos necesiten para pensar.</p><ul><li>Prioridades escritas, con responsable y fecha</li><li>Un lenguaje común para discutir con números</li><li>Mandos medios formados en gestión con datos</li></ul><a class="mas" href="servicio.html?s=estrategia">Ver el servicio completo</a></div>
+    <div class="bloque" data-i="0"><div class="img"><img src="img/tablero-noche.webp" srcset="img/tablero-noche-800.webp 800w, img/tablero-noche.webp 1536w" sizes="(max-width: 900px) 100vw, 60vw" alt="" loading="lazy"></div><h3>Tu negocio <b>en una pantalla</b></h3><p>Los indicadores que importan para dirigir, conectados a tus datos y en una sola pantalla. Con una reunión fija para mirarlos, porque un tablero que nadie abre es una planilla más.</p><ul><li>Conectado a facturación, banco y sistema de gestión</li><li>Alertas automáticas cuando algo se desvía</li><li>Una rutina semanal de revisión, con dueño y agenda</li></ul><a class="mas" href="servicio.html?s=tableros">Ver el servicio completo</a></div>
+    <div class="bloque" data-i="1"><div class="img"><img src="img/sala-reunion.webp" srcset="img/sala-reunion-800.webp 800w, img/sala-reunion.webp 1536w" sizes="(max-width: 900px) 100vw, 60vw" alt="" loading="lazy"></div><h3>Saber dónde ganás <b>y dónde perdés</b></h3><p>Rentabilidad por línea, cliente o sucursal. Caja proyectada a noventa días. Costos que crecieron sin que nadie lo decidiera. Explicado en castellano, no en jerga contable.</p><ul><li>El mapa de dónde se gana y dónde se pierde</li><li>Proyección de caja y escenarios para decidir</li><li>Información lista para bancos, socios o inversores</li></ul><a class="mas" href="servicio.html?s=finanzas">Ver el servicio completo</a></div>
+    <div class="bloque" data-i="2"><div class="img"><img src="img/fibra.webp" srcset="img/fibra-800.webp 800w, img/fibra.webp 1536w" sizes="(max-width: 900px) 100vw, 60vw" alt="" loading="lazy"></div><h3>IA trabajando, <b>no en prueba</b></h3><p>La probaste, te gustó, y ahí quedó. Nosotros la ponemos a hacer trabajo real: responder, cargar, conciliar, hacer seguimiento. Con supervisión humana y midiendo cuánto tiempo y plata ahorra.</p><ul><li>Casos de uso elegidos por impacto, no por moda</li><li>La herramienta en producción y el equipo capacitado</li><li>Política de uso y seguridad de la información</li></ul><a class="mas" href="servicio.html?s=ia">Ver el servicio completo</a></div>
+    <div class="bloque" data-i="3"><div class="img"><img src="img/socios-trabajo.webp" srcset="img/socios-trabajo-800.webp 800w, img/socios-trabajo.webp 1536w" sizes="(max-width: 900px) 100vw, 60vw" alt="" loading="lazy"></div><h3>Un equipo que <b>decide sin vos</b></h3><p>Hoy todo pasa por vos. Trabajamos con tu equipo para ordenar prioridades y decidir con método y con números, así la empresa no se frena cuando no estás.</p><ul><li>Prioridades escritas, con responsable y fecha</li><li>Un lenguaje común para discutir con números</li><li>Mandos medios formados en gestión con datos</li></ul><a class="mas" href="servicio.html?s=estrategia">Ver el servicio completo</a></div>
   </div>
 </div></section>
 
 <section class="pico" id="metodo">
   <div class="w esc">
     <div class="txt">
-      <h2>Una vuelta tiene <b>cuatro momentos.</b></h2>
+      <h2>Iterar es <b>mejorar en cada intento.</b></h2><p class="sub-met">No hacemos el proyecto de un año que nunca termina. Damos una vuelta corta, queda algo funcionando, y recién ahí decidimos la siguiente.</p>
       <ul class="momentos" id="momentos">
         <li><b>Medir</b><span>Juntamos lo que está repartido entre planillas, sistemas y la cabeza de alguien.</span></li>
         <li><b>Entender</b><span>Buscamos dónde se gana y dónde se pierde, con los números a la vista.</span></li>
@@ -338,9 +362,9 @@ table.crudo th{background:#DADDE8;font-weight:600}
     </div>
   </div>
   <div class="puerta" id="contacto">
-    <h2 class="rv">La primera vuelta son <b>once preguntas.</b></h2>
-    <p class="rv">Cinco minutos, casi todas de un click. Se guarda solo. Te respondemos por mail en dos o tres días, gratis, y no te llama ningún vendedor.</p>
-    <a class="cta ctad mag rv" href="#">Hacer el diagnóstico</a>
+    <h2 class="rv">Cada mes que esperás, <b>alguien te saca ventaja.</b></h2>
+    <p class="rv">Empezar lleva cinco minutos: once preguntas, casi todas de un click. Te respondemos por mail en dos o tres días con por dónde arrancaríamos. Gratis, y no te llama ningún vendedor.</p>
+    <a class="cta ctad mag rv" href="#">Ver por dónde empezar</a>
   </div>
   <div class="pie"><div class="firma"><span class="oi">ı<i class="orb"></i></span>terar</div><div>ITERAR Consulting · Buenos Aires<br><a href="mailto:hola@iterarconsulting.com.ar" style="text-decoration:none">hola@iterarconsulting.com.ar</a><br>© 2026</div></div>
 </div></section>
@@ -423,7 +447,7 @@ indicadores().then(d=>{
 ScrollTrigger.create({start:0,end:'max',onUpdate:s=>document.getElementById('nav').classList.toggle('oculto',s.direction===1&&s.scroll()>200)});
 
 /* ¿Te pasa? */
-lista.addEventListener('change',()=>{const n=lista.querySelectorAll(':checked').length;cuenta.textContent=n===0?'Todo esto tiene arreglo, y casi nunca es caro.':n===1?'Una sola ya alcanza para empezar.':`Marcaste ${n}. Contanos un poco más y te decimos por cuál empezar.`;});
+lista.addEventListener('change',()=>{const n=lista.querySelectorAll(':checked').length;cuenta.textContent=n===0?'Cada una de estas te cuesta plata todos los meses. Ninguna se arregla sola.':n===1?'Con una sola ya alcanza para empezar. Te decimos cómo en cinco minutos.':`Marcaste ${n}. Todas tienen arreglo, y se empieza por una. Te decimos por cuál.`;});
 
 /* Servicios: índice pegajoso que sigue el scroll + zoom suave de imágenes */
 {
