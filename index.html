@@ -231,6 +231,9 @@ table.crudo th{background:#DADDE8;font-weight:600}
 .casos .tit{padding:clamp(80px,12vh,140px) 0 clamp(30px,5vh,50px)}
 .casos .tit h2{font-size:clamp(36px,5vw,76px)}
 .casos .tit p{color:var(--tx-2);font-size:19px;max-width:36em;margin:18px 0 0}
+/* foto vertical: ocupa la mitad derecha entera en vez de recortarse a lo ancho */
+.caso.vert .img{left:auto;width:min(46%,820px);-webkit-mask-image:linear-gradient(to right,transparent,#000 30%);mask-image:linear-gradient(to right,transparent,#000 30%)}
+.caso.vert .img img{object-position:50% 22%}
 
 /* equipo + puerta sobre el shader */
 .fin{padding:clamp(100px,16vh,200px) 0 clamp(40px,7vh,70px)}
@@ -257,6 +260,7 @@ table.crudo th{background:#DADDE8;font-weight:600}
 .rv{opacity:1}
 @media (max-width:980px){
   .hero .fila,.pasa .w,.serv .w,.fin .eq,.caso .w{grid-template-columns:1fr}
+  .caso.vert .img{width:100%;-webkit-mask-image:none;mask-image:none}
   .hero .acc{justify-content:flex-start}
   .comp .cab{grid-template-columns:1fr}
   .diag .caja{grid-template-columns:1fr}
@@ -315,7 +319,7 @@ table.crudo th{background:#DADDE8;font-weight:600}
 </div></section>
 
 <section class="datos" id="datos"><div class="w">
-  <h2 class="rv">La ventaja no es tener inteligencia artificial. <b>Es usarla bien antes que el de al lado.</b></h2>
+  <h2 class="rv">La ventaja no es tener inteligencia artificial. <b>Es usarla bien antes que tu competencia.</b></h2>
   <div class="cifras">
     <div class="rv"><b>41,6%</b><p>de las pymes argentinas ya usa inteligencia artificial. Más de la mitad de ellas empezó en 2025.</p></div>
     <div class="rv"><b>46%</b><p>de las que todavía no la usan piensa sumarla en los próximos dos años. El que espera no queda igual: queda último.</p></div>
@@ -395,7 +399,7 @@ table.crudo th{background:#DADDE8;font-weight:600}
 
 <section class="casos" id="casos">
   <div class="w tit"><h2 class="rv">Así se ve una primera vuelta</h2><p class="rv">Tres situaciones típicas con las que llegan las empresas y qué queda funcionando después.</p></div>
-  <article class="caso"><div class="img"><img src="img/retrato-duena.webp" srcset="img/retrato-duena-800.webp 800w, img/retrato-duena.webp 1536w" sizes="(max-width: 900px) 100vw, 60vw" alt="" loading="lazy"></div><div class="velo"></div><div class="w"><div><div class="quien">Distribuidora, 60 personas</div><h3>Las ventas subían y el margen no se movía.</h3></div><div><p class="paso">Tablero de margen por línea y por cliente, conectado a la facturación, con revisión semanal.</p><p class="res">En la primera reunión apareció una línea con margen negativo. Cambiaron la lista de precios esa semana.</p></div></div></article>
+  <article class="caso vert"><div class="img"><img src="img/retrato-duena.webp" srcset="img/retrato-duena-800.webp 800w, img/retrato-duena.webp 1536w" sizes="(max-width: 900px) 100vw, 45vw" alt="" loading="lazy"></div><div class="velo"></div><div class="w"><div><div class="quien">Distribuidora, 60 personas</div><h3>Las ventas subían y el margen no se movía.</h3></div><div><p class="paso">Tablero de margen por línea y por cliente, conectado a la facturación, con revisión semanal.</p><p class="res">En la primera reunión apareció una línea con margen negativo. Cambiaron la lista de precios esa semana.</p></div></div></article>
   <article class="caso"><div class="img"><img src="img/tablero-noche.webp" srcset="img/tablero-noche-800.webp 800w, img/tablero-noche.webp 1536w" sizes="(max-width: 900px) 100vw, 60vw" alt="" loading="lazy"></div><div class="velo"></div><div class="w"><div><div class="quien">Empresa de servicios, gerencia de administración</div><h3>Diez días por mes cerrando a mano.</h3></div><div><p class="paso">Lectura de comprobantes y conciliación con IA, con control humano de las excepciones.</p><p class="res">El cierre pasó a ser una revisión de excepciones. El equipo dejó de cargar y empezó a analizar.</p></div></div></article>
   <article class="caso"><div class="img"><img src="img/tablero.webp" srcset="img/tablero-800.webp 800w, img/tablero.webp 1536w" sizes="(max-width: 900px) 100vw, 60vw" alt="" loading="lazy"></div><div class="velo"></div><div class="w"><div><div class="quien">Fábrica familiar, segunda generación</div><h3>Todo estaba en la cabeza del fundador.</h3></div><div><p class="paso">Cinco indicadores, una reunión mensual de dirección y prioridades escritas con responsable y fecha.</p><p class="res">Hoy el equipo discute con los mismos números.</p></div></div></article>
 </section>
