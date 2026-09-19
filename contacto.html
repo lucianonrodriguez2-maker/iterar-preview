@@ -5,7 +5,7 @@
 <meta name="robots" content="noindex,nofollow">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Contacto. ITERAR Consulting</title>
-<meta name="description" content="Empezá por el diagnóstico gratuito o escribinos. Respondemos en menos de 48 horas hábiles.">
+<meta name="description" content="Empezá por el diagnóstico gratuito o contanos en dos líneas qué querés resolver.">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -55,18 +55,18 @@ small.p{color:var(--tx-3);font-size:12.5px}
     <h1>Empecemos por entender tu negocio.</h1>
     <p class="lead">La forma más rápida es el diagnóstico: once preguntas, cinco minutos, y una devolución nuestra por mail en dos o tres días, gratis. Si preferís contarnos con tus palabras, usá el formulario.</p>
     <a class="cta ctad" href="#">Hacer el diagnóstico gratuito</a>
-    <div class="datos"><span><b>Mail</b> <a href="mailto:hola@iterarconsulting.com.ar">hola@iterarconsulting.com.ar</a></span><span><b>Ubicación</b> Buenos Aires, Argentina. Presencial y remoto.</span><span><b>Respuesta</b> en menos de 48 horas hábiles.</span></div>
+    <div class="datos"><span><b>Mail</b> <a href="mailto:hola@iterarconsulting.com.ar">hola@iterarconsulting.com.ar</a></span><span><b>Ubicación</b> Buenos Aires, Argentina. Presencial y remoto.</span><span><b>Quién responde</b> Luciano o Matías, no un vendedor.</span></div>
   </div>
   <form id="f" novalidate>
-    <h2>Contanos qué te pasa</h2>
-    <div class="dos"><label>Nombre<input name="nombre" required autocomplete="name"></label><label>Empresa<input name="empresa" autocomplete="organization"></label></div>
-    <div class="dos"><label>Mail<input name="mail" type="email" required autocomplete="email"></label><label>Tamaño de la empresa<select name="tamano"><option>Menos de 10 personas</option><option>10 a 50</option><option>50 a 200</option><option>Más de 200</option></select></label></div>
-    <label>¿Cuál es el problema principal?<select name="problema"><option>No sé si estoy ganando plata / no tengo tablero</option><option>Quiero implementar IA en la operación</option><option>Necesito ordenar las finanzas y la caja</option><option>Quiero trabajar la estrategia con mi equipo</option><option>Otro</option></select></label>
-    <label>Mensaje<textarea name="mensaje" rows="5" placeholder="Qué te pasa hoy y qué querrías que cambie"></textarea></label>
+    <h2>Contanos en dos líneas qué querés resolver</h2>
+    <div class="dos"><label>Nombre<input id="c-nombre" name="nombre" required autocomplete="name"></label><label>Mail<input id="c-mail" name="mail" type="email" required autocomplete="email"></label></div>
+    <div class="dos"><label>Empresa y rubro<input id="c-empresa" name="empresa" autocomplete="organization" placeholder="Por ejemplo: distribuidora de alimentos"></label><label>Cantidad de personas<select id="c-tamano" name="tamano"><option>Menos de 10</option><option>10 a 50</option><option>50 a 200</option><option>Más de 200</option></select></label></div>
+    <label>¿Qué te gustaría tener resuelto en los próximos meses?<textarea id="c-mensaje" name="mensaje" rows="4" placeholder="Con dos líneas alcanza"></textarea></label>
+    <label>¿Quién más decide esto con vos? <span style="font-weight:400;color:var(--tx-3)">(opcional)</span><input id="c-decide" name="decide" placeholder="Por ejemplo: mi socio, la gerente de administración"></label>
     <label class="trampa" aria-hidden="true">Web<input name="web" tabindex="-1" autocomplete="off"></label>
-    <button type="submit">Enviar consulta</button>
+    <button type="submit">Enviar</button>
     <div class="msg" id="msg" aria-live="polite"></div>
-    <small class="p">No compartimos tus datos con nadie. Si el envío falla, el botón te abre tu programa de mail con la consulta ya escrita.</small>
+    <small class="p">Qué pasa después: lo leemos nosotros dos y te respondemos por mail. No compartimos tus datos con nadie. Si preferís arrancar ya, el diagnóstico de cinco minutos está a la izquierda.</small>
   </form>
 </div></main>
 <script src="marks.js"></script>
@@ -85,10 +85,10 @@ f.addEventListener('submit',async e=>{
     const r=await fetch('/api/contacto',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(d)});
     const j=await r.json().catch(()=>({}));
     if(!r.ok||!j.ok) throw new Error(j.error||'sin servicio');
-    msg.className='msg ok';msg.textContent='Recibido. Te escribimos en menos de 48 horas hábiles.';f.reset();
+    msg.className='msg ok';msg.textContent='Recibido. Lo leemos nosotros y te respondemos por mail.';f.reset();
   }catch(err){
     // sin backend (maqueta local) o falla del servicio: se abre el mail con todo escrito
-    const cuerpo=encodeURIComponent(`Nombre: ${d.nombre}\nEmpresa: ${d.empresa}\nMail: ${d.mail}\nTamaño: ${d.tamano}\nProblema: ${d.problema}\n\n${d.mensaje}`);
+    const cuerpo=encodeURIComponent(`Nombre: ${d.nombre}\nEmpresa y rubro: ${d.empresa}\nMail: ${d.mail}\nPersonas: ${d.tamano}\nTambién decide: ${d.decide}\n\n${d.mensaje}`);
     location.href=`mailto:hola@iterarconsulting.com.ar?subject=${encodeURIComponent('Consulta de '+d.nombre)}&body=${cuerpo}`;
     msg.className='msg';msg.textContent='Se abrió tu programa de mail con la consulta lista para enviar.';
   }finally{b.disabled=false;}

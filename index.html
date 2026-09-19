@@ -89,6 +89,7 @@ main{position:relative;z-index:1}
 .cifras div{border-top:1px solid var(--linea);padding-top:22px}
 .cifras b{display:block;font-family:var(--d);font-weight:600;font-size:clamp(52px,6.4vw,104px);line-height:.95;letter-spacing:-.04em;color:var(--tx)}
 .cifras p{margin:16px 0 0;color:var(--tx-2);font-size:17px;max-width:24em}
+.puente{font-family:var(--d);font-size:clamp(22px,2.4vw,34px);font-weight:500;letter-spacing:-.02em;line-height:1.15;margin:clamp(34px,6vh,60px) 0 0;max-width:22em}
 .fuente-d{margin:clamp(30px,5vh,50px) 0 0;font-size:13px;color:var(--tx-3);max-width:60em}
 
 /* ¿te pasa? */
@@ -101,11 +102,29 @@ main{position:relative;z-index:1}
 .lista input{appearance:none;width:26px;height:26px;border:2px solid var(--tx-3);border-radius:50%;flex:none;margin:0;cursor:pointer;display:grid;place-items:center;transition:background .15s}
 .lista input:checked{background:var(--azul);border-color:var(--azul)}
 .lista input:checked::after{content:"";width:10px;height:6px;border-left:2.5px solid #fff;border-bottom:2.5px solid #fff;transform:rotate(-45deg) translate(1px,-1px)}
+.lista .sol{display:none;font-family:var(--t);font-size:15.5px;font-weight:400;color:var(--tx-2);margin-top:6px;line-height:1.4}
+.lista label:has(input:checked) .sol{display:block}
+.lista label{align-items:flex-start}
+.lista input{margin-top:2px}
 .sigue{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;margin-top:26px}
 .sigue span{color:var(--tx-2);font-size:16px}
 .lista label:has(input:checked){color:var(--cielo)}
 @media (hover:hover) and (pointer:fine){.lista label:hover input{border-color:var(--tx)}}
 
+
+/* diagnóstico como producto */
+.diag{background:var(--panel);padding:0 0 clamp(80px,12vh,150px)}
+.diag .caja{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,6fr);gap:clamp(24px,4vw,72px);background:var(--azul-2);border-radius:18px;padding:clamp(28px,4.5vw,64px);align-items:center}
+.diag .nom{font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:#C9D1FF;margin:0 0 14px}
+.diag h2{font-size:clamp(32px,4.2vw,60px)}
+.diag h2 b{font-weight:700;color:#C9D1FF}
+.diag .izq p{color:#DCE1FF;font-size:18px;max-width:28em;margin:18px 0 26px}
+.diag .izq .chico{font-size:14px;margin:14px 0 0;color:#C9D1FF}
+.diag .rec{list-style:none;margin:0;padding:0;display:grid;gap:0}
+.diag .rec li{display:grid;grid-template-columns:minmax(0,9em) 1fr;gap:18px;padding:18px 0;border-top:1px solid rgba(255,255,255,.22);align-items:baseline}
+.diag .rec li:last-child{border-bottom:1px solid rgba(255,255,255,.22)}
+.diag .rec b{font-family:var(--d);font-size:clamp(22px,2.2vw,30px);font-weight:600;letter-spacing:-.02em;line-height:1.05}
+.diag .rec span{color:#DCE1FF;font-size:16px}
 
 /* comparador (oscuro) */
 .comp{background:var(--fondo);padding:clamp(90px,14vh,170px) 0 0}
@@ -135,6 +154,9 @@ table.crudo th{background:#DADDE8;font-weight:600}
 .gr svg{display:block;width:100%;height:auto}
 .gr figcaption{font-size:12px;color:var(--tx-3);margin-bottom:4px;display:flex;justify-content:space-between}
 .alerta{background:var(--azul);color:#fff;padding:10px 12px;font-size:13.5px;font-weight:600;border-radius:10px}
+.ad-pie{display:grid;grid-template-columns:1fr 1fr;gap:clamp(16px,3vw,40px);margin-top:22px}
+.ad-pie p{margin:0;color:var(--tx-2);font-size:17px;max-width:30em}
+.ad-pie b{color:var(--tx);font-weight:600}
 .comp .nota{margin:16px 0 0;font-size:14px;color:var(--tx-3)}
 
 /* pico: el logo se dibuja */
@@ -225,7 +247,7 @@ table.crudo th{background:#DADDE8;font-weight:600}
 .puerta{text-align:center;padding:clamp(60px,10vh,120px) 0 0}
 .puerta h2{font-size:clamp(40px,6.6vw,108px);font-weight:600;max-width:11em;margin:0 auto}
 .puerta h2 b{font-weight:700;color:var(--cielo)}
-.puerta p{color:var(--tx-2);font-size:18px;max-width:30em;margin:24px auto 34px}
+.puerta p{color:var(--tx-2);font-size:18px;max-width:34em;margin:24px auto 34px}
 .pie{margin-top:clamp(70px,10vh,120px);display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;border-top:1px solid var(--linea);padding-top:26px;font-size:14px;color:var(--tx-3)}
 .pie .firma{font-family:var(--d);font-weight:700;font-size:clamp(56px,7vw,110px);line-height:.9;letter-spacing:-.04em;color:var(--tx)}
 .oi{position:relative;display:inline-block}
@@ -237,6 +259,8 @@ table.crudo th{background:#DADDE8;font-weight:600}
   .hero .fila,.pasa .w,.serv .w,.fin .eq,.caso .w{grid-template-columns:1fr}
   .hero .acc{justify-content:flex-start}
   .comp .cab{grid-template-columns:1fr}
+  .diag .caja{grid-template-columns:1fr}
+  .diag .rec li{grid-template-columns:1fr;gap:4px}
   .cifras{grid-template-columns:1fr}
   .pico .esc{grid-template-columns:1fr;align-content:center;gap:24px;height:auto;min-height:100svh;padding:70px 0 50px}
   .pico .rueda{max-width:min(86vw,440px);margin:0 auto}
@@ -256,6 +280,7 @@ table.crudo th{background:#DADDE8;font-weight:600}
   .hero h1{font-size:clamp(32px,9.6vw,50px)}
   .hero h1 .l{white-space:normal}
   .cta small{display:none}
+  .ad-pie{grid-template-columns:1fr}
   .slider{aspect-ratio:4/5}.capa{padding:12px}
   .kp{grid-template-columns:1fr 1fr}.kp div:last-child{grid-column:span 2}
   .caso{min-height:90svh}
@@ -276,7 +301,7 @@ table.crudo th{background:#DADDE8;font-weight:600}
 <header class="nav" id="nav"><div class="w">
   <a class="marca" href="#"><span class="lg"></span><b>ITERAR</b></a>
   <button class="menu" aria-expanded="false" onclick="const n=document.getElementById('menu');n.classList.toggle('abierto');this.setAttribute('aria-expanded',n.classList.contains('abierto'))">Menú</button>
-  <nav id="menu"><a href="#pasa">¿Te suena?</a><a href="#antes">Antes y después</a><a href="#servicios">Servicios</a><a href="#metodo">Método</a><a href="#casos">Situaciones</a><a href="#equipo">Equipo</a><a href="indicadores.html">Indicadores</a><a class="cta ctad" href="#">Diagnóstico</a></nav>
+  <nav id="menu"><a href="#pasa">¿Te suena?</a><a href="#diagnostico">Diagnóstico</a><a href="#antes">Antes y después</a><a href="#servicios">Servicios</a><a href="#metodo">Método</a><a href="#casos">Situaciones</a><a href="#equipo">Equipo</a><a href="indicadores.html">Indicadores</a><a class="cta ctad" href="#">Empezar</a></nav>
 </div></header>
 
 <main>
@@ -296,6 +321,7 @@ table.crudo th{background:#DADDE8;font-weight:600}
     <div class="rv"><b>46%</b><p>de las que todavía no la usan piensa sumarla en los próximos dos años. El que espera no queda igual: queda último.</p></div>
     <div class="rv"><b>57,4%</b><p>de las que la usan no mide si le sirve. Tenerla no alcanza: hay que ponerla a trabajar y mirar el resultado.</p></div>
   </div>
+  <p class="puente rv">Ahí trabajamos nosotros: que la uses, que rinda y que lo puedas medir.</p>
   <p class="fuente-d rv">Fuente: Encuesta nacional sobre adopción de IA en pymes argentinas, nadIA (CEPE Di Tella y Fundar, con apoyo del BID y la Fundación Observatorio PyME). 402 empresas, noviembre y diciembre de 2025.</p>
 </div></section>
 
@@ -303,24 +329,42 @@ table.crudo th{background:#DADDE8;font-weight:600}
   <div><h2 class="rv">¿Te suena?</h2><p class="lead rv">Marcá las que sean tuyas. Las escuchamos todas las semanas, y las vivimos en nuestras propias empresas.</p></div>
   <div>
     <div class="lista" id="lista">
-      <label><input type="checkbox" id="p1">Sé que mi competencia ya usa IA y yo todavía no arranqué.</label>
-      <label><input type="checkbox" id="p2">Vendo más que el año pasado y me queda lo mismo.</label>
-      <label><input type="checkbox" id="p3">Cierro el mes y no sé si gané plata.</label>
-      <label><input type="checkbox" id="p4">Decido mirando el saldo del banco.</label>
-      <label><input type="checkbox" id="p5">Todo pasa por mí. Si me voy una semana, se frena.</label>
-      <label><input type="checkbox" id="p6">Pagamos licencias de IA y nadie sabe para qué usarlas.</label>
+      <label><input type="checkbox" id="p1"><span>Sé que mi competencia ya usa IA y yo todavía no arranqué.<small class="sol">Se empieza por un solo caso de uso: el de más impacto y menos riesgo.</small></span></label>
+      <label><input type="checkbox" id="p2"><span>Vendo más que el año pasado y me queda lo mismo.<small class="sol">Se ve en un análisis de márgenes por producto y por cliente.</small></span></label>
+      <label><input type="checkbox" id="p3"><span>Cierro el mes y no sé si gané plata.<small class="sol">Se resuelve con un tablero conectado a tu facturación y a tu banco.</small></span></label>
+      <label><input type="checkbox" id="p4"><span>Decido mirando el saldo del banco.<small class="sol">Se resuelve con una caja proyectada a noventa días.</small></span></label>
+      <label><input type="checkbox" id="p5"><span>Todo pasa por mí. Si me voy una semana, se frena.<small class="sol">Se resuelve con un tablero que tu equipo mira sin preguntarte, y una reunión fija.</small></span></label>
+      <label><input type="checkbox" id="p6"><span>Pagamos licencias de IA y nadie sabe para qué usarlas.<small class="sol">Se ordena eligiendo para qué tarea va cada herramienta, y midiendo si rinde.</small></span></label>
     </div>
     <div class="sigue"><span id="cuenta">Cada una de estas te cuesta plata todos los meses. Ninguna se arregla sola.</span><a class="cta az ctad mag" href="#">Ver por dónde empezar</a></div>
   </div>
 </div></section>
 
+<section class="diag" id="diagnostico"><div class="w">
+  <div class="caja">
+    <div class="izq">
+      <p class="nom rv">Diagnóstico ITERAR</p>
+      <h2 class="rv">Por dónde empezar <b>en tu empresa.</b></h2>
+      <p class="rv">Once preguntas, casi todas de un click. Con lo que nos cuentes te mandamos por mail una devolución escrita por nosotros, no por un robot.</p>
+      <a class="cta ctad mag rv" href="#">Ver por dónde empezar</a>
+      <p class="chico rv">Gratis. No te llama ningún vendedor.</p>
+    </div>
+    <ul class="rec">
+      <li class="rv"><b>5 minutos</b><span>es lo que lleva contestarlo. Se guarda solo: podés cortar y seguir después.</span></li>
+      <li class="rv"><b>2 a 3 días</b><span>después te llega la devolución por mail.</span></li>
+      <li class="rv"><b>Qué te llevás</b><span>Dónde se te está yendo la plata, qué conviene ordenar primero y qué no vale la pena tocar todavía.</span></li>
+    </ul>
+  </div>
+</div></section>
+
 <section class="comp" id="antes"><div class="w">
-  <div class="cab"><h2 class="rv">Mientras vos armás la planilla, <b>otro ya decidió.</b></h2><p class="rv">A la izquierda, como están los números en la mayoría de las empresas: una tabla que nadie mira. A la derecha, los mismos números después de una primera vuelta: se leen en diez segundos y avisan solos cuando algo se desvía. Arrastrá para comparar. Datos de ejemplo.</p></div>
+  <div class="cab"><h2 class="rv">Mientras vos armás la planilla, <b>otro ya decidió.</b></h2><p class="rv">Son los mismos números de una misma empresa. Arrastrá para comparar. Datos de ejemplo.</p></div>
   <div class="slider" id="slider">
     <div class="capa a"><span class="et">Antes</span><table class="crudo" id="crudo"></table></div>
     <div class="capa b" id="capab"><span class="et">Después</span><div class="tab" id="tab"></div></div>
     <div class="manija" id="manija" role="slider" aria-label="Comparar antes y después" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" tabindex="0"></div>
   </div>
+  <div class="ad-pie"><p><b>Antes.</b> La planilla la arma una persona, tarda días y llega cuando el mes ya cerró.</p><p><b>Después.</b> Abrís una pantalla y en diez segundos sabés cómo venís. Si algo se desvía, te avisa sola.</p></div>
   <p class="nota">Comercial Ejemplo S.A. es una empresa inventada para mostrar la idea sin exponer a ningún cliente.</p>
 </div></section>
 <section class="serv" id="servicios"><div class="w">
@@ -366,7 +410,7 @@ table.crudo th{background:#DADDE8;font-weight:600}
   </div>
   <div class="puerta" id="contacto">
     <h2 class="rv">Cada mes que esperás, <b>alguien te saca ventaja.</b></h2>
-    <p class="rv">Empezar lleva cinco minutos: once preguntas, casi todas de un click. Te respondemos por mail en dos o tres días con por dónde arrancaríamos. Gratis, y no te llama ningún vendedor.</p>
+    <p class="rv">Más de la mitad de las pymes argentinas que usan inteligencia artificial empezó en 2025 (52,6%, encuesta nadIA). No hace falta un proyecto de un año para alcanzarlas: hace falta empezar por el lugar correcto. Cinco minutos, gratis, sin compromiso.</p>
     <a class="cta ctad mag rv" href="#">Ver por dónde empezar</a>
   </div>
   <div class="pie"><div class="firma"><span class="oi">ı<i class="orb"></i></span>terar</div><div>ITERAR Consulting · Buenos Aires<br><a href="mailto:hola@iterarconsulting.com.ar" style="text-decoration:none">hola@iterarconsulting.com.ar</a><br>© 2026</div></div>
@@ -450,7 +494,7 @@ indicadores().then(d=>{
 ScrollTrigger.create({start:0,end:'max',onUpdate:s=>document.getElementById('nav').classList.toggle('oculto',s.direction===1&&s.scroll()>200)});
 
 /* ¿Te pasa? */
-lista.addEventListener('change',()=>{const n=lista.querySelectorAll(':checked').length;cuenta.textContent=n===0?'Cada una de estas te cuesta plata todos los meses. Ninguna se arregla sola.':n===1?'Con una sola ya alcanza para empezar. Te decimos cómo en cinco minutos.':`Marcaste ${n}. Todas tienen arreglo, y se empieza por una. Te decimos por cuál.`;});
+lista.addEventListener('change',()=>{const n=lista.querySelectorAll(':checked').length;cuenta.textContent=n===0?'Cada una de estas te cuesta plata todos los meses. Ninguna se arregla sola.':n===1?'Con una sola ya alcanza para empezar. Te decimos cómo en cinco minutos.':`Marcaste ${n}. Ninguna se arregla sola. En el diagnóstico nos contás cuál te pesa más y te decimos por cuál empezar.`;});
 
 /* Servicios: índice pegajoso que sigue el scroll + zoom suave de imágenes */
 {
