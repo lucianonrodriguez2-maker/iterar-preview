@@ -140,20 +140,23 @@ table.crudo th{background:#DADDE8;font-weight:600}
 /* pico: el logo se dibuja */
 .pico{background:var(--panel);position:relative}
 .pico .esc{height:100svh;padding-top:70px;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);align-items:center;gap:clamp(20px,4vw,60px);overflow:hidden}
-.pico .txt h2{font-size:clamp(34px,4.6vw,68px)}
+.pico .txt h2{font-size:clamp(32px,4vw,60px)}
 .pico .txt h2 b{font-weight:700;color:var(--cielo)}
-.pico .sub-met{color:var(--tx-2);font-size:17px;max-width:26em;margin:18px 0 0}
-.pico .momentos{margin:26px 0 0;padding:0;list-style:none}
-.pico .momentos li{display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:baseline;padding:14px 0;border-top:1px solid var(--linea);opacity:.25;transform:translateX(-8px);transition:opacity .4s,transform .5s var(--ease-out)}
+.pico .lema{font-family:var(--d);font-size:clamp(19px,1.8vw,25px);font-weight:500;letter-spacing:-.01em;line-height:1.2;margin:14px 0 0;color:var(--tx);max-width:20em}
+.pico .sub-met{color:var(--tx-2);font-size:16px;max-width:28em;margin:12px 0 0}
+.pico .momentos{margin:20px 0 0;padding:0;list-style:none}
+.pico .momentos li{display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:baseline;padding:10px 0;border-top:1px solid var(--linea);opacity:.25;transform:translateX(-8px);transition:opacity .4s,transform .5s var(--ease-out)}
 .pico .momentos li.on{opacity:1;transform:none}
 .pico .momentos b{font-family:var(--d);font-weight:600;font-size:clamp(24px,2.6vw,36px);line-height:1;letter-spacing:-.02em}
 .pico .momentos span{font-size:15.5px;color:var(--tx-2)}
-.pico .otra{margin:28px 0 0;font-family:var(--d);font-size:clamp(20px,2.1vw,28px);color:var(--cielo);opacity:0;transform:translateY(10px);max-width:22em}
+.pico .otra{margin:18px 0 0;font-family:var(--d);font-size:clamp(17px,1.5vw,21px);line-height:1.3;color:var(--cielo);opacity:0;transform:translateY(10px);max-width:22em}
 .pico .rueda{position:relative;width:100%;max-height:88svh;aspect-ratio:1}
 .pico .rueda svg{width:100%;height:100%;overflow:visible}
 .pico .rueda .cen{position:absolute;inset:0;display:grid;place-items:center;text-align:center;pointer-events:none}
 .pico .rueda .cen b{display:block;font-family:var(--d);font-weight:600;font-size:clamp(22px,2.7vw,40px);line-height:1;letter-spacing:-.03em}
 .pico .rueda .cen small{display:block;margin-top:10px;font-size:14px;color:var(--tx-3)}
+
+@media (max-height:840px) and (min-width:981px){.pico .sub-met{display:none}.pico .txt h2{font-size:clamp(28px,3.4vw,48px)}.pico .momentos li{padding:8px 0}}
 
 /* servicios con índice pegajoso */
 .serv{padding:clamp(90px,14vh,170px) 0;background:var(--fondo)}
@@ -333,7 +336,7 @@ table.crudo th{background:#DADDE8;font-weight:600}
 <section class="pico" id="metodo">
   <div class="w esc">
     <div class="txt">
-      <h2>Iterar es <b>mejorar en cada intento.</b></h2><p class="sub-met">No hacemos el proyecto de un año que nunca termina. Damos una vuelta corta, queda algo funcionando, y recién ahí decidimos la siguiente.</p>
+      <h2>Cada nueva versión <b>supera a la anterior.</b></h2><p class="lema">La evolución no es una opción, es una obligación.</p><p class="sub-met">No hacemos el proyecto de un año que nunca termina. Damos una vuelta corta, queda algo funcionando, y recién ahí decidimos la siguiente.</p>
       <ul class="momentos" id="momentos">
         <li><b>Medir</b><span>Juntamos lo que está repartido entre planillas, sistemas y la cabeza de alguien.</span></li>
         <li><b>Entender</b><span>Buscamos dónde se gana y dónde se pierde, con los números a la vista.</span></li>
@@ -478,7 +481,7 @@ lista.addEventListener('change',()=>{const n=lista.querySelectorAll(':checked').
     const li=[...document.querySelectorAll('#momentos li')],idx=Math.min(3,Math.floor(p1*4.6));
     li.forEach((l,i)=>l.classList.toggle('on',p1>0.02&&i<=idx));
     const nombres=['Medir','Entender','Decidir','Ajustar'];
-    if(p2>0.05){rn.textContent='Otra vez';rs.textContent='la segunda vuelta, más amplia';}else{rn.textContent=nombres[idx];rs.textContent='momento '+(idx+1)+' de 4';}
+    if(p2>0.05){rn.textContent='Otra vez';rs.textContent='más amplia';}else{rn.textContent=nombres[idx];rs.textContent='momento '+(idx+1)+' de 4';}
     gsap.set('#otra',{opacity:p2>0.15?1:0,y:p2>0.15?0:10});
   };
   dibujarRueda(REDUCIDO?1:0.001);
