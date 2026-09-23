@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex,nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Diagnóstico ITERAR · Por dónde empezar en tu empresa</title>
+<meta name="description" content="Doce preguntas de sí o no, cinco minutos, resultado al instante: un semáforo por frente y por dónde empezar. Gratis, sin vendedores.">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://iterarconsulting.com.ar/autoevaluacion">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ITERAR Consulting">
+<meta property="og:title" content="Diagnóstico ITERAR · 12 preguntas, resultado al instante">
+<meta property="og:description" content="Un semáforo por frente (medir, entender, decidir, ajustar) y por dónde conviene empezar. Cinco minutos, gratis.">
+<meta property="og:image" content="og-image.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--fondo:#0B0D14;--panel:#11141F;--panel-2:#171B29;--tx:#F3F4F8;--tx-2:#AEB3C7;--tx-3:#7A8099;--linea:rgba(243,244,248,.12);--azul:#2F4CFF;--azul-2:#2340E8;--cielo:#8FB0FF;--ok:#3DBE8B;--medio:#F2B84B;--mal:#F0705A;--d:"Bricolage Grotesque",sans-serif;--t:"Instrument Sans",system-ui,sans-serif;--ease-out:cubic-bezier(.23,1,.32,1)}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--fondo);color:var(--tx);font-family:var(--t);font-size:17px;line-height:1.5;-webkit-font-smoothing:antialiased;min-height:100svh;display:flex;flex-direction:column}
+a{color:inherit}
+h1,h2,h3{margin:0;font-family:var(--d);font-weight:600;letter-spacing:-.03em;line-height:1.02;text-wrap:balance}
+p{text-wrap:pretty}
+:focus-visible{outline:2px solid var(--cielo);outline-offset:3px;border-radius:6px}
+.w{max-width:860px;margin:0 auto;padding:0 clamp(20px,4vw,48px);width:100%}
+header.top{padding:22px 0}
+header.top .w{display:flex;justify-content:space-between;align-items:center;gap:20px}
+.marca{display:flex;align-items:center;gap:12px;text-decoration:none}
+.marca .logo-mark{width:34px;height:34px;overflow:visible}
+.marca b{font-family:var(--d);font-weight:700;font-size:19px}
+header.top a.v{font-size:14.5px;color:var(--tx-2);text-decoration:none;border-bottom:1px solid var(--linea);min-height:44px;display:inline-flex;align-items:center}
+main{flex:1;display:flex;flex-direction:column}
+.cta{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:var(--tx);color:var(--fondo);text-decoration:none;font-weight:600;padding:15px 22px;border-radius:999px;border:0;font:inherit;font-weight:600;cursor:pointer;min-height:48px;transition:background .2s}
+.cta:hover{background:#fff}
+.cta.az{background:var(--azul);color:#fff}.cta.az:hover{background:var(--azul-2)}
+.sec{display:inline-flex;align-items:center;justify-content:center;padding:14px 22px;border:1px solid var(--linea);border-radius:999px;text-decoration:none;font-weight:600;color:var(--tx);background:none;font:inherit;font-weight:600;cursor:pointer;min-height:48px;transition:border-color .2s}
+.sec:hover{border-color:var(--tx)}
+.chico{font-size:14px;color:var(--tx-3)}
+
+/* portada */
+.portada{padding:clamp(30px,6vh,70px) 0 60px}
+.portada .k{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--cielo);font-weight:600;margin-bottom:16px}
+.portada h1{font-size:clamp(38px,6vw,72px)}
+.portada h1 b{font-weight:700;color:var(--cielo)}
+.portada .lead{font-size:clamp(17px,1.5vw,20px);color:var(--tx-2);max-width:32em;margin:22px 0 30px}
+.frentes{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:34px 0}
+.frentes div{border:1px solid var(--linea);border-radius:12px;padding:16px;background:var(--panel)}
+.frentes b{display:block;font-family:var(--d);font-size:20px;margin-bottom:4px}
+.frentes span{font-size:14px;color:var(--tx-2)}
+.seg{display:inline-flex;border:1px solid var(--linea);border-radius:999px;padding:4px;background:var(--panel);margin-bottom:24px}
+.seg button{font:inherit;font-weight:600;font-size:15px;background:none;border:0;color:var(--tx-2);padding:10px 18px;border-radius:999px;cursor:pointer;min-height:44px;transition:background .2s,color .2s}
+.seg button[aria-pressed="true"]{background:var(--tx);color:var(--fondo)}
+.acc{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.premarc{margin:0 0 22px;padding:14px 16px;border:1px solid var(--linea);border-left:3px solid var(--cielo);border-radius:10px;font-size:15px;color:var(--tx-2)}
+.premarc b{color:var(--tx)}
+
+/* cuestionario */
+.cuest{padding:clamp(20px,4vh,40px) 0 60px;display:none}
+.prog{display:flex;justify-content:space-between;align-items:center;gap:16px;font-size:14px;color:var(--tx-3);margin-bottom:12px}
+.prog b{color:var(--cielo);font-weight:600}
+.barra{height:4px;background:var(--linea);border-radius:999px;overflow:hidden;margin-bottom:clamp(30px,6vh,60px)}
+.barra i{display:block;height:100%;width:0;background:var(--azul);transition:width .5s var(--ease-out)}
+.paso{min-height:52svh}
+.paso .fr{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--cielo);font-weight:600;margin-bottom:14px}
+.paso h2{font-size:clamp(28px,4.4vw,52px);max-width:16em}
+.paso .ay{color:var(--tx-2);font-size:16px;margin:14px 0 0;max-width:34em}
+.ops{display:grid;gap:10px;margin-top:clamp(24px,4vh,40px)}
+.ops.dos{grid-template-columns:1fr 1fr}
+.op{font:inherit;font-family:var(--d);font-weight:600;font-size:clamp(18px,1.8vw,24px);text-align:left;background:var(--panel);color:var(--tx);border:1px solid var(--linea);border-radius:14px;padding:20px 22px;cursor:pointer;min-height:64px;display:flex;align-items:center;gap:14px;transition:border-color .2s,background .2s,transform .2s}
+.op:hover{border-color:var(--cielo);background:var(--panel-2)}
+.op:active{transform:scale(.99)}
+.op i{font-style:normal;font-family:var(--t);font-size:12px;font-weight:600;color:var(--tx-3);border:1px solid var(--linea);border-radius:6px;padding:2px 7px;flex:none}
+.op.on{border-color:var(--azul);background:rgba(47,76,255,.14)}
+.como{margin-top:clamp(24px,4vh,40px);border-top:1px solid var(--linea);padding-top:22px;display:none}
+.como.on{display:block}
+.como h3{font-size:clamp(20px,2.4vw,28px);margin-bottom:6px}
+.como p{margin:0 0 14px;color:var(--tx-2);font-size:15px}
+.como .op{font-size:clamp(16px,1.5vw,20px);min-height:56px;padding:14px 18px}
+.nav-p{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:30px;padding-top:18px;border-top:1px solid var(--linea)}
+.nav-p button{font:inherit;font-weight:600;background:none;border:0;color:var(--tx-2);cursor:pointer;min-height:44px;padding:0 6px}
+.nav-p button:hover{color:var(--tx)}
+.nav-p button[disabled]{opacity:.35;cursor:default}
+.nav-p .cta{padding:12px 20px;min-height:44px}
+.nav-p .cta[disabled]{opacity:.4;cursor:default}
+
+/* resultado */
+.res{padding:clamp(30px,5vh,60px) 0 80px;display:none}
+.res .k{font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--cielo);font-weight:600;margin-bottom:14px}
+.res h1{font-size:clamp(34px,5.4vw,64px)}
+.res h1 b{font-weight:700;color:var(--cielo)}
+.res .lead{color:var(--tx-2);font-size:18px;max-width:34em;margin:18px 0 0}
+.sem{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:34px 0 0}
+.sem div{border:1px solid var(--linea);border-radius:14px;padding:18px;background:var(--panel);display:grid;gap:10px;align-content:start}
+.sem .luz{width:14px;height:14px;border-radius:50%;background:var(--tx-3);box-shadow:0 0 0 4px rgba(255,255,255,.05)}
+.sem .luz.v{background:var(--ok);box-shadow:0 0 18px -2px var(--ok)}.sem .luz.a{background:var(--medio);box-shadow:0 0 18px -2px var(--medio)}.sem .luz.r{background:var(--mal);box-shadow:0 0 18px -2px var(--mal)}
+.sem b{font-family:var(--d);font-size:22px;font-weight:600}
+.sem small{color:var(--tx-3);font-size:13px}
+.sem p{margin:0;font-size:14.5px;color:var(--tx-2)}
+.sem .pts{font-family:var(--d);font-size:13px;color:var(--tx-3);font-variant-numeric:tabular-nums}
+.empieza{margin-top:26px;background:var(--azul-2);border-radius:18px;padding:clamp(24px,4vw,44px);display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:clamp(20px,4vw,50px);align-items:center}
+.empieza .k{color:#C9D1FF}
+.empieza h2{font-size:clamp(28px,3.6vw,46px)}
+.empieza h2 b{font-weight:700;color:#C9D1FF}
+.empieza p{color:#DCE1FF;font-size:17px;max-width:30em;margin:14px 0 0}
+.empieza .sec{border-color:rgba(255,255,255,.4);color:#fff}
+.empieza .acc{margin-top:22px}
+.tilde{margin-top:26px;border:1px solid var(--linea);border-radius:14px;padding:20px 22px;font-size:15.5px;color:var(--tx-2)}
+.tilde b{color:var(--tx)}
+.tilde ul{margin:8px 0 0;padding-left:18px}
+.mail{margin-top:34px;background:var(--panel);border:1px solid var(--linea);border-radius:16px;padding:clamp(20px,3vw,34px);display:grid;gap:16px}
+.mail h2{font-size:clamp(24px,2.8vw,34px)}
+.mail .lead{font-size:16px;margin:0;color:var(--tx-2);max-width:36em}
+.mail .campos{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.mail label{display:grid;gap:6px;font-size:14px;font-weight:600}
+.mail input{font:inherit;font-size:16px;color:var(--tx);background:#0E1119;border:1px solid var(--linea);border-radius:10px;padding:12px 14px;width:100%;min-height:48px}
+.mail input:focus{outline:2px solid var(--azul);border-color:var(--azul)}
+.mail .fila{display:flex;gap:14px;align-items:center;flex-wrap:wrap}
+.mail .msg{font-size:14px;min-height:1.4em}
+.mail .msg.ok{color:var(--ok)}.mail .msg.mal{color:var(--mal)}
+.mail .p{font-size:12.5px;color:var(--tx-3);margin:0}
+.trampa{position:absolute;left:-9999px;opacity:0;height:0;overflow:hidden}
+.otra-vez{margin-top:26px;display:flex;gap:16px;flex-wrap:wrap;align-items:center;color:var(--tx-3);font-size:14px}
+.otra-vez button{font:inherit;background:none;border:0;color:var(--tx-2);text-decoration:underline;cursor:pointer;min-height:44px;padding:0}
+footer{padding:22px 0 40px;font-size:13.5px;color:var(--tx-3);border-top:1px solid var(--linea)}
+@media (max-width:760px){.frentes,.sem{grid-template-columns:1fr 1fr}.empieza{grid-template-columns:1fr}.mail .campos{grid-template-columns:1fr}.ops.dos{grid-template-columns:1fr}.paso{min-height:0}}
+@media (max-width:480px){.frentes,.sem{grid-template-columns:1fr}.seg{width:100%}.seg button{flex:1;padding:10px 8px;font-size:14px}}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body>
+<header class="top"><div class="w"><a class="marca" href="./"><span class="lg"></span><b>ITERAR</b></a><a class="v" href="./">Volver al sitio</a></div></header>
+<main>
+
+<section class="portada w" id="portada">
+  <div class="k">Diagnóstico ITERAR · gratis · 5 minutos</div>
+  <h1>Por dónde empezar <b>en tu empresa.</b></h1>
+  <p class="lead">Doce preguntas de sí o no. Cuando la respuesta es sí, te preguntamos cómo lo sabés: no es lo mismo saberlo de memoria que verlo en un tablero. Al final, un semáforo por frente y por dónde conviene empezar. Se guarda solo: podés cortar y seguir después.</p>
+  <div class="seg" role="group" aria-label="Tipo de empresa"><button type="button" data-puerta="pyme" aria-pressed="true">Soy dueño de una pyme</button><button type="button" data-puerta="grande" aria-pressed="false">Trabajo en una empresa grande</button></div>
+  <div class="premarc" id="premarc" hidden></div>
+  <div class="acc"><button class="cta az" id="empezar">Empezar</button><span class="chico">Sin registro. El mail solo si querés la devolución escrita.</span></div>
+  <div class="frentes">
+    <div><b>Medir</b><span>¿Tenés los números?</span></div>
+    <div><b>Entender</b><span>¿Sabés qué dicen?</span></div>
+    <div><b>Decidir</b><span>¿Se usan para decidir?</span></div>
+    <div><b>Ajustar</b><span>¿Algo cambia con ellos?</span></div>
+  </div>
+</section>
+
+<section class="cuest w" id="cuest" aria-live="polite">
+  <div class="prog"><span>Pregunta <b id="num">1</b> de 12</span><span id="frname">Medir</span></div>
+  <div class="barra" aria-hidden="true"><i id="bar"></i></div>
+  <div class="paso" id="paso">
+    <div class="fr" id="fr"></div>
+    <h2 id="q"></h2>
+    <p class="ay" id="ay"></p>
+    <div class="ops dos" id="ops"><button class="op" data-v="si"><i>S</i>Sí</button><button class="op" data-v="no"><i>N</i>No</button></div>
+    <div class="como" id="como"><h3 id="como-t"></h3><p id="como-p"></p><div class="ops" id="como-ops"></div></div>
+  </div>
+  <div class="nav-p"><button id="atras">← Anterior</button><span class="chico" id="guardado"></span><button class="cta" id="sig" disabled>Siguiente →</button></div>
+</section>
+
+<section class="res w" id="res">
+  <div class="k">Tu resultado</div>
+  <h1 id="res-t"></h1>
+  <p class="lead" id="res-l"></p>
+  <div class="sem" id="sem"></div>
+  <div class="empieza" id="empieza"></div>
+  <div class="tilde" id="tilde" hidden></div>
+  <form class="mail" id="f" novalidate>
+    <h2>¿Querés la devolución escrita?</h2>
+    <p class="lead">Con tus respuestas y lo que marcaste, en dos o tres días te mandamos por mail una devolución escrita por nosotros: qué ordenar primero, qué no tocar todavía y cómo sería una primera vuelta. <a href="devolucion-muestra.html">Así se ve una de ejemplo.</a></p>
+    <div class="campos"><label>Nombre<input id="m-nombre" name="nombre" required autocomplete="name"></label><label>Mail<input id="m-mail" name="mail" type="email" required autocomplete="email" inputmode="email"></label></div>
+    <label>Empresa y rubro <span style="font-weight:400;color:var(--tx-3)">(opcional)</span><input id="m-empresa" name="empresa" autocomplete="organization" placeholder="Por ejemplo: distribuidora de alimentos"></label>
+    <label class="trampa" aria-hidden="true">Web<input name="web" tabindex="-1" autocomplete="off"></label>
+    <div class="fila"><button class="cta az" type="submit">Quiero la devolución</button><span class="msg" id="msg" aria-live="polite"></span></div>
+    <p class="p">La leemos y la escribimos nosotros dos. No te llama ningún vendedor y no compartimos tus datos con nadie.</p>
+  </form>
+  <div class="otra-vez"><button id="denuevo">Volver a empezar</button><span>·</span><a href="./" style="color:var(--tx-2)">Volver al sitio</a></div>
+</section>
+
+</main>
+<footer><div class="w">ITERAR Consulting · Buenos Aires · <a href="mailto:hola@iterarconsulting.com.ar" style="text-decoration:none">hola@iterarconsulting.com.ar</a></div></footer>
+
+<script src="marks.js"></script>
+<script src="comun.js"></script>
+<script>
+document.querySelectorAll('.lg').forEach(e=>e.outerHTML=COMUN.logo('A'));
+document.querySelectorAll('.logo-mark').forEach(s=>s.style.setProperty('--accent','#8FB0FF'));
+const {medir}=COMUN;
+const $=id=>document.getElementById(id);
+const Q=new URLSearchParams(location.search);
+const FRENTES=[
+  {id:'medir',n:'Medir',pregunta:'¿Tenés los números?',serv:'tableros',servN:'Tu negocio en una pantalla'},
+  {id:'entender',n:'Entender',pregunta:'¿Sabés qué dicen?',serv:'finanzas',servN:'Saber dónde ganás y dónde perdés'},
+  {id:'decidir',n:'Decidir',pregunta:'¿Se usan para decidir?',serv:'estrategia',servN:'Un equipo que decide sin vos'},
+  {id:'ajustar',n:'Ajustar',pregunta:'¿Algo cambia con ellos?',serv:'ia',servN:'IA trabajando, no en demo'}
+];
+// Cada pregunta: texto para pyme y para empresa grande, ayuda, y el tipo de repregunta (saber = "¿cómo lo sabés?", pasa = "¿y cómo pasa?")
+const PREG=[
+  {f:0,pyme:'¿Sabés cuánto vendiste este mes, hoy, sin pedírselo a nadie?',grande:'¿Las ventas del mes están disponibles hoy sin pedírselas a un área?',ay:'No el número exacto: el orden de magnitud, con confianza.',t:'saber'},
+  {f:0,pyme:'¿Sabés cuánto te cuesta producir o entregar lo que vendés?',grande:'¿Se conoce el costo real por producto, servicio o unidad?',ay:'Costo real, no el precio de lista de los insumos.',t:'saber'},
+  {f:0,pyme:'¿Sabés cuánto tenés que cobrar y cuánto tenés que pagar en los próximos treinta días?',grande:'¿Se conoce la caja proyectada de los próximos treinta días?',ay:'Lo que entra y lo que sale, aunque sea aproximado.',t:'saber'},
+  {f:1,pyme:'¿Sabés qué producto, cliente o línea te deja más margen, y cuál te lo come?',grande:'¿Se sabe qué línea, unidad o cliente deja más margen y cuál lo consume?',ay:'Margen, no ventas. El que más vende no siempre es el que más deja.',t:'saber'},
+  {f:1,pyme:'¿Sabés si este mes ganaste plata, antes de que te lo diga el contador?',grande:'¿Se conoce el resultado del mes antes del cierre contable?',ay:'Resultado, no saldo del banco.',t:'saber'},
+  {f:1,pyme:'¿Sabés qué tarea repetida se lleva más horas de tu equipo?',grande:'¿Se sabe qué tarea repetida consume más horas en cada área?',ay:'Cargar, conciliar, responder lo mismo, pasar datos de un lado a otro.',t:'saber'},
+  {f:2,pyme:'¿Tenés una reunión fija para mirar los números con tu equipo?',grande:'¿Hay una reunión fija de gestión con los mismos números para todas las áreas?',ay:'Fija: mismo día, misma agenda, aunque haya lío.',t:'pasa'},
+  {f:2,pyme:'¿Están escritas las tres prioridades del trimestre, con responsable y fecha?',grande:'¿Están escritas las prioridades del trimestre por área, con responsable y fecha?',ay:'Escritas en algún lado que todos vean, no en tu cabeza.',t:'pasa'},
+  {f:2,pyme:'¿Tu equipo puede tomar una decisión importante sin consultarte?',grande:'¿Los mandos medios deciden dentro de su área sin escalar todo?',ay:'Un precio, un proveedor, una contratación.',t:'pasa'},
+  {f:3,pyme:'¿Usás inteligencia artificial en alguna tarea, todos los días?',grande:'¿Hay alguna herramienta de IA en producción, usada todos los días?',ay:'Todos los días. Haberla visto o haber pagado la licencia no cuenta.',t:'pasa'},
+  {f:3,pyme:'¿Medís cuánto tiempo o plata te ahorra?',grande:'¿Se mide el resultado de las herramientas de IA que se usan?',ay:'Un número, aunque sea aproximado: horas, errores, pesos.',t:'pasa'},
+  {f:3,pyme:'¿Tenés una regla escrita de qué datos de la empresa pueden salir y cuáles no?',grande:'¿Hay una política escrita de uso de IA y de datos?',ay:'Qué se puede pegar en una herramienta externa y qué no.',t:'pasa'}
+];
+const COMO={
+  saber:{t:'¿Cómo lo sabés?',p:'No es lo mismo saberlo de memoria que verlo en un tablero.',ops:[['memoria','Lo sé de memoria',1],['planilla','Está en una planilla que alguien arma',2],['tablero','Lo veo en un tablero que se actualiza solo',3]]},
+  pasa:{t:'¿Y cómo pasa?',p:'Lo que depende de una persona se corta cuando esa persona no está.',ops:[['yo','Depende de mí que pase',1],['escrito','Está escrito o agendado, y se cumple casi siempre',2],['solo','Funciona sin que nadie lo empuje',3]]}
+};
+// Textos por frente según color
+const TXT={
+  medir:{r:'Los números no están, o están en la cabeza de alguien. Todo lo demás se apoya acá.',a:'Los números existen, pero los arma una persona y llegan tarde. Sirven para explicar, no para decidir.',v:'Tenés los números a mano y actualizados. Es la base que a la mayoría le falta.'},
+  entender:{r:'No sabés dónde ganás y dónde perdés. Es la pregunta que más plata cuesta no responder.',a:'Sabés más o menos dónde ganás, pero no con números que puedas mostrar. El margen se te escapa por los bordes.',v:'Sabés dónde ganás y dónde perdés, con datos. Lo que sigue es decidir con eso.'},
+  decidir:{r:'Las decisiones pasan todas por una persona y sin números en la mesa. La empresa se frena cuando esa persona no está.',a:'Hay rutinas, pero se sostienen a pulso. Con un tablero y una agenda fija dejan de depender de vos.',v:'El equipo decide con método y con números. Es lo que hace que una empresa crezca sin que el dueño explote.'},
+  ajustar:{r:'Todavía no hay inteligencia artificial trabajando, o no se mide. Es donde más rápido se abre la distancia con la competencia.',a:'Hay herramientas, pero sin medición o sin reglas. Rinden menos de lo que podrían.',v:'Hay IA en producción, medida y con reglas. Estás adelante de la mayoría.'}
+};
+const PROBLEMAS={1:'Sé que mi competencia ya usa IA y yo todavía no arranqué',2:'Vendo más que el año pasado y me queda lo mismo',3:'Cierro el mes y no sé si gané plata',4:'Decido mirando el saldo del banco',5:'Todo pasa por mí; si me voy una semana, se frena',6:'Pagamos licencias de IA y nadie sabe para qué usarlas',7:'Cada área tiene su planilla y los números no coinciden',8:'El cierre llega tarde para decidir',9:'Compramos licencias de IA y la adopción es baja',10:'Los proyectos de datos se miden en meses y no llegan',11:'Nos preocupa qué datos salen de la empresa con la IA',12:'Los mandos medios escalan todas las decisiones'};
+
+/* Estado, guardado en el navegador */
+const KEY='iterar-diag';
+let S={puerta:COMUN.puerta(),i:0,r:[],marcados:(Q.get('p')||'').split(',').filter(Boolean),origen:Q.get('origen')||'',cta:Q.get('cta')||''};
+try{const g=JSON.parse(localStorage.getItem(KEY)||'null');if(g&&g.r&&g.r.length&&!Q.get('p'))S=Object.assign(S,g,{puerta:S.puerta});}catch{}
+const guardar=()=>{try{localStorage.setItem(KEY,JSON.stringify(S));}catch{}};
+
+/* Portada */
+document.querySelectorAll('.seg button').forEach(b=>{b.setAttribute('aria-pressed',b.dataset.puerta===S.puerta);b.addEventListener('click',()=>{S.puerta=b.dataset.puerta;COMUN.puerta(S.puerta);document.querySelectorAll('.seg button').forEach(x=>x.setAttribute('aria-pressed',x.dataset.puerta===S.puerta));guardar();});});
+if(S.marcados.length){const pm=$('premarc');pm.hidden=false;pm.innerHTML=`<b>Marcaste ${S.marcados.length} ${S.marcados.length>1?'situaciones':'situación'} en el sitio.</b> Llegan con vos: las tenemos en cuenta en el resultado y en la devolución.`;}
+if(S.r.length&&S.r.length<12){$('empezar').textContent=`Seguir donde lo dejé (${S.r.length} de 12)`;}
+$('empezar').addEventListener('click',()=>{if(S.r.length>=12){mostrarRes();return;}S.i=S.r.length;medir('diag_start',{origen:S.origen,cta:S.cta,marcados:S.marcados.length});ir('cuest');pintar();});
+
+/* Cuestionario */
+const vista={portada:$('portada'),cuest:$('cuest'),res:$('res')};
+function ir(v){Object.entries(vista).forEach(([k,el])=>el.style.display=k===v?'block':'none');scrollTo({top:0,behavior:'instant'});}
+function pintar(){
+  const p=PREG[S.i],f=FRENTES[p.f],r=S.r[S.i]||{};
+  $('num').textContent=S.i+1;$('frname').textContent=f.n;$('bar').style.width=((S.i)/12*100)+'%';
+  $('fr').textContent=`${f.n} · ${f.pregunta}`;$('q').textContent=p[S.puerta];$('ay').textContent=p.ay;
+  $('ops').querySelectorAll('.op').forEach(b=>b.classList.toggle('on',r.v===b.dataset.v));
+  const c=COMO[p.t];$('como-t').textContent=c.t;$('como-p').textContent=c.p;
+  $('como-ops').innerHTML=c.ops.map(([k,t,pts])=>`<button class="op ${r.c===k?'on':''}" data-c="${k}" data-pts="${pts}">${t}</button>`).join('');
+  $('como').classList.toggle('on',r.v==='si');
+  $('atras').disabled=S.i===0;
+  $('sig').disabled=!(r.v==='no'||(r.v==='si'&&r.c));
+  $('sig').textContent=S.i===11?'Ver el resultado →':'Siguiente →';
+  $('guardado').textContent=S.r.filter(Boolean).length?'Se guarda solo':'';
+  $('paso').animate([{opacity:0,transform:'translateY(10px)'},{opacity:1,transform:'none'}],{duration:350,easing:'cubic-bezier(.23,1,.32,1)'});
+}
+$('ops').addEventListener('click',e=>{
+  const b=e.target.closest('.op');if(!b)return;
+  const v=b.dataset.v;S.r[S.i]=v==='si'?{v:'si',c:S.r[S.i]?.c||null,pts:S.r[S.i]?.pts||0}:{v:'no',c:null,pts:0};
+  guardar();medir('diag_pregunta',{n:S.i+1,v});
+  if(v==='no'){setTimeout(avanzar,260);}else pintar();
+});
+$('como-ops').addEventListener('click',e=>{
+  const b=e.target.closest('.op');if(!b)return;
+  S.r[S.i]={v:'si',c:b.dataset.c,pts:+b.dataset.pts};guardar();setTimeout(avanzar,260);
+});
+function avanzar(){if(S.i>=11){mostrarRes();return;}S.i++;guardar();pintar();}
+$('sig').addEventListener('click',avanzar);
+$('atras').addEventListener('click',()=>{if(S.i>0){S.i--;pintar();}});
+addEventListener('keydown',e=>{if(vista.cuest.style.display!=='block')return;if(e.key==='s'||e.key==='S')$('ops').querySelector('[data-v=si]').click();if(e.key==='n'||e.key==='N')$('ops').querySelector('[data-v=no]').click();if(/^[123]$/.test(e.key)&&$('como').classList.contains('on'))$('como-ops').querySelectorAll('.op')[+e.key-1]?.click();});
+
+/* Resultado */
+function puntajes(){return FRENTES.map((f,fi)=>{const rs=PREG.map((p,i)=>p.f===fi?(S.r[i]?.pts||0):0);const pts=rs.reduce((a,b)=>a+b,0);return {f,pts,color:pts<=3?'r':pts<=6?'a':'v'};});}
+function mostrarRes(){
+  const P=puntajes(),total=P.reduce((a,x)=>a+x.pts,0);
+  const orden=[...P].sort((a,b)=>a.pts-b.pts||FRENTES.indexOf(a.f)-FRENTES.indexOf(b.f));
+  const peor=orden[0],rojos=P.filter(x=>x.color==='r').length,verdes=P.filter(x=>x.color==='v').length;
+  $('res-t').innerHTML=verdes===4?'Estás adelante. <b>Ahora, que no se afloje.</b>':rojos>=3?'Hay mucho por ordenar, <b>y se empieza por uno solo.</b>':rojos>=1?`Lo primero es <b>${peor.f.n.toLowerCase()}.</b>`:`Tenés base. <b>Lo que sigue es ${peor.f.n.toLowerCase()}.</b>`;
+  $('res-l').textContent=`${total} de 36 puntos. Lo que importa no es el total: es qué frente está más flojo, porque cada uno se apoya en el anterior. ${S.puerta==='grande'?'En una empresa grande esto se lee por área; el resultado vale para el área que tenías en la cabeza al contestar.':''}`;
+  $('sem').innerHTML=P.map(x=>`<div><span class="luz ${x.color}" aria-hidden="true"></span><b>${x.f.n}</b><small>${x.f.pregunta}</small><p>${TXT[x.f.id][x.color]}</p><span class="pts">${x.pts} de 9</span></div>`).join('');
+  const s=peor.f;
+  $('empieza').innerHTML=`<div><div class="k">Por acá se empieza</div><h2>${s.n}: <b>${s.servN.toLowerCase()}.</b></h2><p>${{
+    medir:'Primero, los números en una sola pantalla, conectados a tus fuentes, y una reunión fija para mirarlos. Sin eso, lo demás es opinión.',
+    entender:'Con los números a mano, lo que sigue es saber dónde ganás y dónde perdés: margen por línea y por cliente, y la caja proyectada.',
+    decidir:'Los números están. Lo que falta es una rutina para decidir con ellos: reunión fija, prioridades escritas, un equipo que resuelve sin vos.',
+    ajustar:'Tenés base para que la inteligencia artificial rinda de verdad: un primer caso de uso, en producción, medido y con reglas.'
+  }[s.id]}</p><div class="acc"><a class="cta" href="servicio.html?s=${s.serv}">Ver cómo lo hacemos</a><a class="sec" href="contacto.html?puerta=${S.puerta}">Hablar con nosotros</a></div></div><div><p style="margin:0;font-family:var(--d);font-size:clamp(20px,2.2vw,28px);line-height:1.2;color:#fff;font-weight:500">Cada nueva versión supera a la anterior. Esta es la primera.</p></div>`;
+  if(S.marcados.length){const t=$('tilde');t.hidden=false;t.innerHTML=`<b>Lo que marcaste en el sitio:</b><ul>${S.marcados.map(k=>`<li>${PROBLEMAS[k]||k}</li>`).join('')}</ul>`;}
+  ir('res');medir('diag_submit',{total,peor:peor.f.id,rojos,puerta:S.puerta});
+  // resumen para el mail
+  S.resumen=P.map(x=>`${x.f.n}: ${x.pts}/9 (${{r:'rojo',a:'amarillo',v:'verde'}[x.color]})`).join(' · ')+` · empezar por ${peor.f.n}`;guardar();
+}
+$('denuevo').addEventListener('click',()=>{S.r=[];S.i=0;guardar();ir('portada');$('empezar').textContent='Empezar';});
+
+/* Mail para la devolución escrita */
+const f=$('f'),msg=$('msg');
+f.addEventListener('submit',async e=>{
+  e.preventDefault();
+  const d=Object.fromEntries(new FormData(f).entries());
+  if(!d.nombre.trim()||!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(d.mail)){msg.className='msg mal';msg.textContent='Necesitamos tu nombre y un mail válido.';return;}
+  const detalle=PREG.map((p,i)=>`${i+1}. ${p[S.puerta]} → ${S.r[i]?.v==='si'?'Sí ('+(S.r[i].c||'')+')':'No'}`).join('\n');
+  const marc=S.marcados.map(k=>PROBLEMAS[k]||k).join('; ');
+  const cuerpo={tipo:'autoevaluacion',nombre:d.nombre,mail:d.mail,empresa:d.empresa,tamano:S.puerta==='grande'?'Empresa grande':'Pyme',decide:'',mensaje:`Resultado: ${S.resumen}\nMarcado en el sitio: ${marc||'nada'}\nOrigen: ${S.origen||'directo'} / ${S.cta||''}\n\n${detalle}`,web:d.web||''};
+  const b=f.querySelector('button');b.disabled=true;msg.className='msg';msg.textContent='Enviando…';
+  try{
+    const r=await fetch('/api/contacto',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(cuerpo)});
+    const j=await r.json().catch(()=>({}));if(!r.ok||!j.ok)throw new Error(j.error||'sin servicio');
+    msg.className='msg ok';msg.textContent='Recibido. En dos o tres días te llega la devolución.';medir('diag_mail',{ok:true});
+  }catch(err){
+    location.href=`mailto:${COMUN.MAIL}?subject=${encodeURIComponent('Devolución del diagnóstico · '+d.nombre)}&body=${encodeURIComponent(cuerpo.mensaje)}`;
+    msg.className='msg';msg.textContent='Se abrió tu programa de mail con el resultado listo para enviar.';medir('diag_mail',{ok:false});
+  }finally{b.disabled=false;}
+});
+
+/* Arranque */
+if(S.r.length>=12&&!Q.get('p')){mostrarRes();}else ir('portada');
+</script>
+</body>
+</html>

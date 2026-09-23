@@ -7,6 +7,11 @@
 <title>Servicios. ITERAR Consulting</title>
 <meta name="description" content="Tableros de control, análisis financiero, inteligencia artificial y pensamiento estratégico para pymes y grandes empresas.">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ITERAR Consulting">
+<meta property="og:title" content="Servicios · ITERAR Consulting">
+<meta property="og:description" content="Tableros de control, análisis financiero, inteligencia artificial y pensamiento estratégico para pymes y grandes empresas.">
+<meta property="og:image" content="og-image.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
@@ -26,6 +31,9 @@ p{text-wrap:pretty}
 .marca .logo-mark{width:34px;height:34px;overflow:visible}
 .marca b{font-family:var(--d);font-weight:700;font-size:19px}
 .nav nav{display:flex;gap:6px;flex-wrap:wrap}
+:focus-visible{outline:2px solid var(--cielo);outline-offset:3px;border-radius:6px}
+.cta small{font-weight:400;opacity:.7}
+.tabs-m{display:none}
 .nav nav a{text-decoration:none;font-size:14px;color:var(--tx-2);padding:8px 12px;border-radius:999px;border:1px solid transparent}
 .nav nav a.on{color:var(--tx);border-color:var(--linea);background:var(--panel)}
 .nav nav a:hover{color:var(--tx)}
@@ -71,28 +79,29 @@ section.b h2{font-size:clamp(30px,4vw,54px);max-width:14em;margin-bottom:26px}
 .otros a b{font-family:var(--d);font-size:20px}
 .otros a span{color:var(--tx-3);font-size:14px}
 footer{padding:24px 0 50px;font-size:13.5px;color:var(--tx-3);border-top:1px solid var(--linea)}
-@media (max-width:900px){.hero,.dos{grid-template-columns:1fr}.hero .img{aspect-ratio:16/10}.dos .fijo{position:static}.queda,.vuelta,.otros{grid-template-columns:1fr}.vuelta div{border-right:0;border-bottom:1px solid var(--linea)}.nav nav{display:none}}
+@media (max-width:900px){.hero,.dos{grid-template-columns:1fr}.hero .img{aspect-ratio:16/10}.dos .fijo{position:static}.queda,.vuelta,.otros{grid-template-columns:1fr}.vuelta div{border-right:0;border-bottom:1px solid var(--linea)}.nav nav{display:none}.nav .w{height:64px}.nav .cta small{display:none}
+  .tabs-m{display:flex;gap:6px;overflow-x:auto;padding:10px clamp(20px,4vw,48px);border-bottom:1px solid var(--linea);background:var(--fondo);-webkit-overflow-scrolling:touch;scrollbar-width:none}.tabs-m::-webkit-scrollbar{display:none}.tabs-m a{flex:none;text-decoration:none;font-size:14px;color:var(--tx-2);padding:10px 14px;border-radius:999px;border:1px solid var(--linea);min-height:44px;display:inline-flex;align-items:center}.tabs-m a.on{color:var(--tx);background:var(--panel);border-color:var(--cielo)}}
 </style>
 </head>
 <body>
-<header class="nav"><div class="w"><a class="marca" href="./"><span class="lg"></span><b>ITERAR</b></a><nav id="tabs"></nav><a class="cta ctad" href="#" style="padding:10px 16px;font-size:14.5px">Diagnóstico</a></div></header>
+<header class="nav"><div class="w"><a class="marca" href="./"><span class="lg"></span><b>ITERAR</b></a><nav id="tabs"></nav><a class="cta ctad" href="#" style="padding:10px 16px;font-size:14.5px">Hacer el diagnóstico <small>5 min, gratis</small></a></div><nav class="tabs-m" id="tabsm" aria-label="Servicios"></nav></header>
 <main class="w">
-  <section class="hero"><div><div class="k" id="k"></div><h1 id="h1"></h1><p class="lead" id="lead"></p><a class="cta ctad" href="#">Empezar por el diagnóstico</a></div><div class="img"><img id="img" alt=""></div></section>
+  <section class="hero"><div><div class="k" id="k"></div><h1 id="h1"></h1><p class="lead" id="lead"></p><a class="cta ctad" href="#">Hacer el diagnóstico <small>5 min, gratis</small></a></div><div class="img"><img id="img" alt=""></div></section>
   <section class="b"><div class="dos"><div class="fijo"><h2>Si te pasa esto, es para vos</h2></div><ul class="lista" id="pasa"></ul></div></section>
   <section class="b"><div class="dos"><div class="fijo"><h2>Qué hacemos</h2></div><ul class="lista" id="hacemos"></ul></div></section>
   <section class="b"><h2>Qué queda funcionando</h2><div class="queda" id="queda"></div></section>
   <section class="b"><h2>Cómo es la primera vuelta</h2><div class="vuelta" id="vuelta"></div></section>
   <section class="b faq"><h2>Preguntas frecuentes</h2><div id="faq"></div></section>
-  <section class="puerta"><h2>La primera vuelta son once preguntas.</h2><p>Cinco minutos, gratis, con devolución nuestra por mail. Sin vendedores.</p><a class="cta ctad" href="#">Hacer el diagnóstico</a></section>
+  <section class="puerta"><h2>La primera vuelta son doce preguntas.</h2><p>Cinco minutos, gratis, resultado al instante. Devolución escrita por nosotros si dejás el mail. Sin vendedores.</p><a class="cta ctad" href="#">Hacer el diagnóstico <small>5 min, gratis</small></a></section>
   <div class="otros" id="otros"></div>
 </main>
-<footer><div class="w">ITERAR Consulting · Buenos Aires · <a href="mailto:hola@iterarconsulting.com.ar" style="text-decoration:none">hola@iterarconsulting.com.ar</a></div></footer>
+<footer><div class="w">ITERAR Consulting · Buenos Aires · <a href="mailto:hola@iterarconsulting.com.ar" style="text-decoration:none">hola@iterarconsulting.com.ar</a> · <a href="contacto.html" style="text-decoration:none">Contacto</a> · <a href="para-empresas.html" style="text-decoration:none">Para empresas grandes</a></div></footer>
 <script src="marks.js"></script>
 <script src="comun.js"></script>
 <script>
 document.querySelectorAll('.lg').forEach(e=>e.outerHTML=COMUN.logo('A'));
 document.querySelectorAll('.logo-mark').forEach(s=>s.style.setProperty('--accent','#8FB0FF'));
-document.querySelectorAll('.ctad').forEach(a=>{a.href=COMUN.DIAGNOSTICO_URL;a.target='_blank';a.rel='noopener';});
+document.querySelectorAll('.ctad').forEach(a=>{a.href=COMUN.linkDiagnostico('servicio');a.addEventListener('click',()=>COMUN.medir('cta_diagnostico_click',{cta:'servicio'}));});
 const S={
  tableros:{k:'Tableros de control de gestión',h:'Un tablero <b>que se mira.</b>',lead:'Los indicadores que importan para dirigir, conectados a tus datos y en una sola pantalla. Con una reunión fija para mirarlos, porque un tablero que nadie abre es una planilla más.',img:'img/tablero-noche.webp',
   pasa:['Cerrás el mes y te enterás tarde de cómo fue.','Cada área tiene su planilla y los números no coinciden entre sí.','Sabés cuánto vendiste, pero no cuánto ganaste ni con qué.','Tomás decisiones con el saldo del banco como único dato.'],
@@ -121,14 +130,14 @@ const S={
 };
 const nombres={tableros:'Tableros',finanzas:'Finanzas',ia:'Inteligencia artificial',estrategia:'Estrategia'};
 const id=new URLSearchParams(location.search).get('s')||'tableros';const d=S[id]||S.tableros;
-document.title=d.k+'. ITERAR Consulting';
-document.getElementById('tabs').innerHTML=Object.keys(S).map(k=>`<a href="?s=${k}" class="${k===id?'on':''}">${nombres[k]}</a>`).join('');
+document.title=d.k+' · ITERAR Consulting';document.querySelector('meta[name=description]').content=d.lead;const ld=document.createElement('script');ld.type='application/ld+json';ld.textContent=JSON.stringify({'@context':'https://schema.org','@type':'FAQPage',mainEntity:d.faq.map(([q,a])=>({'@type':'Question',name:q,acceptedAnswer:{'@type':'Answer',text:a}}))});document.head.appendChild(ld);
+document.getElementById('tabs').innerHTML=document.getElementById('tabsm').innerHTML=Object.keys(S).map(k=>`<a href="?s=${k}" class="${k===id?'on':''}">${nombres[k]}</a>`).join('');COMUN.medir('servicio_view',{servicio:id});
 k.textContent=d.k;h1.innerHTML=d.h;lead.textContent=d.lead;img.src=d.img;
 pasa.innerHTML=d.pasa.map(t=>`<li><i>·</i><div><b>${t}</b></div></li>`).join('');
 hacemos.innerHTML=d.hacemos.map(([t,s])=>`<li><i>·</i><div><b>${t}</b><br><span>${s}</span></div></li>`).join('');
 queda.innerHTML=d.queda.map(([t,s])=>`<div><h3>${t}</h3><p>${s}</p></div>`).join('');
 vuelta.innerHTML=d.vuelta.map(([t,s])=>`<div><b>${t}</b><p>${s}</p></div>`).join('');
-faq.innerHTML=d.faq.map(([q,a],i)=>`<details${i===0?' open':''}><summary>${q}</summary><p>${a}</p></details>`).join('');
+faq.innerHTML=d.faq.map(([q,a],i)=>`<details${i===0?' open':''}><summary>${q}</summary><p>${a}</p></details>`).join('');faq.querySelectorAll('details').forEach(x=>x.addEventListener('toggle',()=>{if(x.open)COMUN.medir('faq_open',{pregunta:x.querySelector('summary').textContent});}));
 otros.innerHTML=Object.keys(S).filter(k=>k!==id).map(k=>`<a href="?s=${k}"><span>También</span><b>${S[k].h.replace(/<[^>]+>/g,'')}</b></a>`).join('');
 </script>
 </body>

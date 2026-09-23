@@ -4,42 +4,61 @@
 <meta charset="utf-8">
 <meta name="robots" content="noindex,nofollow">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Contacto. ITERAR Consulting</title>
-<meta name="description" content="Empezá por el diagnóstico gratuito o contanos en dos líneas qué querés resolver.">
+<title>Contacto · ITERAR Consulting</title>
+<meta name="description" content="Empezá por el diagnóstico gratuito o contanos en dos líneas qué querés resolver. Respondemos nosotros dos.">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://iterarconsulting.com.ar/contacto">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ITERAR Consulting">
+<meta property="og:title" content="Contacto · ITERAR Consulting">
+<meta property="og:description" content="Contanos en dos líneas qué querés resolver. Respondemos Luciano o Matías, no un vendedor.">
+<meta property="og:image" content="og-image.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{--fondo:#0B0D14;--panel:#11141F;--tx:#F3F4F8;--tx-2:#AEB3C7;--tx-3:#7A8099;--linea:rgba(243,244,248,.14);--azul:#2F4CFF;--azul-2:#2340E8;--cielo:#8FB0FF;--ok:#3DBE8B;--mal:#F0705A;--d:"Bricolage Grotesque",sans-serif;--t:"Instrument Sans",system-ui,sans-serif}
 *{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
 body{margin:0;background:var(--fondo);color:var(--tx);font-family:var(--t);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
 a{color:inherit}
 h1,h2{margin:0;font-family:var(--d);font-weight:600;letter-spacing:-.02em;line-height:1.05}
+:focus-visible{outline:2px solid var(--cielo);outline-offset:3px;border-radius:6px}
 .w{max-width:1160px;margin:0 auto;padding:0 clamp(20px,4vw,48px)}
-header.top{padding:28px 0 0}
+header.top{padding:22px 0 0}
 header.top .w{display:flex;justify-content:space-between;align-items:center;gap:20px}
 .marca{display:flex;align-items:center;gap:12px;text-decoration:none}
 .marca .logo-mark{width:34px;height:34px;overflow:visible}
 .marca b{font-family:var(--d);font-weight:700;font-size:19px}
-header.top a.v{font-size:14.5px;color:var(--tx-2);text-decoration:none;border-bottom:1px solid var(--linea)}
-main .w{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(30px,5vw,80px);padding:clamp(50px,9vh,100px) clamp(20px,4vw,48px) 90px;align-items:start}
+header.top a.v{font-size:14.5px;color:var(--tx-2);text-decoration:none;border-bottom:1px solid var(--linea);min-height:44px;display:inline-flex;align-items:center}
+main .w{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(30px,5vw,80px);padding:clamp(40px,8vh,90px) clamp(20px,4vw,48px) 90px;align-items:start}
 h1{font-size:clamp(34px,4.6vw,60px)}
 .lead{color:var(--tx-2);font-size:18px;margin:20px 0 28px;max-width:26em}
-.cta{display:inline-flex;align-items:center;gap:10px;background:var(--tx);color:var(--fondo);text-decoration:none;font-weight:600;padding:14px 20px;border-radius:999px}
+.cta{display:inline-flex;align-items:center;gap:10px;background:var(--tx);color:var(--fondo);text-decoration:none;font-weight:600;padding:14px 20px;border-radius:999px;min-height:48px}
 .cta:hover{background:#fff}
+.cta small{font-weight:400;opacity:.7}
 .datos{margin-top:34px;padding-top:22px;border-top:1px solid var(--linea);display:grid;gap:8px;font-size:15px;color:var(--tx-2)}
 .datos b{color:var(--tx);font-weight:600}
 .datos a{text-decoration:none}
+.wa{display:none;align-items:center;gap:10px;margin-top:18px;text-decoration:none;font-weight:600;border:1px solid var(--linea);border-radius:999px;padding:12px 18px;min-height:48px;width:max-content}
+.wa.on{display:inline-flex}
+.wa svg{width:22px;height:22px}
+.seg{display:inline-flex;border:1px solid var(--linea);border-radius:999px;padding:4px;background:var(--panel);margin-bottom:22px}
+.seg button{font:inherit;font-weight:600;font-size:14px;background:none;border:0;color:var(--tx-2);padding:9px 16px;border-radius:999px;cursor:pointer;min-height:42px;transition:background .2s,color .2s}
+.seg button[aria-pressed="true"]{background:var(--tx);color:var(--fondo)}
+body[data-puerta="pyme"] [data-p="grande"]{display:none!important}
+body[data-puerta="grande"] [data-p="pyme"]{display:none!important}
 form{background:var(--panel);border:1px solid var(--linea);border-radius:14px;padding:clamp(20px,3vw,34px);display:grid;gap:16px}
 form h2{font-size:22px;margin-bottom:4px}
 label{display:grid;gap:6px;font-size:14px;font-weight:600}
-input,select,textarea{font:inherit;font-size:15.5px;color:var(--tx);background:#0E1119;border:1px solid var(--linea);border-radius:8px;padding:12px 14px;width:100%}
+label .ob{color:var(--cielo);font-weight:400}
+input,select,textarea{font:inherit;font-size:16px;color:var(--tx);background:#0E1119;border:1px solid var(--linea);border-radius:8px;padding:12px 14px;width:100%;min-height:48px}
 input:focus,select:focus,textarea:focus{outline:2px solid var(--azul);border-color:var(--azul)}
+input[aria-invalid="true"]{border-color:var(--mal)}
 select option{color:#000}
 .dos{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-button{font:inherit;font-weight:600;font-size:16px;background:var(--azul);color:#fff;border:0;padding:15px;border-radius:999px;cursor:pointer}
-button:hover{background:var(--azul-2)}
+button[type=submit]{font:inherit;font-weight:600;font-size:16px;background:var(--azul);color:#fff;border:0;padding:15px;border-radius:999px;cursor:pointer;min-height:48px}
+button[type=submit]:hover{background:var(--azul-2)}
 button[disabled]{opacity:.6;cursor:wait}
 .msg{font-size:14px;min-height:1.4em}
 .msg.ok{color:var(--ok)}.msg.mal{color:var(--mal)}
@@ -48,25 +67,36 @@ small.p{color:var(--tx-3);font-size:12.5px}
 @media (max-width:900px){main .w{grid-template-columns:1fr}.dos{grid-template-columns:1fr}}
 </style>
 </head>
-<body>
+<body data-puerta="pyme">
 <header class="top"><div class="w"><a class="marca" href="./"><span class="lg"></span><b>ITERAR</b></a><a class="v" href="./">Volver al sitio</a></div></header>
 <main><div class="w">
   <div>
-    <h1>Empecemos por entender tu negocio.</h1>
-    <p class="lead">La forma más rápida es el diagnóstico: once preguntas, cinco minutos, y una devolución nuestra por mail en dos o tres días, gratis. Si preferís contarnos con tus palabras, usá el formulario.</p>
-    <a class="cta ctad" href="#">Hacer el diagnóstico gratuito</a>
+    <div class="seg" role="group" aria-label="Tipo de empresa"><button type="button" data-puerta="pyme" aria-pressed="true">Soy dueño de una pyme</button><button type="button" data-puerta="grande" aria-pressed="false">Empresa grande</button></div>
+    <div data-p="pyme">
+      <h1>Empecemos por entender tu negocio.</h1>
+      <p class="lead">La forma más rápida es el diagnóstico: doce preguntas de sí o no, cinco minutos, resultado al instante y una devolución escrita por nosotros si dejás el mail. Si preferís contarnos con tus palabras, usá el formulario.</p>
+      <a class="cta ctad" href="autoevaluacion.html">Hacer el diagnóstico <small>5 min, gratis</small></a>
+    </div>
+    <div data-p="grande">
+      <h1>Contanos en qué área está el problema.</h1>
+      <p class="lead">Respondemos nosotros dos. Te decimos si podemos ayudar y cómo sería una primera vuelta: qué queda funcionando, quién lo mantiene y qué datos no salen de la empresa. Si tenés que reenviarle algo a quien aprueba, <a href="para-empresas.html">acá hay una hoja</a>.</p>
+      <a class="cta" href="para-empresas.html">Ver cómo trabajamos con empresas grandes</a>
+    </div>
+    <a class="wa" id="wa" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.6.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 12 12 0 0 0 4.6 4c1.7.7 2.4.8 3.2.7a2.8 2.8 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3z"/></svg>Escribinos por WhatsApp</a>
     <div class="datos"><span><b>Mail</b> <a href="mailto:hola@iterarconsulting.com.ar">hola@iterarconsulting.com.ar</a></span><span><b>Ubicación</b> Buenos Aires, Argentina. Presencial y remoto.</span><span><b>Quién responde</b> Luciano o Matías, no un vendedor.</span></div>
   </div>
   <form id="f" novalidate>
-    <h2>Contanos en dos líneas qué querés resolver</h2>
-    <div class="dos"><label>Nombre<input id="c-nombre" name="nombre" required autocomplete="name"></label><label>Mail<input id="c-mail" name="mail" type="email" required autocomplete="email"></label></div>
+    <h2 data-p="pyme">Contanos en dos líneas qué querés resolver</h2>
+    <h2 data-p="grande">Contanos el proyecto</h2>
+    <div class="dos"><label>Nombre <span class="ob">obligatorio</span><input id="c-nombre" name="nombre" required autocomplete="name"></label><label>Mail <span class="ob">obligatorio</span><input id="c-mail" name="mail" type="email" required autocomplete="email" inputmode="email"></label></div>
     <div class="dos"><label>Empresa y rubro<input id="c-empresa" name="empresa" autocomplete="organization" placeholder="Por ejemplo: distribuidora de alimentos"></label><label>Cantidad de personas<select id="c-tamano" name="tamano"><option>Menos de 10</option><option>10 a 50</option><option>50 a 200</option><option>Más de 200</option></select></label></div>
-    <label>¿Qué te gustaría tener resuelto en los próximos meses?<textarea id="c-mensaje" name="mensaje" rows="4" placeholder="Con dos líneas alcanza"></textarea></label>
+    <label data-p="grande">Área y sistemas que hay hoy<input id="c-area" name="area" placeholder="Por ejemplo: administración; SAP y planillas"></label>
+    <label><span data-p="pyme">¿Qué te gustaría tener resuelto en los próximos meses?</span><span data-p="grande">¿Qué problema querés resolver primero?</span><textarea id="c-mensaje" name="mensaje" rows="4" placeholder="Con dos líneas alcanza"></textarea></label>
     <label>¿Quién más decide esto con vos? <span style="font-weight:400;color:var(--tx-3)">(opcional)</span><input id="c-decide" name="decide" placeholder="Por ejemplo: mi socio, la gerente de administración"></label>
     <label class="trampa" aria-hidden="true">Web<input name="web" tabindex="-1" autocomplete="off"></label>
     <button type="submit">Enviar</button>
     <div class="msg" id="msg" aria-live="polite"></div>
-    <small class="p">Qué pasa después: lo leemos nosotros dos y te respondemos por mail. No compartimos tus datos con nadie. Si preferís arrancar ya, el diagnóstico de cinco minutos está a la izquierda.</small>
+    <small class="p">Qué pasa después: lo leemos nosotros dos y te respondemos por mail. No compartimos tus datos con nadie.</small>
   </form>
 </div></main>
 <script src="marks.js"></script>
@@ -74,23 +104,31 @@ small.p{color:var(--tx-3);font-size:12.5px}
 <script>
 document.querySelectorAll('.lg').forEach(e=>e.outerHTML=COMUN.logo('A'));
 document.querySelectorAll('.logo-mark').forEach(s=>s.style.setProperty('--accent','#8FB0FF'));
-document.querySelectorAll('.ctad').forEach(a=>{a.href=COMUN.DIAGNOSTICO_URL;a.target='_blank';a.rel='noopener';});
+const setPuerta=(p,guardar)=>{document.body.dataset.puerta=p;document.querySelectorAll('.seg button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.puerta===p));if(guardar)COMUN.puerta(p);if(p==='grande')document.getElementById('c-tamano').value='Más de 200';};
+document.querySelectorAll('.seg button').forEach(b=>b.addEventListener('click',()=>setPuerta(b.dataset.puerta,true)));
+setPuerta(COMUN.puerta(),false);
+document.querySelectorAll('.ctad').forEach(a=>{a.href=COMUN.linkDiagnostico('contacto');a.addEventListener('click',()=>COMUN.medir('cta_diagnostico_click',{cta:'contacto'}));});
+const wa=document.getElementById('wa'),lw=COMUN.linkWhatsApp('Hola, vengo del sitio de ITERAR y quiero hacer una consulta.');if(lw){wa.href=lw;wa.classList.add('on');wa.addEventListener('click',()=>COMUN.medir('whatsapp_click',{cta:'contacto'}));}
 const f=document.getElementById('f'),msg=document.getElementById('msg');
 f.addEventListener('submit',async e=>{
   e.preventDefault();
   const d=Object.fromEntries(new FormData(f).entries());
-  if(!d.nombre.trim()||!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(d.mail)){msg.className='msg mal';msg.textContent='Necesitamos tu nombre y un mail válido.';return;}
-  const b=f.querySelector('button');b.disabled=true;msg.className='msg';msg.textContent='Enviando…';
+  const nombreOk=!!d.nombre.trim(),mailOk=/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(d.mail);
+  document.getElementById('c-nombre').setAttribute('aria-invalid',!nombreOk);document.getElementById('c-mail').setAttribute('aria-invalid',!mailOk);
+  if(!nombreOk||!mailOk){msg.className='msg mal';msg.textContent=!nombreOk?'Falta tu nombre.':'El mail no parece válido.';(nombreOk?document.getElementById('c-mail'):document.getElementById('c-nombre')).focus();return;}
+  d.tipo=document.body.dataset.puerta==='grande'?'empresa-grande':'contacto';
+  if(d.area)d.mensaje=`Área y sistemas: ${d.area}\n\n${d.mensaje}`;
+  const b=f.querySelector('button[type=submit]');b.disabled=true;msg.className='msg';msg.textContent='Enviando…';
   try{
     const r=await fetch('/api/contacto',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(d)});
     const j=await r.json().catch(()=>({}));
     if(!r.ok||!j.ok) throw new Error(j.error||'sin servicio');
-    msg.className='msg ok';msg.textContent='Recibido. Lo leemos nosotros y te respondemos por mail.';f.reset();
+    msg.className='msg ok';msg.textContent='Recibido. Lo leemos nosotros y te respondemos por mail.';f.reset();COMUN.medir('contacto_submit',{ok:true,tipo:d.tipo});
   }catch(err){
     // sin backend (maqueta local) o falla del servicio: se abre el mail con todo escrito
     const cuerpo=encodeURIComponent(`Nombre: ${d.nombre}\nEmpresa y rubro: ${d.empresa}\nMail: ${d.mail}\nPersonas: ${d.tamano}\nTambién decide: ${d.decide}\n\n${d.mensaje}`);
-    location.href=`mailto:hola@iterarconsulting.com.ar?subject=${encodeURIComponent('Consulta de '+d.nombre)}&body=${cuerpo}`;
-    msg.className='msg';msg.textContent='Se abrió tu programa de mail con la consulta lista para enviar.';
+    location.href=`mailto:${COMUN.MAIL}?subject=${encodeURIComponent('Consulta de '+d.nombre)}&body=${cuerpo}`;
+    msg.className='msg';msg.textContent='Se abrió tu programa de mail con la consulta lista para enviar. Si no se abrió, escribinos a '+COMUN.MAIL+'.';COMUN.medir('contacto_submit',{ok:false,tipo:d.tipo});
   }finally{b.disabled=false;}
 });
 </script>

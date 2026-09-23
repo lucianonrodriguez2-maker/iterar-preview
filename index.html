@@ -4,21 +4,22 @@
 <meta charset="utf-8">
 <meta name="robots" content="noindex,nofollow">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>ITERAR Consulting. Tu competencia ya usa inteligencia artificial.</title>
-<!-- Sitio definitivo: base ruta 7 (oscura) + comparador de la ruta 6 + pico del logo de la ruta 5 -->
-<meta name="description" content="Consultora en Buenos Aires: inteligencia artificial, tableros de control, análisis financiero y pensamiento estratégico en ciclos cortos.">
+<title>ITERAR Consulting · Inteligencia artificial y tableros de control para pymes y empresas</title>
+<!-- Sitio definitivo: base ruta 7 (oscura) + comparador de la ruta 6 + pico del logo de la ruta 5. Informe 10 aplicado el 23/9/2026. -->
+<meta name="description" content="Consultora en Buenos Aires: inteligencia artificial, tableros de control, análisis financiero y pensamiento estratégico en ciclos cortos. Tu competencia ya usa IA: empezá por el diagnóstico gratuito de 5 minutos.">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="icono-180.png">
 <link rel="manifest" href="site.webmanifest">
 <meta name="theme-color" content="#2340E8">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="ITERAR Consulting">
-<meta property="og:title" content="ITERAR Consulting. Tu empresa mejora por vueltas.">
-<meta property="og:description" content="Inteligencia artificial, tableros de control y análisis financiero implementados en ciclos cortos, para pymes y grandes empresas. Buenos Aires.">
+<meta property="og:title" content="Tu competencia ya usa inteligencia artificial. ¿Vos qué estás esperando?">
+<meta property="og:description" content="Inteligencia artificial, tableros de control y análisis financiero implementados en ciclos cortos, para pymes y empresas grandes. Buenos Aires. Diagnóstico gratuito de 5 minutos.">
 <meta property="og:image" content="og-image.png">
+<meta property="og:url" content="https://iterarconsulting.com.ar/">
 <meta property="og:locale" content="es_AR">
 <meta name="twitter:card" content="summary_large_image">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"ITERAR Consulting","description":"Consultora de implementación de inteligencia artificial, tableros de control de gestión, análisis financiero y pensamiento estratégico para pymes y grandes empresas.","url":"https://iterarconsulting.com.ar/","areaServed":"AR","address":{"@type":"PostalAddress","addressLocality":"Buenos Aires","addressCountry":"AR"},"founder":[{"@type":"Person","name":"Luciano Rodríguez"},{"@type":"Person","name":"Matías Gabrenja"}],"knowsAbout":["Inteligencia artificial para empresas","Tableros de control de gestión","Análisis financiero","Planificación estratégica"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"ITERAR Consulting","description":"Consultora de implementación de inteligencia artificial, tableros de control de gestión, análisis financiero y pensamiento estratégico para pymes y grandes empresas.","url":"https://iterarconsulting.com.ar/","logo":"https://iterarconsulting.com.ar/icono-512.png","image":"https://iterarconsulting.com.ar/og-image.png","email":"hola@iterarconsulting.com.ar","areaServed":"AR","address":{"@type":"PostalAddress","addressLocality":"Buenos Aires","addressCountry":"AR"},"founder":[{"@type":"Person","name":"Luciano Rodríguez"},{"@type":"Person","name":"Matías Gabrenja"}],"knowsAbout":["Inteligencia artificial para empresas","Tableros de control de gestión","Análisis financiero","Planificación estratégica"]}</script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,7 +28,7 @@
 <style>
 :root{
   --fondo:#0B0D14; --panel:#11141F; --panel-2:#171B29; --tx:#F3F4F8; --tx-2:#AEB3C7; --tx-3:#7A8099; --linea:rgba(243,244,248,.12);
-  --azul:#2F4CFF; --azul-2:#2340E8; --cielo:#8FB0FF; --claro:#EEF0F6;
+  --azul:#2F4CFF; --azul-2:#2340E8; --cielo:#8FB0FF; --claro:#EEF0F6; --ok:#3DBE8B; --medio:#F2B84B; --mal:#F0705A;
   --d:"Bricolage Grotesque",sans-serif; --t:"Instrument Sans",system-ui,sans-serif;
   --ease-out:cubic-bezier(.23,1,.32,1);
 }
@@ -42,10 +43,14 @@ p{text-wrap:pretty}
 #bg{position:fixed;inset:0;width:100%;height:100%;z-index:0;display:block}
 main{position:relative;z-index:1}
 .grano{position:fixed;inset:0;pointer-events:none;z-index:60;opacity:.05;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:200px 200px}
+:focus-visible{outline:2px solid var(--cielo);outline-offset:3px;border-radius:4px}
+.saltar{position:absolute;left:-9999px;top:12px;z-index:100;background:var(--tx);color:var(--fondo);padding:10px 16px;border-radius:999px;font-weight:600;text-decoration:none}
+.saltar:focus{left:16px}
 
 /* nav */
-.nav{position:fixed;top:0;left:0;right:0;z-index:50;transition:transform .5s var(--ease-out)}
+.nav{position:fixed;top:0;left:0;right:0;z-index:50;transition:transform .5s var(--ease-out),background .3s}
 .nav.oculto{transform:translateY(-110%)}
+.nav.solido{background:rgba(11,13,20,.82);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid var(--linea)}
 .nav .w{display:flex;align-items:center;justify-content:space-between;height:76px}
 .marca{display:flex;align-items:center;gap:12px;text-decoration:none}
 .marca .logo-mark{width:36px;height:36px;overflow:visible}
@@ -53,33 +58,44 @@ main{position:relative;z-index:1}
 .marca:hover .logo-mark .c{animation:vuelta 1.2s cubic-bezier(.6,0,.15,1) 1}
 @keyframes vuelta{from{transform:rotate(0)}to{transform:rotate(360deg)}}
 .marca b{font-family:var(--d);font-weight:700;font-size:20px;letter-spacing:.02em}
-.nav nav{display:flex;align-items:center;gap:clamp(16px,2.2vw,30px);font-size:15px;font-weight:500;background:rgba(17,20,31,.55);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid var(--linea);border-radius:999px;padding:6px 8px 6px 20px}
+.nav nav{display:flex;align-items:center;gap:clamp(14px,2vw,26px);font-size:15px;font-weight:500;background:rgba(17,20,31,.55);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid var(--linea);border-radius:999px;padding:6px 8px 6px 20px}
 .nav nav a{text-decoration:none;color:var(--tx-2);transition:color .2s}
 .nav nav a:hover{color:var(--tx)}
 .nav nav .cta{color:var(--fondo);background:var(--tx);border-radius:999px;padding:9px 14px;font-weight:600}
 .nav nav .cta:hover{background:#fff;color:var(--fondo)}
+.nav nav .cta small{display:none}
+@media (min-width:981px) and (max-width:1260px){.nav nav a.mid{display:none}}
 .menu{display:none}
-.cta{display:inline-flex;align-items:center;gap:12px;background:var(--tx);color:var(--fondo);text-decoration:none;font-weight:600;padding:15px 22px;border-radius:999px;will-change:transform;transition:background .2s}
+.cta{display:inline-flex;align-items:center;gap:12px;background:var(--tx);color:var(--fondo);text-decoration:none;font-weight:600;padding:15px 22px;border-radius:999px;will-change:transform;transition:background .2s;min-height:44px}
 .cta:hover{background:#fff}
 .cta.az{background:var(--azul);color:#fff}.cta.az:hover{background:var(--azul-2)}
 .cta small{font-weight:400;opacity:.7}
+.sec{display:inline-flex;align-items:center;padding:14px 22px;border:1px solid var(--linea);border-radius:999px;text-decoration:none;font-weight:600;color:var(--tx);transition:border-color .2s;min-height:44px}
+.sec:hover{border-color:var(--tx)}
 
 /* hero */
 .hero{min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;padding-top:120px}
 .hero .w{padding-bottom:clamp(30px,6vh,60px)}
 .hero h1{font-size:clamp(44px,6.6vw,108px);font-weight:500}
-.hero h1 .l{display:block;min-height:1em}
-.hero h1 .l{white-space:nowrap}
+.hero h1 .l{display:block;min-height:1em;white-space:nowrap}
 .hero h1 .l b{font-weight:700;color:var(--cielo)}
 .hero .fila{display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:32px;align-items:end;margin-top:34px}
 .hero .bajada{font-size:clamp(17px,1.35vw,21px);color:var(--tx-2);max-width:30em;margin:0}
+.hero .bajada b{color:var(--tx);font-weight:600}
 .hero .acc{display:flex;gap:14px;flex-wrap:wrap;justify-content:flex-end}
-.hero .acc .sec{display:inline-flex;align-items:center;padding:15px 22px;border:1px solid var(--linea);border-radius:999px;text-decoration:none;font-weight:600;color:var(--tx);transition:border-color .2s}
-.hero .acc .sec:hover{border-color:var(--tx)}
 .senal{margin-top:clamp(30px,6vh,60px);border-top:1px solid var(--linea);padding-top:18px;display:flex;gap:14px 40px;flex-wrap:wrap;font-size:14px;color:var(--tx-3)}
 .senal b{color:var(--tx);font-weight:600;font-variant-numeric:tabular-nums}
 .senal .vivo{color:var(--cielo);font-weight:600}
 
+/* dos puertas */
+.puertas{background:var(--fondo);border-top:1px solid var(--linea);padding:22px 0}
+.puertas .w{display:flex;align-items:center;justify-content:space-between;gap:16px 30px;flex-wrap:wrap}
+.puertas p{margin:0;font-family:var(--d);font-size:clamp(18px,1.6vw,22px);font-weight:500;letter-spacing:-.01em}
+.seg{display:inline-flex;border:1px solid var(--linea);border-radius:999px;padding:4px;background:var(--panel)}
+.seg button{font:inherit;font-weight:600;font-size:15px;background:none;border:0;color:var(--tx-2);padding:10px 18px;border-radius:999px;cursor:pointer;min-height:44px;transition:background .2s,color .2s}
+.seg button[aria-pressed="true"]{background:var(--tx);color:var(--fondo)}
+body[data-puerta="pyme"] [data-p="grande"]{display:none!important}
+body[data-puerta="grande"] [data-p="pyme"]{display:none!important}
 
 /* datos reales: el costo de esperar */
 .datos{background:var(--fondo);padding:clamp(80px,12vh,150px) 0;border-top:1px solid var(--linea)}
@@ -89,28 +105,26 @@ main{position:relative;z-index:1}
 .cifras div{border-top:1px solid var(--linea);padding-top:22px}
 .cifras b{display:block;font-family:var(--d);font-weight:600;font-size:clamp(52px,6.4vw,104px);line-height:.95;letter-spacing:-.04em;color:var(--tx)}
 .cifras p{margin:16px 0 0;color:var(--tx-2);font-size:17px;max-width:24em}
-.puente{font-family:var(--d);font-size:clamp(22px,2.4vw,34px);font-weight:500;letter-spacing:-.02em;line-height:1.15;margin:clamp(34px,6vh,60px) 0 0;max-width:22em}
+.puente{font-family:var(--d);font-size:clamp(22px,2.4vw,34px);font-weight:500;letter-spacing:-.02em;line-height:1.15;margin:clamp(34px,6vh,60px) 0 0;max-width:24em}
 .fuente-d{margin:clamp(30px,5vh,50px) 0 0;font-size:13px;color:var(--tx-3);max-width:60em}
+.fuente-d a{color:var(--tx-2)}
 
-/* ¿te pasa? */
+/* ¿te suena? */
 .pasa{background:var(--panel);color:var(--tx);padding:clamp(90px,14vh,170px) 0;border-top:1px solid var(--linea)}
 .pasa .w{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(30px,5vw,80px);align-items:start}
 .pasa h2{font-size:clamp(40px,6vw,92px);font-weight:700}
 .pasa .lead{font-size:19px;color:var(--tx-2);max-width:24em;margin:22px 0 0}
 .lista{border-top:1px solid var(--linea)}
-.lista label{display:flex;gap:18px;align-items:center;padding:18px 4px;border-bottom:1px solid var(--linea);cursor:pointer;transition:color .2s;font-size:clamp(18px,1.9vw,24px);font-weight:500;line-height:1.25;font-family:var(--d)}
-.lista input{appearance:none;width:26px;height:26px;border:2px solid var(--tx-3);border-radius:50%;flex:none;margin:0;cursor:pointer;display:grid;place-items:center;transition:background .15s}
+.lista label{display:flex;gap:18px;align-items:flex-start;padding:18px 4px;border-bottom:1px solid var(--linea);cursor:pointer;transition:color .2s;font-size:clamp(18px,1.9vw,24px);font-weight:500;line-height:1.25;font-family:var(--d)}
+.lista input{appearance:none;width:26px;height:26px;border:2px solid var(--tx-3);border-radius:50%;flex:none;margin:2px 0 0;cursor:pointer;display:grid;place-items:center;transition:background .15s}
 .lista input:checked{background:var(--azul);border-color:var(--azul)}
 .lista input:checked::after{content:"";width:10px;height:6px;border-left:2.5px solid #fff;border-bottom:2.5px solid #fff;transform:rotate(-45deg) translate(1px,-1px)}
 .lista .sol{display:none;font-family:var(--t);font-size:15.5px;font-weight:400;color:var(--tx-2);margin-top:6px;line-height:1.4}
 .lista label:has(input:checked) .sol{display:block}
-.lista label{align-items:flex-start}
-.lista input{margin-top:2px}
 .sigue{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;margin-top:26px}
 .sigue span{color:var(--tx-2);font-size:16px}
 .lista label:has(input:checked){color:var(--cielo)}
 @media (hover:hover) and (pointer:fine){.lista label:hover input{border-color:var(--tx)}}
-
 
 /* diagnóstico como producto */
 .diag{background:var(--panel);padding:0 0 clamp(80px,12vh,150px)}
@@ -120,11 +134,14 @@ main{position:relative;z-index:1}
 .diag h2 b{font-weight:700;color:#C9D1FF}
 .diag .izq p{color:#DCE1FF;font-size:18px;max-width:28em;margin:18px 0 26px}
 .diag .izq .chico{font-size:14px;margin:14px 0 0;color:#C9D1FF}
+.diag .acc{display:flex;gap:12px;flex-wrap:wrap}
+.diag .sec{border-color:rgba(255,255,255,.4);color:#fff}
 .diag .rec{list-style:none;margin:0;padding:0;display:grid;gap:0}
 .diag .rec li{display:grid;grid-template-columns:minmax(0,9em) 1fr;gap:18px;padding:18px 0;border-top:1px solid rgba(255,255,255,.22);align-items:baseline}
 .diag .rec li:last-child{border-bottom:1px solid rgba(255,255,255,.22)}
 .diag .rec b{font-family:var(--d);font-size:clamp(22px,2.2vw,30px);font-weight:600;letter-spacing:-.02em;line-height:1.05}
 .diag .rec span{color:#DCE1FF;font-size:16px}
+.diag .rec a{color:#fff}
 
 /* comparador (oscuro) */
 .comp{background:var(--fondo);padding:clamp(90px,14vh,170px) 0 0}
@@ -132,24 +149,26 @@ main{position:relative;z-index:1}
 .comp h2{font-size:clamp(34px,4.8vw,70px)}
 .comp h2 b{font-weight:700;color:var(--cielo)}
 .comp .cab p{margin:0;font-size:18px;color:var(--tx-2);max-width:32em}
-.slider{position:relative;aspect-ratio:16/9;background:#E9EBF2;color:#0B0D14;border:1px solid var(--linea);border-radius:14px;overflow:hidden;user-select:none;touch-action:pan-y}
-.capa{position:absolute;inset:0;padding:clamp(14px,2.4vw,34px)}
+.slider{position:relative;display:grid;min-height:min(56vw,620px);background:#E9EBF2;color:#0B0D14;border:1px solid var(--linea);border-radius:14px;overflow:hidden;user-select:none;touch-action:pan-y}
+.capa{grid-area:1/1;padding:clamp(14px,2.4vw,34px)}
 .capa.b{clip-path:inset(0 0 0 50%);background:var(--panel);color:var(--tx)}
 .capa .et{position:absolute;top:14px;font-size:12px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:6px 10px;border-radius:999px}
 .capa.a .et{left:14px;background:#0B0D14;color:#fff}
 .capa.b .et{right:14px;background:var(--azul);color:#fff}
-.manija{position:absolute;top:0;bottom:0;left:50%;width:2px;background:var(--cielo);transform:translateX(-1px);cursor:ew-resize}
+.manija{position:absolute;top:0;bottom:0;left:50%;width:44px;margin-left:-22px;cursor:ew-resize;touch-action:none;background:none}
+.manija::before{content:"";position:absolute;top:0;bottom:0;left:50%;width:2px;margin-left:-1px;background:var(--cielo)}
 .manija::after{content:"";position:absolute;top:50%;left:50%;width:54px;height:54px;border-radius:50%;background:var(--azul);transform:translate(-50%,-50%);box-shadow:0 10px 30px -8px rgba(47,76,255,.7);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='2.2'%3E%3Cpath d='M8 7l-4 5 4 5M16 7l4 5-4 5'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:center;background-size:22px}
-table.crudo{width:100%;border-collapse:collapse;font-size:clamp(11px,1.15vw,15px);font-variant-numeric:tabular-nums;margin-top:44px}
+.manija:focus-visible{outline:0}.manija:focus-visible::after{outline:3px solid #fff;outline-offset:2px}
+table.crudo{width:100%;border-collapse:collapse;font-size:clamp(12px,1.15vw,15px);font-variant-numeric:tabular-nums;margin-top:44px}
 table.crudo th,table.crudo td{border:1px solid rgba(11,13,20,.16);padding:.5em .7em;text-align:right}
 table.crudo th:first-child,table.crudo td:first-child{text-align:left}
 table.crudo th{background:#DADDE8;font-weight:600}
 .tab{margin-top:44px;display:grid;gap:12px}
 .kp{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
 .kp div{border:1px solid var(--linea);border-radius:10px;padding:10px 12px}
-.kp small{display:block;font-size:11.5px;color:var(--tx-3)}
+.kp small{display:block;font-size:12px;color:var(--tx-3)}
 .kp b{font-family:var(--d);font-size:clamp(20px,2.4vw,34px);font-weight:600;letter-spacing:-.02em;line-height:1.1}
-.kp i{font-style:normal;font-size:12px;font-weight:600;color:#3DBE8B}
+.kp i{font-style:normal;font-size:12px;font-weight:600;color:var(--ok)}
 .gr{border:1px solid var(--linea);border-radius:10px;padding:10px 12px}
 .gr svg{display:block;width:100%;height:auto}
 .gr figcaption{font-size:12px;color:var(--tx-3);margin-bottom:4px;display:flex;justify-content:space-between}
@@ -159,26 +178,26 @@ table.crudo th{background:#DADDE8;font-weight:600}
 .ad-pie b{color:var(--tx);font-weight:600}
 .comp .nota{margin:16px 0 0;font-size:14px;color:var(--tx-3)}
 
-/* pico: el logo se dibuja */
-.pico{background:var(--panel);position:relative}
-.pico .esc{height:100svh;padding-top:70px;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);align-items:center;gap:clamp(20px,4vw,60px);overflow:hidden}
-.pico .txt h2{font-size:clamp(32px,4vw,60px)}
-.pico .txt h2 b{font-weight:700;color:var(--cielo)}
-.pico .lema{font-family:var(--d);font-size:clamp(19px,1.8vw,25px);font-weight:500;letter-spacing:-.01em;line-height:1.2;margin:14px 0 0;color:var(--tx);max-width:20em}
-.pico .sub-met{color:var(--tx-2);font-size:16px;max-width:28em;margin:12px 0 0}
-.pico .momentos{margin:20px 0 0;padding:0;list-style:none}
-.pico .momentos li{display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:baseline;padding:10px 0;border-top:1px solid var(--linea);opacity:.25;transform:translateX(-8px);transition:opacity .4s,transform .5s var(--ease-out)}
-.pico .momentos li.on{opacity:1;transform:none}
-.pico .momentos b{font-family:var(--d);font-weight:600;font-size:clamp(24px,2.6vw,36px);line-height:1;letter-spacing:-.02em}
-.pico .momentos span{font-size:15.5px;color:var(--tx-2)}
-.pico .otra{margin:18px 0 0;font-family:var(--d);font-size:clamp(17px,1.5vw,21px);line-height:1.3;color:var(--cielo);opacity:0;transform:translateY(10px);max-width:22em}
-.pico .rueda{position:relative;width:100%;max-height:88svh;aspect-ratio:1}
-.pico .rueda svg{width:100%;height:100%;overflow:visible}
-.pico .rueda .cen{position:absolute;inset:0;display:grid;place-items:center;text-align:center;pointer-events:none}
-.pico .rueda .cen b{display:block;font-family:var(--d);font-weight:600;font-size:clamp(22px,2.7vw,40px);line-height:1;letter-spacing:-.03em}
-.pico .rueda .cen small{display:block;margin-top:10px;font-size:14px;color:var(--tx-3)}
-
-@media (max-height:840px) and (min-width:981px){.pico .sub-met{display:none}.pico .txt h2{font-size:clamp(28px,3.4vw,48px)}.pico .momentos li{padding:8px 0}}
+/* calculadora con los números del visitante */
+.calc{background:var(--fondo);padding:clamp(80px,12vh,150px) 0}
+.calc .w{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(30px,5vw,80px);align-items:start}
+.calc h2{font-size:clamp(34px,4.8vw,70px)}
+.calc h2 b{font-weight:700;color:var(--cielo)}
+.calc .lead{font-size:18px;color:var(--tx-2);max-width:26em;margin:20px 0 0}
+.calc .nota{font-size:14px;color:var(--tx-3);margin:18px 0 0;max-width:26em}
+.calc form{background:var(--panel);border:1px solid var(--linea);border-radius:16px;padding:clamp(20px,3vw,34px);display:grid;gap:18px}
+.calc .campos{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.calc label{display:grid;gap:8px;font-size:15px;font-weight:600}
+.calc label span{color:var(--tx-2);font-weight:400;font-size:14px}
+.calc input{font:inherit;font-size:20px;font-family:var(--d);font-weight:600;color:var(--tx);background:#0E1119;border:1px solid var(--linea);border-radius:10px;padding:12px 14px;width:100%;min-height:52px;font-variant-numeric:tabular-nums}
+.calc input:focus{outline:2px solid var(--azul);border-color:var(--azul)}
+.calc .res{border-top:1px solid var(--linea);padding-top:18px;display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.calc .res div{display:grid;gap:4px}
+.calc .res small{font-size:13px;color:var(--tx-3)}
+.calc .res b{font-family:var(--d);font-size:clamp(26px,3vw,44px);font-weight:600;letter-spacing:-.03em;line-height:1;font-variant-numeric:tabular-nums}
+.calc .res b.vacio{color:var(--tx-3);font-size:clamp(20px,2vw,28px)}
+.calc .cierre{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;border-top:1px solid var(--linea);padding-top:18px}
+.calc .cierre p{margin:0;color:var(--tx-2);font-size:15.5px;max-width:28em}
 
 /* servicios con índice pegajoso */
 .serv{padding:clamp(90px,14vh,170px) 0;background:var(--fondo)}
@@ -198,42 +217,73 @@ table.crudo th{background:#DADDE8;font-weight:600}
 .bloque p{margin:0 0 16px;color:var(--tx-2);font-size:18px;max-width:34em}
 .bloque ul{margin:0;padding:0;list-style:none;display:grid;gap:8px;font-size:15.5px;color:var(--tx-2);max-width:34em}
 .bloque li{padding-left:18px;position:relative}
-.bloque .mas{display:inline-block;margin-top:18px;font-weight:600;color:var(--cielo);text-decoration:none;border-bottom:1px solid var(--linea);padding-bottom:2px}
+.bloque .mas{display:inline-flex;align-items:center;min-height:44px;margin-top:10px;font-weight:600;color:var(--cielo);text-decoration:none;border-bottom:1px solid var(--linea)}
 .bloque .mas:hover{border-color:var(--cielo)}
 .bloque li::before{content:"";position:absolute;left:0;top:.6em;width:8px;height:8px;border-radius:50%;border:1.5px solid var(--cielo)}
+.cta-fila{display:flex;align-items:center;gap:18px 28px;flex-wrap:wrap;margin-top:clamp(36px,6vh,60px);padding-top:26px;border-top:1px solid var(--linea)}
+.cta-fila p{margin:0;color:var(--tx-2);font-size:16px;max-width:30em}
 
-/* método: línea de tiempo horizontal */
-.met{background:var(--panel);overflow:hidden;position:relative}
-.met .cab{padding:clamp(80px,12vh,140px) 0 30px}
-.met .cab h2{font-size:clamp(36px,5vw,76px);max-width:14em}
-.met .cab p{color:var(--tx-2);font-size:19px;max-width:36em;margin:18px 0 0}
-.met .esc{position:relative;height:100svh;display:flex;align-items:center}
-.met .aro{position:absolute;right:-8vw;top:50%;width:min(70vh,760px);height:min(70vh,760px);transform:translateY(-50%);opacity:.14;pointer-events:none}
-.met .aro svg{width:100%;height:100%;overflow:visible}
-.met .pista{display:flex;gap:clamp(20px,3vw,48px);padding:0 clamp(20px,4vw,56px);width:max-content;position:relative}
-.mom{width:min(78vw,560px);flex:none;padding:30px 0;border-top:1px solid var(--linea)}
-.mom .k{font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--cielo);font-weight:600;margin-bottom:16px}
-.mom h3{font-size:clamp(44px,6vw,96px);font-weight:600;margin-bottom:18px}
-.mom p{margin:0;color:var(--tx-2);font-size:18px;max-width:28em}
-.mom .q{margin:16px 0 0;color:var(--tx);font-weight:600;font-size:16px}
-.mom.otra h3{color:var(--cielo)}
+/* pico: el logo se dibuja */
+.pico{background:var(--panel);position:relative}
+.pico .esc{height:100svh;padding-top:70px;display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);align-items:center;gap:clamp(20px,4vw,60px);overflow:hidden}
+.pico .txt h2{font-size:clamp(32px,4vw,60px)}
+.pico .txt h2 b{font-weight:700;color:var(--cielo)}
+.pico .lema{font-family:var(--d);font-size:clamp(19px,1.8vw,25px);font-weight:500;letter-spacing:-.01em;line-height:1.2;margin:14px 0 0;color:var(--tx);max-width:20em}
+.pico .sub-met{color:var(--tx-2);font-size:16px;max-width:28em;margin:12px 0 0}
+.pico .momentos{margin:20px 0 0;padding:0;list-style:none}
+.pico .momentos li{display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:baseline;padding:10px 0;border-top:1px solid var(--linea);color:var(--tx-3);transform:translateX(-8px);transition:color .4s,transform .5s var(--ease-out)}
+.pico .momentos li.on{color:var(--tx);transform:none}
+.pico .momentos b{font-family:var(--d);font-weight:600;font-size:clamp(24px,2.6vw,36px);line-height:1;letter-spacing:-.02em}
+.pico .momentos span{font-size:15.5px;color:inherit;opacity:.85}
+.pico .momentos li.on span{color:var(--tx-2);opacity:1}
+.pico .otra{margin:18px 0 0;font-family:var(--d);font-size:clamp(17px,1.5vw,21px);line-height:1.3;color:var(--cielo);opacity:0;transform:translateY(10px);max-width:22em}
+.pico .rueda{position:relative;width:100%;max-height:88svh;aspect-ratio:1}
+.pico .rueda svg{width:100%;height:100%;overflow:visible}
+.pico .rueda .cen{position:absolute;inset:0;display:grid;place-items:center;text-align:center;pointer-events:none}
+.pico .rueda .cen b{display:block;font-family:var(--d);font-weight:600;font-size:clamp(22px,2.7vw,40px);line-height:1;letter-spacing:-.03em}
+.pico .rueda .cen small{display:block;margin-top:10px;font-size:14px;color:var(--tx-3)}
+@media (max-height:840px) and (min-width:981px){.pico .sub-met{font-size:14.5px}.pico .txt h2{font-size:clamp(28px,3.4vw,48px)}.pico .momentos li{padding:7px 0}.pico .momentos span{font-size:14px}}
 
-/* casos con zoom parallax */
-.caso{position:relative;min-height:100svh;display:flex;align-items:flex-end;overflow:hidden}
-.caso .img{position:absolute;inset:0}
-.caso .img img{width:100%;height:100%;object-fit:cover;transform:scale(1.18);will-change:transform}
-.caso .velo{position:absolute;inset:0;background:linear-gradient(to top,rgba(11,13,20,.92) 0%,rgba(11,13,20,.35) 55%,rgba(11,13,20,.15) 100%)}
-.caso .w{position:relative;padding-bottom:clamp(40px,8vh,90px);padding-top:120px;display:grid;grid-template-columns:minmax(0,7fr) minmax(0,5fr);gap:30px;align-items:end}
-.caso .quien{font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--cielo);font-weight:600;margin-bottom:14px}
-.caso h3{font-size:clamp(34px,5vw,76px);font-weight:600;max-width:12em}
-.caso .paso{color:var(--tx-2);font-size:16.5px;margin:0 0 12px}
-.caso .res{font-family:var(--d);font-size:clamp(20px,2vw,28px);font-weight:500;line-height:1.25;margin:0;border-top:1px solid var(--linea);padding-top:16px}
-.casos .tit{padding:clamp(80px,12vh,140px) 0 clamp(30px,5vh,50px)}
+/* situaciones típicas: tres tarjetas */
+.casos{background:var(--fondo);padding:clamp(90px,14vh,170px) 0}
 .casos .tit h2{font-size:clamp(36px,5vw,76px)}
 .casos .tit p{color:var(--tx-2);font-size:19px;max-width:36em;margin:18px 0 0}
-/* foto vertical: ocupa la mitad derecha entera en vez de recortarse a lo ancho */
-.caso.vert .img{left:auto;width:min(46%,820px);-webkit-mask-image:linear-gradient(to right,transparent,#000 30%);mask-image:linear-gradient(to right,transparent,#000 30%)}
-.caso.vert .img img{object-position:50% 22%}
+.casos .tit .rot{display:inline-block;font-size:12.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--cielo);border:1px solid var(--linea);border-radius:999px;padding:6px 12px;margin-bottom:18px}
+.tarjetas{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:clamp(30px,5vh,50px)}
+.caso{background:var(--panel);border:1px solid var(--linea);border-radius:16px;overflow:hidden;display:flex;flex-direction:column}
+.caso .img{aspect-ratio:16/9;overflow:hidden;background:var(--panel-2)}
+.caso .img img{width:100%;height:100%;object-fit:cover;transform:scale(1.08)}
+.caso .cu{padding:22px 22px 26px;display:flex;flex-direction:column;gap:12px;flex:1}
+.caso .quien{font-size:12.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--cielo);font-weight:600}
+.caso h3{font-size:clamp(24px,2.2vw,32px);font-weight:600}
+.caso .paso{color:var(--tx-2);font-size:15.5px;margin:0}
+.caso .res{font-family:var(--d);font-size:17px;font-weight:500;line-height:1.3;margin:auto 0 0;border-top:1px solid var(--linea);padding-top:14px}
+.caso .res b{color:var(--cielo);font-weight:600}
+.honesto{margin-top:clamp(40px,6vh,70px);border:1px solid var(--linea);border-radius:16px;padding:clamp(22px,3vw,36px);display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(20px,4vw,60px);align-items:start}
+.honesto h3{font-size:clamp(24px,2.6vw,36px)}
+.honesto h3 b{font-weight:700;color:var(--cielo)}
+.honesto p{margin:12px 0 0;color:var(--tx-2);font-size:16px;max-width:26em}
+.honesto ul{list-style:none;margin:0;padding:0;display:grid;gap:0;border-top:1px solid var(--linea)}
+.honesto li a{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:16px 4px;border-bottom:1px solid var(--linea);text-decoration:none;min-height:56px}
+.honesto li a b{font-family:var(--d);font-size:18px;font-weight:600}
+.honesto li a span{color:var(--tx-3);font-size:14px;flex:1}
+.honesto li a i{font-style:normal;color:var(--cielo)}
+.honesto li a:hover b{color:var(--cielo)}
+
+/* preguntas frecuentes */
+.faq{background:var(--panel);padding:clamp(90px,14vh,170px) 0;border-top:1px solid var(--linea)}
+.faq .w{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(30px,5vw,80px);align-items:start}
+.faq h2{font-size:clamp(34px,4.8vw,70px)}
+.faq .lead{font-size:18px;color:var(--tx-2);max-width:24em;margin:18px 0 0}
+.faq details{border-top:1px solid var(--linea)}
+.faq details:last-child{border-bottom:1px solid var(--linea)}
+.faq summary{cursor:pointer;list-style:none;padding:20px 44px 20px 0;font-family:var(--d);font-size:clamp(19px,1.7vw,23px);font-weight:500;position:relative;min-height:44px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";position:absolute;right:4px;top:14px;font-size:28px;color:var(--cielo);font-weight:300}
+.faq details[open] summary::after{content:"–"}
+.faq details p{margin:0 0 22px;color:var(--tx-2);max-width:40em;font-size:16.5px}
+.faq details p a{color:var(--tx)}
+.pend{display:inline-block;border:1px dashed var(--cielo);color:var(--cielo);border-radius:6px;padding:1px 8px;font-size:.85em}
 
 /* equipo + puerta sobre el shader */
 .fin{padding:clamp(100px,16vh,200px) 0 clamp(40px,7vh,70px)}
@@ -250,134 +300,202 @@ table.crudo th{background:#DADDE8;font-weight:600}
 .puerta{text-align:center;padding:clamp(60px,10vh,120px) 0 0}
 .puerta h2{font-size:clamp(40px,6.6vw,108px);font-weight:600;max-width:11em;margin:0 auto}
 .puerta h2 b{font-weight:700;color:var(--cielo)}
-.puerta p{color:var(--tx-2);font-size:18px;max-width:34em;margin:24px auto 34px}
+.puerta p{color:var(--tx-2);font-size:18px;max-width:30em;margin:24px auto 34px}
 .pie{margin-top:clamp(70px,10vh,120px);display:flex;justify-content:space-between;align-items:flex-end;gap:24px;flex-wrap:wrap;border-top:1px solid var(--linea);padding-top:26px;font-size:14px;color:var(--tx-3)}
 .pie .firma{font-family:var(--d);font-weight:700;font-size:clamp(56px,7vw,110px);line-height:.9;letter-spacing:-.04em;color:var(--tx)}
+.pie .col{display:grid;gap:6px;line-height:1.5}
+.pie a{text-decoration:none;display:inline-block;min-height:24px}
+.pie nav{display:flex;gap:14px 20px;flex-wrap:wrap;margin-top:6px}
 .oi{position:relative;display:inline-block}
 .oi .orb{position:absolute;left:50%;top:.02em;width:.17em;height:.17em;margin-left:-.085em;border-radius:50%;background:var(--azul);transform-origin:50% -.2em;animation:loop 5s cubic-bezier(.6,0,.3,1) infinite}
 @keyframes loop{0%,34%{transform:rotate(0)}78%,100%{transform:rotate(360deg)}}
 
+/* barra fija de acción en celular */
+.barra{display:none}
+
 .rv{opacity:1}
 @media (max-width:980px){
-  .hero .fila,.pasa .w,.serv .w,.fin .eq,.caso .w{grid-template-columns:1fr}
-  .caso.vert .img{width:100%;-webkit-mask-image:none;mask-image:none}
+  .hero .fila,.pasa .w,.serv .w,.fin .eq,.calc .w,.faq .w,.honesto{grid-template-columns:1fr}
   .hero .acc{justify-content:flex-start}
   .comp .cab{grid-template-columns:1fr}
   .diag .caja{grid-template-columns:1fr}
   .diag .rec li{grid-template-columns:1fr;gap:4px}
   .cifras{grid-template-columns:1fr}
-  .pico .esc{grid-template-columns:1fr;align-content:center;gap:24px;height:auto;min-height:100svh;padding:70px 0 50px}
-  .pico .rueda{max-width:min(86vw,440px);margin:0 auto}
+  .tarjetas{grid-template-columns:1fr}
+  .honesto li a{flex-wrap:wrap}.honesto li a b{flex:1 1 100%}.honesto li a span{flex:1}
+  .pico .esc{grid-template-columns:1fr;align-content:start;gap:24px;height:auto;min-height:0;padding:clamp(70px,10vh,110px) 0 clamp(50px,8vh,80px);overflow:visible}
+  .pico .rueda{max-width:min(78vw,400px);max-height:none;margin:0 auto}
+  .pico .momentos li{color:var(--tx);transform:none}
+  .pico .momentos li span{color:var(--tx-2);opacity:1}
   .indice{position:static}
   .indice ol{display:none}
-  .met .esc{height:auto;padding:20px 0 60px}
-  .met .pista{width:auto;flex-direction:column;padding:0}
-  .mom{width:100%}
-  .met .aro{display:none}
   .socios{grid-template-columns:1fr}
   .nav nav{display:none}
-  .menu{display:inline-flex;font:inherit;font-weight:600;background:none;color:inherit;border:1px solid var(--linea);border-radius:999px;padding:8px 14px;cursor:pointer}
-  .nav nav.abierto{display:flex;position:absolute;left:16px;right:16px;top:70px;flex-direction:column;align-items:flex-start;gap:16px;padding:20px;border-radius:16px;background:rgba(17,20,31,.96)}
+  .menu{display:inline-flex;align-items:center;font:inherit;font-weight:600;background:none;color:inherit;border:1px solid var(--linea);border-radius:999px;padding:0 16px;min-height:44px;cursor:pointer}
+  .nav nav.abierto{display:flex;position:absolute;left:16px;right:16px;top:70px;flex-direction:column;align-items:stretch;gap:0;padding:8px 10px;border-radius:16px;background:rgba(17,20,31,.97);border:1px solid var(--linea)}
+  .nav nav.abierto a{padding:12px 10px;min-height:44px;display:flex;align-items:center;border-bottom:1px solid var(--linea);font-size:17px}
+  .nav nav.abierto a:last-child{border-bottom:0;margin-top:8px;justify-content:center}
+  .barra{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:49;gap:10px;padding:10px 14px calc(10px + env(safe-area-inset-bottom));background:rgba(11,13,20,.9);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-top:1px solid var(--linea);transform:translateY(110%);transition:transform .45s var(--ease-out)}
+  .barra.on{transform:none}
+  .barra .cta{flex:1;justify-content:center;padding:13px 16px}
+  .barra .cta small{opacity:.75}
+  .barra .wa{display:none;align-items:center;justify-content:center;width:50px;min-height:44px;border:1px solid var(--linea);border-radius:999px;color:var(--tx)}
+  .barra .wa.on{display:inline-flex}
+  .barra .wa svg{width:24px;height:24px}
+  body{padding-bottom:0}
+  .fin .pie{padding-bottom:80px}
 }
 @media (max-width:600px){
   body{font-size:16px}
   .hero h1{font-size:clamp(32px,9.6vw,50px)}
   .hero h1 .l{white-space:normal}
-  .cta small{display:none}
+  .cta small{font-size:13px}
   .ad-pie{grid-template-columns:1fr}
-  .slider{aspect-ratio:4/5}.capa{padding:12px}
+  .slider{min-height:0}.capa{padding:12px}
   .kp{grid-template-columns:1fr 1fr}.kp div:last-child{grid-column:span 2}
-  .caso{min-height:90svh}
+  .calc .campos{grid-template-columns:1fr}
+  .calc .res{grid-template-columns:1fr 1fr}.calc .res div:last-child{grid-column:span 2}
   .pie .firma{font-size:56px}
+  .puertas .w{align-items:stretch}.seg{width:100%}.seg button{flex:1;padding:10px 8px;font-size:14px}
 }
 @media (prefers-reduced-motion:reduce){
   #bg{display:none}body{background:#0F1424}
   .bloque .img img,.caso .img img{transform:none}
   .oi .orb,.marca .logo-mark .c{animation:none!important}
-  .pico .momentos li{opacity:1;transform:none}.pico .otra{opacity:1;transform:none}
+  .pico .momentos li{color:var(--tx);transform:none}.pico .otra{opacity:1;transform:none}
 }
 </style>
 </head>
-<body>
+<body data-puerta="pyme">
+<a class="saltar" href="#inicio">Saltar al contenido</a>
 <canvas id="bg" aria-hidden="true"></canvas>
 <div class="grano" aria-hidden="true"></div>
 
 <header class="nav" id="nav"><div class="w">
-  <a class="marca" href="#"><span class="lg"></span><b>ITERAR</b></a>
-  <button class="menu" aria-expanded="false" onclick="const n=document.getElementById('menu');n.classList.toggle('abierto');this.setAttribute('aria-expanded',n.classList.contains('abierto'))">Menú</button>
-  <nav id="menu"><a href="#pasa">¿Te suena?</a><a href="#diagnostico">Diagnóstico</a><a href="#antes">Antes y después</a><a href="#servicios">Servicios</a><a href="#metodo">Método</a><a href="#casos">Situaciones</a><a href="#equipo">Equipo</a><a href="indicadores.html">Indicadores</a><a class="cta ctad" href="#">Empezar</a></nav>
+  <a class="marca" href="#" aria-label="ITERAR, inicio"><span class="lg"></span><b>ITERAR</b></a>
+  <button class="menu" id="btnmenu" aria-expanded="false" aria-controls="menu">Menú</button>
+  <nav id="menu"><a class="mid" href="#pasa">¿Te suena?</a><a href="#diagnostico">Diagnóstico</a><a class="mid" href="#antes">Antes y después</a><a href="#servicios">Servicios</a><a href="#metodo">Método</a><a href="#preguntas">Preguntas</a><a class="mid" href="#equipo">Equipo</a><a class="mid" href="indicadores.html">Indicadores</a><a href="contacto.html">Contacto</a><a class="cta ctad" data-cta="nav" href="autoevaluacion.html">Hacer el diagnóstico <small>5 min, gratis</small></a></nav>
 </div></header>
 
 <main>
 <section class="hero" id="inicio"><div class="w">
-  <h1 id="h1"><span class="l" data-t="Tu competencia ya usa">Tu competencia ya usa</span><span class="l" data-t="inteligencia artificial.">inteligencia artificial.</span><span class="l" data-t="¿Vos qué estás"><b>¿Vos qué estás</b></span><span class="l" data-t="esperando?"><b>esperando?</b></span></h1>
+  <h1 id="h1" aria-label="Tu competencia ya usa inteligencia artificial. ¿Vos qué estás esperando?"><span class="l" aria-hidden="true">Tu competencia ya usa</span><span class="l" aria-hidden="true">inteligencia artificial.</span><span class="l" aria-hidden="true" data-t="¿Vos qué estás"><b>¿Vos qué estás</b></span><span class="l" aria-hidden="true" data-t="esperando?"><b>esperando?</b></span></h1>
   <div class="fila">
-    <p class="bajada rv">Cuatro de cada diez pymes argentinas ya la usan. Si vos no, tus márgenes quedan donde están mientras los de ellos mejoran. ¿Cómo pensás competir? Nosotros la ponemos a trabajar en tu empresa, junto con los números para decidir.</p>
-    <div class="acc rv"><a class="cta ctad mag" href="#">Ver por dónde empezar <small>5 min, gratis</small></a><a class="sec" href="#metodo">Cómo trabajamos</a></div>
+    <p class="bajada">Cuatro de cada diez pymes argentinas ya la usan. Si vos no, tus márgenes quedan donde están mientras los de ellos mejoran. <b>La inteligencia artificial rinde cuando los números están ordenados: hacemos las dos cosas, en tu empresa.</b></p>
+    <div class="acc"><a class="cta ctad mag" data-cta="hero" href="autoevaluacion.html">Hacer el diagnóstico <small>5 min, gratis</small></a><a class="sec" href="#metodo">Cómo trabajamos</a></div>
   </div>
-  <div class="senal rv" id="senal"><span><span class="vivo">En vivo</span> Hoy en Argentina</span><span>Dólar oficial <b id="dolar">…</b></span><span>Inflación mensual <b id="inf">…</b> <span id="infmes"></span></span><span id="fuente" style="flex-basis:100%;font-size:12.5px">Conectando con las fuentes…</span></div>
+  <div class="senal" id="senal"><span><span class="vivo">En vivo</span> Hoy en Argentina</span><span>Dólar oficial <b id="dolar">…</b></span><span>Inflación mensual <b id="inf">…</b> <span id="infmes"></span></span><span id="fuente" style="flex-basis:100%;font-size:12.5px">Conectando con las fuentes…</span></div>
+</div></section>
+
+<section class="puertas" id="puertas" aria-label="Elegí desde dónde nos escribís"><div class="w">
+  <p>¿Desde dónde nos escribís?</p>
+  <div class="seg" role="group" aria-label="Tipo de empresa"><button type="button" data-puerta="pyme" aria-pressed="true">Soy dueño de una pyme</button><button type="button" data-puerta="grande" aria-pressed="false">Trabajo en una empresa grande</button></div>
 </div></section>
 
 <section class="datos" id="datos"><div class="w">
   <h2 class="rv">La ventaja no es tener inteligencia artificial. <b>Es usarla bien antes que tu competencia.</b></h2>
   <div class="cifras">
     <div class="rv"><b>41,6%</b><p>de las pymes argentinas ya usa inteligencia artificial. Más de la mitad de ellas empezó en 2025.</p></div>
-    <div class="rv"><b>46%</b><p>de las que todavía no la usan piensa sumarla en los próximos dos años. El que espera no queda igual: queda último.</p></div>
+    <div class="rv"><b>46%</b><p>de las que todavía no la usan piensa sumarla en los próximos dos años. Dentro de poco, usarla no va a ser una ventaja: va a ser lo normal.</p></div>
     <div class="rv"><b>57,4%</b><p>de las que la usan no mide si le sirve. Tenerla no alcanza: hay que ponerla a trabajar y mirar el resultado.</p></div>
   </div>
-  <p class="puente rv">Ahí trabajamos nosotros: que la uses, que rinda y que lo puedas medir.</p>
-  <p class="fuente-d rv">Fuente: Encuesta nacional sobre adopción de IA en pymes argentinas, nadIA (CEPE Di Tella y Fundar, con apoyo del BID y la Fundación Observatorio PyME). 402 empresas, noviembre y diciembre de 2025.</p>
+  <p class="puente rv">Ahí trabajamos nosotros: que la uses, que rinda y que lo puedas medir. Para eso, primero los números tienen que estar en orden. Hacemos las dos cosas.</p>
+  <p class="fuente-d rv">Fuente: <a href="https://nadia.fund.ar/" target="_blank" rel="noopener">Encuesta nacional sobre adopción de IA en pymes argentinas, nadIA</a> (CEPE Di Tella y Fundar, con apoyo del BID y la Fundación Observatorio PyME). 402 empresas, noviembre y diciembre de 2025.</p>
 </div></section>
 
 <section class="pasa" id="pasa"><div class="w">
-  <div><h2 class="rv">¿Te suena?</h2><p class="lead rv">Marcá las que sean tuyas. Las escuchamos todas las semanas, y las vivimos en nuestras propias empresas.</p></div>
+  <div><h2 class="rv">¿Te suena?</h2><p class="lead rv" data-p="pyme">Marcá las que sean tuyas. Las escuchamos todas las semanas, y las vivimos en nuestras propias empresas.</p><p class="lead rv" data-p="grande">Marcá las que pasan en tu empresa. Son las que más escuchamos en gerencias de administración, finanzas y operaciones.</p></div>
   <div>
     <div class="lista" id="lista">
-      <label><input type="checkbox" id="p1"><span>Sé que mi competencia ya usa IA y yo todavía no arranqué.<small class="sol">Se empieza por un solo caso de uso: el de más impacto y menos riesgo.</small></span></label>
-      <label><input type="checkbox" id="p2"><span>Vendo más que el año pasado y me queda lo mismo.<small class="sol">Se ve en un análisis de márgenes por producto y por cliente.</small></span></label>
-      <label><input type="checkbox" id="p3"><span>Cierro el mes y no sé si gané plata.<small class="sol">Se resuelve con un tablero conectado a tu facturación y a tu banco.</small></span></label>
-      <label><input type="checkbox" id="p4"><span>Decido mirando el saldo del banco.<small class="sol">Se resuelve con una caja proyectada a noventa días.</small></span></label>
-      <label><input type="checkbox" id="p5"><span>Todo pasa por mí. Si me voy una semana, se frena.<small class="sol">Se resuelve con un tablero que tu equipo mira sin preguntarte, y una reunión fija.</small></span></label>
-      <label><input type="checkbox" id="p6"><span>Pagamos licencias de IA y nadie sabe para qué usarlas.<small class="sol">Se ordena eligiendo para qué tarea va cada herramienta, y midiendo si rinde.</small></span></label>
+      <label data-p="pyme"><input type="checkbox" value="1"><span>Sé que mi competencia ya usa IA y yo todavía no arranqué.<small class="sol">Se empieza por un solo caso de uso: el de más impacto y menos riesgo.</small></span></label>
+      <label data-p="pyme"><input type="checkbox" value="2"><span>Vendo más que el año pasado y me queda lo mismo.<small class="sol">Se ve en un análisis de márgenes por producto y por cliente.</small></span></label>
+      <label data-p="pyme"><input type="checkbox" value="3"><span>Cierro el mes y no sé si gané plata.<small class="sol">Se resuelve con un tablero conectado a tu facturación y a tu banco.</small></span></label>
+      <label data-p="pyme"><input type="checkbox" value="4"><span>Decido mirando el saldo del banco.<small class="sol">Se resuelve con una caja proyectada a noventa días.</small></span></label>
+      <label data-p="pyme"><input type="checkbox" value="5"><span>Todo pasa por mí. Si me voy una semana, se frena.<small class="sol">Se resuelve con un tablero que tu equipo mira sin preguntarte, y una reunión fija.</small></span></label>
+      <label data-p="pyme"><input type="checkbox" value="6"><span>Pagamos licencias de IA y nadie sabe para qué usarlas.<small class="sol">Se ordena eligiendo para qué tarea va cada herramienta, y midiendo si rinde.</small></span></label>
+      <label data-p="grande"><input type="checkbox" value="7"><span>Cada área tiene su planilla y en el comité los números no coinciden.<small class="sol">Se resuelve con una sola fuente por indicador, acordada entre áreas, en un tablero que todos miran.</small></span></label>
+      <label data-p="grande"><input type="checkbox" value="8"><span>El cierre llega tarde para decidir el mes siguiente.<small class="sol">Se acorta automatizando la carga y la conciliación, con control humano de las excepciones.</small></span></label>
+      <label data-p="grande"><input type="checkbox" value="9"><span>Compramos licencias de IA y la adopción es baja.<small class="sol">Se ordena eligiendo casos de uso por área, capacitando sobre tareas reales y midiendo el resultado.</small></span></label>
+      <label data-p="grande"><input type="checkbox" value="10"><span>Los proyectos de datos se miden en meses y no llegan.<small class="sol">Se cambia por vueltas cortas: un piloto por área que queda funcionando antes de ampliar.</small></span></label>
+      <label data-p="grande"><input type="checkbox" value="11"><span>Nos preocupa qué datos salen de la empresa cuando se usa IA.<small class="sol">Se define una política de uso: qué se automatiza, qué revisa una persona y qué información no sale.</small></span></label>
+      <label data-p="grande"><input type="checkbox" value="12"><span>Los mandos medios escalan todas las decisiones.<small class="sol">Se forma al equipo para leer sus números y decidir dentro de su área, con un tablero propio.</small></span></label>
     </div>
-    <div class="sigue"><span id="cuenta">Cada una de estas te cuesta plata todos los meses. Ninguna se arregla sola.</span><a class="cta az ctad mag" href="#">Ver por dónde empezar</a></div>
+    <div class="sigue"><span id="cuenta" aria-live="polite">Cada una de estas te cuesta plata todos los meses. Ninguna se arregla sola.</span><a class="cta az ctad mag" data-cta="lista" data-p="pyme" href="autoevaluacion.html">Hacer el diagnóstico <small>5 min, gratis</small></a><a class="cta az mag" data-p="grande" href="contacto.html?puerta=grande" data-medir="grande_contacto">Contanos el proyecto</a></div>
   </div>
 </div></section>
 
 <section class="diag" id="diagnostico"><div class="w">
-  <div class="caja">
+  <div class="caja" data-p="pyme">
     <div class="izq">
       <p class="nom rv">Diagnóstico ITERAR</p>
       <h2 class="rv">Por dónde empezar <b>en tu empresa.</b></h2>
-      <p class="rv">Once preguntas, casi todas de un click. Con lo que nos cuentes te mandamos por mail una devolución escrita por nosotros, no por un robot.</p>
-      <a class="cta ctad mag rv" href="#">Ver por dónde empezar</a>
+      <p class="rv">Doce preguntas de sí o no, con la marca y el criterio de ITERAR. Ves el resultado al instante: un semáforo por frente y por dónde conviene empezar. Si querés la devolución escrita por nosotros, dejás el mail.</p>
+      <div class="acc rv"><a class="cta ctad mag" data-cta="caja" href="autoevaluacion.html">Hacer el diagnóstico <small>5 min, gratis</small></a><a class="sec" href="devolucion-muestra.html" data-medir="muestra_click">Ver una devolución de ejemplo</a></div>
       <p class="chico rv">Gratis. No te llama ningún vendedor.</p>
     </div>
     <ul class="rec">
       <li class="rv"><b>5 minutos</b><span>es lo que lleva contestarlo. Se guarda solo: podés cortar y seguir después.</span></li>
-      <li class="rv"><b>2 a 3 días</b><span>después te llega la devolución por mail.</span></li>
-      <li class="rv"><b>Qué te llevás</b><span>Dónde se te está yendo la plata, qué conviene ordenar primero y qué no vale la pena tocar todavía.</span></li>
+      <li class="rv"><b>Al instante</b><span>ves qué frente está en verde, cuál en amarillo y cuál en rojo, y por cuál empezar.</span></li>
+      <li class="rv"><b>2 a 3 días</b><span>después, si dejaste el mail, te llega una devolución escrita por nosotros, no por un robot.</span></li>
+    </ul>
+  </div>
+  <div class="caja" data-p="grande">
+    <div class="izq">
+      <p class="nom rv">Para empresas grandes</p>
+      <h2 class="rv">Un piloto por área, <b>en semanas.</b></h2>
+      <p class="rv">Contanos en qué área está el problema y qué sistemas hay. Te decimos si podemos ayudar y cómo sería una primera vuelta: qué queda funcionando, quién lo mantiene y qué datos no salen de la empresa.</p>
+      <div class="acc rv"><a class="cta mag" href="contacto.html?puerta=grande" data-medir="grande_contacto">Contanos el proyecto</a><a class="sec" href="para-empresas.html" data-medir="hoja_click">Hoja para reenviar</a></div>
+      <p class="chico rv">Respondemos nosotros dos. Sin equipos junior, sin vendedores.</p>
+    </div>
+    <ul class="rec">
+      <li class="rv"><b>Una reunión</b><span>con los dos socios para entender el área, los sistemas y quién decide.</span></li>
+      <li class="rv"><b>Un piloto</b><span>por área, en semanas. Queda funcionando o se corta; no hay proyecto de un año.</span></li>
+      <li class="rv"><b>Para reenviar</b><span>una hoja con cómo trabajamos, para la persona que aprueba. <a href="para-empresas.html">Verla</a>.</span></li>
     </ul>
   </div>
 </div></section>
 
 <section class="comp" id="antes"><div class="w">
-  <div class="cab"><h2 class="rv">Mientras vos armás la planilla, <b>otro ya decidió.</b></h2><p class="rv">Son los mismos números de una misma empresa. Arrastrá para comparar. Datos de ejemplo.</p></div>
+  <div class="cab"><h2 class="rv">Mientras vos armás la planilla, <b>otro ya decidió.</b></h2><p class="rv">Son los mismos números de una misma empresa. Arrastrá la manija para comparar. Datos de ejemplo.</p></div>
   <div class="slider" id="slider">
     <div class="capa a"><span class="et">Antes</span><table class="crudo" id="crudo"></table></div>
     <div class="capa b" id="capab"><span class="et">Después</span><div class="tab" id="tab"></div></div>
-    <div class="manija" id="manija" role="slider" aria-label="Comparar antes y después" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" tabindex="0"></div>
+    <div class="manija" id="manija" role="slider" aria-label="Comparar antes y después" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" aria-valuetext="Mitad antes, mitad después" tabindex="0"></div>
   </div>
   <div class="ad-pie"><p><b>Antes.</b> La planilla la arma una persona, tarda días y llega cuando el mes ya cerró.</p><p><b>Después.</b> Abrís una pantalla y en diez segundos sabés cómo venís. Si algo se desvía, te avisa sola.</p></div>
   <p class="nota">Comercial Ejemplo S.A. es una empresa inventada para mostrar la idea sin exponer a ningún cliente.</p>
 </div></section>
+
+<section class="calc" id="calculadora"><div class="w">
+  <div>
+    <h2 class="rv">¿Cuánto te cuesta <b>decidir tarde?</b></h2>
+    <p class="lead rv">Cargá tus propios números. El resultado sale solo de lo que vos pongas: no agregamos ningún supuesto ni te pedimos el mail.</p>
+    <p class="nota rv">Es una cuenta simple, para que el costo deje de ser una sensación y pase a ser un número tuyo.</p>
+  </div>
+  <form id="calc" class="rv" novalidate>
+    <div class="campos">
+      <label>¿Cuántas personas arman los números cada mes?<span>Las que cargan, cruzan o revisan planillas.</span><input id="c-per" type="number" inputmode="numeric" min="0" step="1" placeholder="2"></label>
+      <label>¿Cuántas horas por semana le dedica cada una?<span>Un promedio, aunque sea a ojo.</span><input id="c-hs" type="number" inputmode="decimal" min="0" step="0.5" placeholder="6"></label>
+      <label>¿Cuánto cuesta una hora de esa persona?<span>En pesos, con cargas. Si no lo sabés, poné lo que te parezca.</span><input id="c-costo" type="number" inputmode="numeric" min="0" step="100" placeholder="15000"></label>
+      <label>¿Cuántos días después de cerrar el mes tenés los números?<span>Desde el último día del mes hasta que los ves.</span><input id="c-dias" type="number" inputmode="numeric" min="0" step="1" placeholder="10"></label>
+    </div>
+    <div class="res" aria-live="polite">
+      <div><small>Horas por mes armando números</small><b id="r-hs" class="vacio">—</b></div>
+      <div><small>Lo que te cuesta por año</small><b id="r-anio" class="vacio">—</b></div>
+      <div><small>Días del año decidiendo con el mes anterior</small><b id="r-dias" class="vacio">—</b></div>
+    </div>
+    <div class="cierre"><p id="r-txt">Completá los cuatro campos y el resultado aparece acá.</p><a class="cta ctad mag" data-cta="calculadora" href="autoevaluacion.html">Hacer el diagnóstico <small>5 min, gratis</small></a></div>
+  </form>
+</div></section>
+
 <section class="serv" id="servicios"><div class="w">
-  <div class="indice"><h2>Lo que queda funcionando en tu empresa</h2><ol id="indice"><li class="on"><i>01</i>Tu negocio en una pantalla</li><li><i>02</i>Saber dónde ganás y dónde perdés</li><li><i>03</i>IA trabajando, no en prueba</li><li><i>04</i>Un equipo que decide sin vos</li></ol></div>
+  <div class="indice"><h2>Lo que queda funcionando en tu empresa</h2><ol id="indice"><li class="on"><i>01</i>Tu negocio en una pantalla</li><li><i>02</i>Saber dónde ganás y dónde perdés</li><li><i>03</i>IA trabajando, no en demo</li><li><i>04</i>Un equipo que decide sin vos</li></ol></div>
   <div class="bloques">
     <div class="bloque" data-i="0"><div class="img"><img src="img/tablero-noche.webp" srcset="img/tablero-noche-800.webp 800w, img/tablero-noche.webp 1536w" sizes="(max-width: 900px) 100vw, 60vw" alt="" loading="lazy"></div><h3>Tu negocio <b>en una pantalla</b></h3><p>Los indicadores que importan para dirigir, conectados a tus datos y en una sola pantalla. Con una reunión fija para mirarlos, porque un tablero que nadie abre es una planilla más.</p><ul><li>Conectado a facturación, banco y sistema de gestión</li><li>Alertas automáticas cuando algo se desvía</li><li>Una rutina semanal de revisión, con dueño y agenda</li></ul><a class="mas" href="servicio.html?s=tableros">Ver el servicio completo</a></div>
     <div class="bloque" data-i="1"><div class="img"><img src="img/sala-reunion.webp" srcset="img/sala-reunion-800.webp 800w, img/sala-reunion.webp 1536w" sizes="(max-width: 900px) 100vw, 60vw" alt="" loading="lazy"></div><h3>Saber dónde ganás <b>y dónde perdés</b></h3><p>Rentabilidad por línea, cliente o sucursal. Caja proyectada a noventa días. Costos que crecieron sin que nadie lo decidiera. Explicado en castellano, no en jerga contable.</p><ul><li>El mapa de dónde se gana y dónde se pierde</li><li>Proyección de caja y escenarios para decidir</li><li>Información lista para bancos, socios o inversores</li></ul><a class="mas" href="servicio.html?s=finanzas">Ver el servicio completo</a></div>
-    <div class="bloque" data-i="2"><div class="img"><img src="img/fibra.webp" srcset="img/fibra-800.webp 800w, img/fibra.webp 1536w" sizes="(max-width: 900px) 100vw, 60vw" alt="" loading="lazy"></div><h3>IA trabajando, <b>no en prueba</b></h3><p>La probaste, te gustó, y ahí quedó. Nosotros la ponemos a hacer trabajo real: responder, cargar, conciliar, hacer seguimiento. Con supervisión humana y midiendo cuánto tiempo y plata ahorra.</p><ul><li>Casos de uso elegidos por impacto, no por moda</li><li>La herramienta en producción y el equipo capacitado</li><li>Política de uso y seguridad de la información</li></ul><a class="mas" href="servicio.html?s=ia">Ver el servicio completo</a></div>
-    <div class="bloque" data-i="3"><div class="img"><img src="img/socios-trabajo.webp" srcset="img/socios-trabajo-800.webp 800w, img/socios-trabajo.webp 1536w" sizes="(max-width: 900px) 100vw, 60vw" alt="" loading="lazy"></div><h3>Un equipo que <b>decide sin vos</b></h3><p>Hoy todo pasa por vos. Trabajamos con tu equipo para ordenar prioridades y decidir con método y con números, así la empresa no se frena cuando no estás.</p><ul><li>Prioridades escritas, con responsable y fecha</li><li>Un lenguaje común para discutir con números</li><li>Mandos medios formados en gestión con datos</li></ul><a class="mas" href="servicio.html?s=estrategia">Ver el servicio completo</a></div>
+    <div class="bloque" data-i="2"><div class="img"><img src="img/fibra.webp" srcset="img/fibra-800.webp 800w, img/fibra.webp 1536w" sizes="(max-width: 900px) 100vw, 60vw" alt="" loading="lazy"></div><h3>IA trabajando, <b>no en demo</b></h3><p>La viste, te gustó, y ahí quedó. Nosotros la ponemos a hacer trabajo real: responder, cargar, conciliar, hacer seguimiento. Con supervisión humana y midiendo cuánto tiempo y plata ahorra.</p><ul><li>Tareas elegidas por impacto, no por moda</li><li>La herramienta funcionando todos los días y tu equipo capacitado</li><li>Reglas claras: qué se automatiza, qué revisa una persona, qué datos no salen</li></ul><a class="mas" href="servicio.html?s=ia">Ver el servicio completo</a></div>
+    <div class="bloque" data-i="3"><div class="img"><img src="img/socios-trabajo.webp" srcset="img/socios-trabajo-800.webp 800w, img/socios-trabajo.webp 1536w" sizes="(max-width: 900px) 100vw, 60vw" alt="" loading="lazy"></div><h3>Un equipo que <b>decide sin vos</b></h3><p>Hoy todo pasa por vos. Trabajamos con tu equipo para ordenar prioridades y decidir con método y con números, así la empresa no se frena cuando no estás.</p><ul><li>Prioridades escritas, con responsable y fecha</li><li>Un lenguaje común para discutir con números</li><li>Tus encargados y gerentes formados para decidir con datos</li></ul><a class="mas" href="servicio.html?s=estrategia">Ver el servicio completo</a></div>
+    <div class="cta-fila"><p>No hace falta elegir un servicio ahora. El diagnóstico te dice por cuál conviene empezar.</p><a class="cta ctad mag" data-cta="servicios" href="autoevaluacion.html">Hacer el diagnóstico <small>5 min, gratis</small></a></div>
   </div>
 </div></section>
 
@@ -393,33 +511,59 @@ table.crudo th{background:#DADDE8;font-weight:600}
       </ul>
       <p class="otra" id="otra">Y otra vez, un poco más afuera. La segunda vuelta arranca donde terminó la primera.</p>
     </div>
-    <div class="rueda"><svg viewBox="-82 -82 164 164" id="rueda" aria-hidden="true"></svg><div class="cen"><div><b id="rn">Medir</b><small id="rs">momento 1 de 4</small></div></div></div>
+    <div class="rueda"><svg viewBox="-82 -82 164 164" id="rueda" aria-hidden="true"></svg><div class="cen"><div><b id="rn">Medir</b><small id="rs">paso 1 de 4</small></div></div></div>
   </div>
 </section>
 
-<section class="casos" id="casos">
-  <div class="w tit"><h2 class="rv">Así se ve una primera vuelta</h2><p class="rv">Tres situaciones típicas con las que llegan las empresas y qué queda funcionando después.</p></div>
-  <article class="caso vert"><div class="img"><img src="img/retrato-duena.webp" srcset="img/retrato-duena-800.webp 800w, img/retrato-duena.webp 1536w" sizes="(max-width: 900px) 100vw, 45vw" alt="" loading="lazy"></div><div class="velo"></div><div class="w"><div><div class="quien">Distribuidora, 60 personas</div><h3>Las ventas subían y el margen no se movía.</h3></div><div><p class="paso">Tablero de margen por línea y por cliente, conectado a la facturación, con revisión semanal.</p><p class="res">En la primera reunión apareció una línea con margen negativo. Cambiaron la lista de precios esa semana.</p></div></div></article>
-  <article class="caso"><div class="img"><img src="img/tablero-noche.webp" srcset="img/tablero-noche-800.webp 800w, img/tablero-noche.webp 1536w" sizes="(max-width: 900px) 100vw, 60vw" alt="" loading="lazy"></div><div class="velo"></div><div class="w"><div><div class="quien">Empresa de servicios, gerencia de administración</div><h3>Diez días por mes cerrando a mano.</h3></div><div><p class="paso">Lectura de comprobantes y conciliación con IA, con control humano de las excepciones.</p><p class="res">El cierre pasó a ser una revisión de excepciones. El equipo dejó de cargar y empezó a analizar.</p></div></div></article>
-  <article class="caso"><div class="img"><img src="img/tablero.webp" srcset="img/tablero-800.webp 800w, img/tablero.webp 1536w" sizes="(max-width: 900px) 100vw, 60vw" alt="" loading="lazy"></div><div class="velo"></div><div class="w"><div><div class="quien">Fábrica familiar, segunda generación</div><h3>Todo estaba en la cabeza del fundador.</h3></div><div><p class="paso">Cinco indicadores, una reunión mensual de dirección y prioridades escritas con responsable y fecha.</p><p class="res">Hoy el equipo discute con los mismos números.</p></div></div></article>
-</section>
+<section class="casos" id="casos"><div class="w">
+  <div class="tit"><span class="rot rv">Situaciones típicas · ejemplos ilustrativos</span><h2 class="rv">Así se ve una primera vuelta</h2><p class="rv">Tres situaciones con las que suelen llegar las empresas y qué queda funcionando después. Son ejemplos de cómo trabajamos, no casos de clientes con nombre.</p></div>
+  <div class="tarjetas">
+    <article class="caso rv"><div class="img"><img src="img/sala-reunion.webp" srcset="img/sala-reunion-800.webp 800w, img/sala-reunion.webp 1536w" sizes="(max-width: 900px) 100vw, 33vw" alt="" loading="lazy"></div><div class="cu"><div class="quien">Distribuidora</div><h3>Las ventas suben y el margen no se mueve.</h3><p class="paso">Tablero de margen por línea y por cliente, conectado a la facturación, con revisión semanal.</p><p class="res"><b>Lo que suele aparecer:</b> una línea o un cliente con margen negativo que nadie miraba. La lista de precios cambia esa misma semana.</p></div></article>
+    <article class="caso rv"><div class="img"><img src="img/tablero-noche.webp" srcset="img/tablero-noche-800.webp 800w, img/tablero-noche.webp 1536w" sizes="(max-width: 900px) 100vw, 33vw" alt="" loading="lazy"></div><div class="cu"><div class="quien">Empresa de servicios · administración</div><h3>Cerrar el mes a mano, todos los meses.</h3><p class="paso">Lectura de comprobantes y conciliación con IA, con control humano de las excepciones.</p><p class="res"><b>Lo que queda:</b> el cierre pasa a ser una revisión de excepciones. El equipo deja de cargar y empieza a analizar.</p></div></article>
+    <article class="caso rv"><div class="img"><img src="img/tablero.webp" srcset="img/tablero-800.webp 800w, img/tablero.webp 1536w" sizes="(max-width: 900px) 100vw, 33vw" alt="" loading="lazy"></div><div class="cu"><div class="quien">Fábrica familiar · segunda generación</div><h3>Todo en la cabeza del fundador.</h3><p class="paso">Cinco indicadores, una reunión mensual de dirección y prioridades escritas con responsable y fecha.</p><p class="res"><b>Lo que queda:</b> un equipo que discute con los mismos números, esté o no el fundador en la sala.</p></div></article>
+  </div>
+  <div class="honesto rv">
+    <div><h3>Todavía no mostramos logos de clientes. <b>Sí mostramos cómo trabajamos.</b></h3><p>Lo que vendemos lo usamos primero en nuestras propias empresas. Mientras no podamos nombrar clientes, preferimos que veas el producto antes que una lista de marcas.</p></div>
+    <ul>
+      <li><a href="#antes"><b>El tablero, antes y después</b><span>Los mismos números, dos formas de verlos</span><i>→</i></a></li>
+      <li><a href="devolucion-muestra.html" data-medir="muestra_click"><b>Una devolución de ejemplo</b><span>Lo que recibís después del diagnóstico</span><i>→</i></a></li>
+      <li><a class="ctad" data-cta="honesto" href="autoevaluacion.html"><b>El diagnóstico</b><span>Doce preguntas, resultado al instante</span><i>→</i></a></li>
+    </ul>
+  </div>
+</div></section>
+
+<section class="faq" id="preguntas"><div class="w">
+  <div><h2 class="rv">Lo que seguramente <br>te estás preguntando.</h2><p class="lead rv">Respuestas cortas y de frente. Si te queda alguna, <a href="contacto.html">escribinos</a>.</p></div>
+  <div class="rv">
+    <details open><summary>¿Qué pasa después del diagnóstico?</summary><p>Ves el resultado al instante: un semáforo por frente y por dónde empezar. Si dejás tu mail, en dos o tres días te llega una devolución escrita por nosotros. Después, si querés seguir, lo charlamos en una reunión; si no, te quedás con la devolución y listo. <span class="pend">Cómo sigue después de esa reunión: a definir por los socios</span></p></details>
+    <details><summary>¿Quién hace el trabajo?</summary><p>Nosotros dos, de principio a fin. Sin equipos junior que aprenden con tu empresa. La persona que te escucha en la primera reunión es la que después implementa.</p></details>
+    <details><summary>¿Qué tengo que poner yo?</summary><p>Acceso a tu facturación, tu banco y tu sistema de gestión (o a las planillas que uses hoy), una persona de referencia en tu equipo y una reunión fija para mirar los números. No hace falta que sepas de datos ni de inteligencia artificial.</p></details>
+    <details><summary>¿Cuánto dura y cómo se cobra?</summary><p>Una primera vuelta se piensa en semanas, no en meses; depende de cómo estén los datos. Se contrata por vuelta o por abono mensual, y se corta cuando tu equipo no nos necesita. <span class="pend">Valores y forma de cotizar: a definir por los socios</span></p></details>
+    <details><summary>¿Necesito un sistema de gestión?</summary><p>No. Muchas empresas arrancan con planillas. Ordenar las fuentes es parte de la primera vuelta.</p></details>
+    <details><summary>¿Y los datos de mi empresa?</summary><p>Definimos al principio qué datos pueden salir de tu empresa y cuáles no, y elegimos las herramientas en función de eso. No compartimos tu información con nadie.</p></details>
+    <details><summary>¿Sirve para una empresa grande?</summary><p>Sí. Cambia la escala: trabajamos por área, con el equipo gerencial, en pilotos cortos que quedan funcionando antes de ampliar. Hay <a href="para-empresas.html">una hoja para reenviar</a> a quien aprueba.</p></details>
+  </div>
+</div></section>
 
 <section class="fin" id="equipo"><div class="w">
   <div class="eq">
     <div><h2 class="rv">Vas a hablar con quien hace el trabajo.</h2><p class="l rv">Dos socios, presentes en cada proyecto de principio a fin. Sin equipos junior que aprenden con tu empresa. Antes de vender algo, lo usamos en nuestras propias empresas.</p></div>
     <div class="socios">
-      <div class="socio rv"><div class="f"><img src="img/reunion.webp" srcset="img/reunion-800.webp 800w, img/reunion.webp 1536w" sizes="(max-width: 900px) 100vw, 40vw" alt="Foto provisoria de Luciano" style="object-position:50% 30%;transform:scale(1.9);transform-origin:57% 38%"></div><h3>Luciano Rodríguez</h3><div class="rol">Socio. Estrategia, finanzas y control de gestión.</div><p>Dirige empresas de transporte y logística, donde implementó tableros de control, análisis financiero y un sistema de gestión propio.</p></div>
-      <div class="socio rv"><div class="f"><img src="img/socios-trabajo.webp" srcset="img/socios-trabajo-800.webp 800w, img/socios-trabajo.webp 1536w" sizes="(max-width: 900px) 100vw, 60vw" alt="Foto provisoria de Matías" style="object-position:30% center;transform:scale(2.3);transform-origin:36% 40%"></div><h3>Matías Gabrenja</h3><div class="rol">Socio. Inteligencia artificial y automatización.</div><p>Diseña e implementa herramientas de IA para negocios. Creó el diagnóstico con el que empieza cada proyecto.</p></div>
+      <div class="socio rv"><div class="f"><img src="img/reunion.webp" srcset="img/reunion-800.webp 800w, img/reunion.webp 1536w" sizes="(max-width: 900px) 100vw, 40vw" alt="Foto provisoria de Luciano" loading="lazy" style="object-position:50% 30%;transform:scale(1.9);transform-origin:57% 38%"></div><h3>Luciano Rodríguez</h3><div class="rol">Socio. Estrategia, finanzas y control de gestión.</div><p>Dirige empresas de transporte y logística, donde implementó tableros de control, análisis financiero y un sistema de gestión propio.</p></div>
+      <div class="socio rv"><div class="f"><img src="img/socios-trabajo.webp" srcset="img/socios-trabajo-800.webp 800w, img/socios-trabajo.webp 1536w" sizes="(max-width: 900px) 100vw, 60vw" alt="Foto provisoria de Matías" loading="lazy" style="object-position:30% center;transform:scale(2.3);transform-origin:36% 40%"></div><h3>Matías Gabrenja</h3><div class="rol">Socio. Inteligencia artificial y automatización.</div><p>Diseña e implementa herramientas de IA para negocios. Creó el diagnóstico con el que empieza cada proyecto.</p></div>
     </div>
   </div>
-  <div class="puerta" id="contacto">
+  <div class="puerta" id="cierre">
     <h2 class="rv">Cada mes que esperás, <b>alguien te saca ventaja.</b></h2>
-    <p class="rv">Más de la mitad de las pymes argentinas que usan inteligencia artificial empezó en 2025 (52,6%, encuesta nadIA). No hace falta un proyecto de un año para alcanzarlas: hace falta empezar por el lugar correcto. Cinco minutos, gratis, sin compromiso.</p>
-    <a class="cta ctad mag rv" href="#">Ver por dónde empezar</a>
+    <p class="rv">No hace falta un proyecto de un año para alcanzarlos: hace falta empezar por el lugar correcto. Cinco minutos, gratis, sin compromiso.</p>
+    <a class="cta ctad mag rv" data-cta="cierre" data-p="pyme" href="autoevaluacion.html">Hacer el diagnóstico <small>5 min, gratis</small></a>
+    <a class="cta mag rv" data-p="grande" href="contacto.html?puerta=grande" data-medir="grande_contacto">Contanos el proyecto</a>
   </div>
-  <div class="pie"><div class="firma"><span class="oi">ı<i class="orb"></i></span>terar</div><div>ITERAR Consulting · Buenos Aires<br><a href="mailto:hola@iterarconsulting.com.ar" style="text-decoration:none">hola@iterarconsulting.com.ar</a><br>© 2026</div></div>
+  <div class="pie"><div class="firma"><span class="oi">ı<i class="orb"></i></span>terar</div><div class="col">ITERAR Consulting · Buenos Aires<br><a href="mailto:hola@iterarconsulting.com.ar">hola@iterarconsulting.com.ar</a><nav aria-label="Pie"><a href="contacto.html">Contacto</a><a href="indicadores.html">Indicadores</a><a href="para-empresas.html">Para empresas grandes</a><a href="devolucion-muestra.html">Devolución de ejemplo</a></nav>© 2026</div></div>
 </div></section>
 </main>
+
+<div class="barra" id="barra" aria-label="Acción rápida"><a class="cta ctad" data-cta="barra" data-p="pyme" href="autoevaluacion.html">Hacer el diagnóstico <small>5 min, gratis</small></a><a class="cta" data-p="grande" href="contacto.html?puerta=grande" data-medir="grande_contacto">Contanos el proyecto</a><a class="wa" id="wa" href="#" aria-label="Escribinos por WhatsApp" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.6.8-.8 1-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 12 12 0 0 0 4.6 4c1.7.7 2.4.8 3.2.7a2.8 2.8 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3z"/></svg></a></div>
 
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/ScrollTrigger.min.js"></script>
@@ -429,22 +573,41 @@ table.crudo th{background:#DADDE8;font-weight:600}
 <script src="comun.js"></script>
 <script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.186.0/build/three.module.min.js","https://cdn.jsdelivr.net/npm/three@0.186.0/build/three.core.js":"https://cdn.jsdelivr.net/npm/three@0.186.0/build/three.core.min.js"}}</script>
 <script>
-if('scrollRestoration' in history) history.scrollRestoration='manual'; scrollTo(0,0);
-const {DIAGNOSTICO_URL,indicadores,logo}=COMUN;
+const {indicadores,logo,medir,linkDiagnostico,linkWhatsApp,unir}=COMUN;
 document.querySelectorAll('.lg').forEach(e=>e.outerHTML=logo('A'));
 document.querySelectorAll('.logo-mark').forEach(s=>s.style.setProperty('--accent','#8FB0FF'));
-document.querySelectorAll('.ctad').forEach(a=>{a.href=DIAGNOSTICO_URL;a.target='_blank';a.rel='noopener';});
 const REDUCIDO=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const CEL=innerWidth<981;
 gsap.registerPlugin(ScrollTrigger,ScrambleTextPlugin);
 let lenis=null;
 if(!REDUCIDO){lenis=new Lenis({lerp:.1,anchors:true});lenis.on('scroll',ScrollTrigger.update);gsap.ticker.add(t=>lenis.raf(t*1000));gsap.ticker.lagSmoothing(0);}
+
+/* Dos puertas: pyme o empresa grande. Se recuerda en el navegador. */
+const setPuerta=(p,guardar)=>{
+  document.body.dataset.puerta=p;
+  document.querySelectorAll('.seg button').forEach(b=>b.setAttribute('aria-pressed',b.dataset.puerta===p));
+  if(guardar){COMUN.puerta(p);medir('puerta_elegida',{puerta:p});}
+  armarLinks();ScrollTrigger.refresh();
+};
+document.querySelectorAll('.seg button').forEach(b=>b.addEventListener('click',()=>setPuerta(b.dataset.puerta,true)));
+
+/* Enlaces al diagnóstico: origen, botón y lo marcado en "¿Te suena?" */
+const marcados=()=>[...document.querySelectorAll('#lista input:checked')].map(i=>i.value);
+function armarLinks(){document.querySelectorAll('.ctad').forEach(a=>{a.href=linkDiagnostico(a.dataset.cta||'otro',marcados());});}
+armarLinks();
+document.addEventListener('click',e=>{
+  const a=e.target.closest('a');if(!a)return;
+  if(a.classList.contains('ctad')) medir('cta_diagnostico_click',{cta:a.dataset.cta||'otro',marcados:marcados().length});
+  else if(a.dataset.medir) medir(a.dataset.medir,{cta:a.closest('section')?.id||''});
+  else if(a.closest('#menu')) medir('nav_click',{destino:a.getAttribute('href')});
+});
 
 /* Fondo: un solo shader detrás de toda la página (ruido fluido en la paleta) */
 if(!REDUCIDO){
 import('three').then(THREE=>{
   const cv=document.getElementById('bg');
   const r=new THREE.WebGLRenderer({canvas:cv,antialias:false,powerPreference:'high-performance'});
-  r.setPixelRatio(Math.min(devicePixelRatio,1.5));
+  r.setPixelRatio(Math.min(devicePixelRatio,CEL?1:1.5));
   const sc=new THREE.Scene(),cam=new THREE.OrthographicCamera(-1,1,1,-1,0,1);
   const u={uT:{value:0},uR:{value:new THREE.Vector2(1,1)},uM:{value:new THREE.Vector2(.5,.5)},uS:{value:0}};
   const m=new THREE.ShaderMaterial({uniforms:u,vertexShader:`void main(){gl_Position=vec4(position,1.);}`,
@@ -453,7 +616,7 @@ import('three').then(THREE=>{
     float noise(vec3 p){vec3 i=floor(p),f=fract(p),u=f*f*(3.-2.*f);
       return mix(mix(mix(dot(hash(i),f),dot(hash(i+vec3(1,0,0)),f-vec3(1,0,0)),u.x),mix(dot(hash(i+vec3(0,1,0)),f-vec3(0,1,0)),dot(hash(i+vec3(1,1,0)),f-vec3(1,1,0)),u.x),u.y),
       mix(mix(dot(hash(i+vec3(0,0,1)),f-vec3(0,0,1)),dot(hash(i+vec3(1,0,1)),f-vec3(1,0,1)),u.x),mix(dot(hash(i+vec3(0,1,1)),f-vec3(0,1,1)),dot(hash(i+vec3(1,1,1)),f-vec3(1,1,1)),u.x),u.y),u.z);}
-    float fbm(vec3 p){float v=0.,a=.5;for(int i=0;i<5;i++){v+=a*noise(p);p*=2.02;a*=.5;}return v;}
+    float fbm(vec3 p){float v=0.,a=.5;for(int i=0;i<${CEL?4:5};i++){v+=a*noise(p);p*=2.02;a*=.5;}return v;}
     void main(){vec2 uv=gl_FragCoord.xy/uR;vec2 q=uv;q.x*=uR.x/uR.y;float t=uT*.05;
       vec2 mm=(uM-.5)*.25;
       float n1=fbm(vec3(q*1.3+mm,t));float n2=fbm(vec3(q*2.2-n1*.8,t*1.4+3.));
@@ -476,14 +639,13 @@ import('three').then(THREE=>{
 });
 }
 
-/* Hero: el titular se descifra */
+/* Hero: la propuesta y el botón se ven desde el primer cuadro; solo las dos líneas azules se descifran */
 if(!REDUCIDO){
   gsap.set('.rv',{opacity:0,y:14});
-  const ls=[...document.querySelectorAll('#h1 .l')];
-  const tl=gsap.timeline({delay:.3});
-  ls.forEach((l,i)=>{const el=l.querySelector('b')||l;tl.to(el,{duration:.9,scrambleText:{text:l.dataset.t,chars:'iterar',speed:.6,revealDelay:.25,tweenLength:false}},i*.28);});
-  tl.to('.hero .rv',{opacity:1,y:0,duration:.8,stagger:.12,ease:'power3.out'},'-=.6');
-  document.querySelectorAll('.rv').forEach(el=>{if(el.closest('.hero'))return;ScrollTrigger.create({trigger:el,start:'top 88%',once:true,onEnter:()=>gsap.to(el,{opacity:1,y:0,duration:.8,ease:'power3.out'})});});
+  const tl=gsap.timeline({delay:.2});
+  document.querySelectorAll('#h1 .l[data-t]').forEach((l,i)=>{tl.to(l.querySelector('b'),{duration:.9,scrambleText:{text:l.dataset.t,chars:'iterar',speed:.6,revealDelay:.25,tweenLength:false}},i*.28);});
+  gsap.from('.hero .fila, .hero .senal',{opacity:0,y:12,duration:.8,stagger:.12,ease:'power3.out',delay:.15,clearProps:'all'});
+  document.querySelectorAll('.rv').forEach(el=>{ScrollTrigger.create({trigger:el,start:'top 92%',once:true,onEnter:()=>gsap.to(el,{opacity:1,y:0,duration:.8,ease:'power3.out'})});});
 }
 
 /* Indicadores reales (dólar oficial e inflación) */
@@ -491,14 +653,56 @@ indicadores().then(d=>{
   const f=[];
   if(d.dolar){dolar.textContent='$'+d.dolar.venta.toLocaleString('es-AR');f.push(d.dolar.fuente);} else dolar.textContent='sin conexión';
   if(d.inflacion){const s=d.inflacion.serie,l=s[s.length-1];inf.textContent=l.valor.toLocaleString('es-AR')+'%';infmes.textContent='('+new Date(l.fecha+'T12:00:00').toLocaleDateString('es-AR',{month:'long'})+')';f.push(d.inflacion.fuente);} else inf.textContent='sin conexión';
-  fuente.textContent=f.length?'Fuentes: '+f.join(' y ')+'. Se actualiza solo, como nuestros tableros.':'No se pudo conectar con las fuentes; no mostramos números que no sean reales.';
+  fuente.textContent=f.length?'Fuentes: '+unir(f)+'. Se actualiza solo, como nuestros tableros.':'No se pudo conectar con las fuentes; no mostramos números que no sean reales.';
 });
 
-/* Nav */
-ScrollTrigger.create({start:0,end:'max',onUpdate:s=>document.getElementById('nav').classList.toggle('oculto',s.direction===1&&s.scroll()>200)});
+/* Nav: se esconde al bajar, fondo sólido después del hero, menú de celular que se cierra */
+const nav=document.getElementById('nav'),menu=document.getElementById('menu'),btn=document.getElementById('btnmenu');
+const cerrarMenu=()=>{menu.classList.remove('abierto');btn.setAttribute('aria-expanded','false');};
+btn.addEventListener('click',()=>{const ab=!menu.classList.contains('abierto');menu.classList.toggle('abierto',ab);btn.setAttribute('aria-expanded',ab);if(ab)medir('menu_mobile_open');});
+menu.addEventListener('click',e=>{if(e.target.closest('a'))cerrarMenu();});
+addEventListener('keydown',e=>{if(e.key==='Escape')cerrarMenu();});
+ScrollTrigger.create({start:0,end:'max',onUpdate:s=>{const y=s.scroll();nav.classList.toggle('oculto',s.direction===1&&y>200);nav.classList.toggle('solido',y>80);if(s.direction===1&&y>200)cerrarMenu();}});
 
-/* ¿Te pasa? */
-lista.addEventListener('change',()=>{const n=lista.querySelectorAll(':checked').length;cuenta.textContent=n===0?'Cada una de estas te cuesta plata todos los meses. Ninguna se arregla sola.':n===1?'Con una sola ya alcanza para empezar. Te decimos cómo en cinco minutos.':`Marcaste ${n}. Ninguna se arregla sola. En el diagnóstico nos contás cuál te pesa más y te decimos por cuál empezar.`;});
+/* Barra fija en celular: aparece pasado el hero. WhatsApp solo si hay número configurado. */
+{
+  const barra=document.getElementById('barra'),wa=document.getElementById('wa');
+  ScrollTrigger.create({trigger:'.hero',start:'bottom 70%',end:'max',onToggle:s=>barra.classList.toggle('on',s.isActive)});
+  const armarWA=()=>{const n=marcados().length;const l=linkWhatsApp('Hola, vengo del sitio de ITERAR.'+(n?` Marqué ${n} ${n>1?'situaciones':'situación'} en "¿Te suena?" y quiero ver por dónde empezar.`:' Quiero ver por dónde empezar.'));if(l){wa.href=l;wa.classList.add('on');}};
+  armarWA();
+  wa.addEventListener('click',()=>medir('whatsapp_click',{marcados:marcados().length}));
+  document.getElementById('lista').addEventListener('change',armarWA);
+}
+
+/* ¿Te suena? */
+lista.addEventListener('change',e=>{
+  const n=marcados().length;
+  cuenta.textContent=n===0?'Cada una de estas te cuesta plata todos los meses. Ninguna se arregla sola.':n===1?'Con una sola ya alcanza para empezar. Te decimos por dónde en cinco minutos.':`Marcaste ${n}. Llegan ya marcadas al diagnóstico: te decimos por cuál empezar.`;
+  armarLinks();
+  if(e.target.matches('input'))medir('checklist_toggle',{item:e.target.value,marcado:e.target.checked,total:n});
+});
+
+/* Calculadora: solo con los números del visitante */
+{
+  const $=id=>document.getElementById(id),fmt=n=>Math.round(n).toLocaleString('es-AR');
+  const campos=['c-per','c-hs','c-costo','c-dias'].map($);let medido=false;
+  const calc=()=>{
+    const [per,hs,costo,dias]=campos.map(i=>parseFloat(i.value));
+    const ok=v=>Number.isFinite(v)&&v>=0;
+    const hsMes=ok(per)&&ok(hs)?per*hs*52/12:null;
+    const anio=hsMes!==null&&ok(costo)?hsMes*costo*12:null;
+    const d=ok(dias)?dias*12:null;
+    const pon=(id,v,txt)=>{const el=$(id);if(v===null){el.textContent='—';el.classList.add('vacio');}else{el.textContent=txt;el.classList.remove('vacio');}};
+    pon('r-hs',hsMes,fmt(hsMes)+' h');pon('r-anio',anio,'$ '+fmt(anio));pon('r-dias',d,fmt(d)+' días');
+    const t=$('r-txt');
+    if(hsMes===null&&anio===null&&d===null)t.textContent='Completá los cuatro campos y el resultado aparece acá.';
+    else if(anio!==null&&d!==null)t.textContent=`Son tus números, no los nuestros: ${fmt(hsMes)} horas por mes y $ ${fmt(anio)} por año para tener información que llega ${fmt(dias)} días tarde. El diagnóstico te dice por dónde empezar a recuperarlos.`;
+    else t.textContent='Con lo que cargaste ya se ve una parte. Completá el resto para tener el número entero.';
+    if(anio!==null&&!medido){medido=true;medir('calculadora_completa');}
+  };
+  campos.forEach(i=>i.addEventListener('input',calc));
+  document.getElementById('calc').addEventListener('submit',e=>e.preventDefault());
+}
 
 /* Servicios: índice pegajoso que sigue el scroll + zoom suave de imágenes */
 {
@@ -507,9 +711,11 @@ lista.addEventListener('change',()=>{const n=lista.querySelectorAll(':checked').
     ScrollTrigger.create({trigger:b,start:'top 55%',end:'bottom 55%',onToggle:s=>{if(s.isActive)items.forEach((li,i)=>li.classList.toggle('on',i==b.dataset.i));}});
     if(!REDUCIDO) gsap.to(b.querySelector('.img img'),{scale:1,ease:'none',scrollTrigger:{trigger:b,start:'top bottom',end:'top 30%',scrub:true}});
   });
+  if(!REDUCIDO) document.querySelectorAll('.caso .img img').forEach(im=>gsap.to(im,{scale:1,ease:'none',scrollTrigger:{trigger:im,start:'top bottom',end:'top 30%',scrub:true}}));
 }
 
-/* Método (pico): el logo se dibuja con el scroll y arranca la segunda vuelta */
+/* Método (pico): el logo se dibuja con el scroll y arranca la segunda vuelta.
+   En escritorio la sección queda fija (200% de scroll). En celular no se fija: los cuatro pasos se leen enteros y la rueda se dibuja al pasar. */
 {
   const rueda=document.getElementById('rueda');
   window.dibujarRueda=function(p){
@@ -527,42 +733,49 @@ lista.addEventListener('change',()=>{const n=lista.querySelectorAll(':checked').
     }
     rueda.innerHTML=out;
     const li=[...document.querySelectorAll('#momentos li')],idx=Math.min(3,Math.floor(p1*4.6));
-    li.forEach((l,i)=>l.classList.toggle('on',p1>0.02&&i<=idx));
+    if(!CEL) li.forEach((l,i)=>l.classList.toggle('on',p1>0.02&&i<=idx));
     const nombres=['Medir','Entender','Decidir','Ajustar'];
-    if(p2>0.05){rn.textContent='Otra vez';rs.textContent='más amplia';}else{rn.textContent=nombres[idx];rs.textContent='momento '+(idx+1)+' de 4';}
+    if(p2>0.05){rn.textContent='Otra vez';rs.textContent='más amplia';}else{rn.textContent=nombres[idx];rs.textContent='paso '+(idx+1)+' de 4';}
     gsap.set('#otra',{opacity:p2>0.15?1:0,y:p2>0.15?0:10});
   };
   dibujarRueda(REDUCIDO?1:0.001);
-  if(!REDUCIDO) ScrollTrigger.create({trigger:'.pico',start:'top top',end:innerWidth<800?'+=220%':'+=320%',pin:true,scrub:.5,onUpdate:s=>dibujarRueda(s.progress)});
+  if(!REDUCIDO){
+    if(CEL) ScrollTrigger.create({trigger:'.pico .rueda',start:'top 85%',end:'bottom 45%',scrub:.4,onUpdate:s=>dibujarRueda(s.progress)});
+    else ScrollTrigger.create({trigger:'.pico',start:'top top',end:'+=200%',pin:true,scrub:.5,onUpdate:s=>dibujarRueda(s.progress)});
+  }
 }
 
-/* Comparador antes / después */
+/* Comparador antes / después: se arrastra desde la manija (el resto de la pantalla sigue scrolleando) */
 {
   const E=COMUN.EJEMPLO,n=E.meses.length,u=n-1,c=x=>x.toFixed(1).replace('.',',');
   crudo.innerHTML=`<thead><tr><th>Mes</th><th>Ventas</th><th>Costos</th><th>Margen</th><th>%</th></tr></thead><tbody>${E.meses.slice(-8).map((m,i)=>{const j=n-8+i;return `<tr><td>${m}</td><td>${E.ventas[j]}</td><td>${E.costos[j]}</td><td>${E.ventas[j]-E.costos[j]}</td><td>${c(E.margen[j])}</td></tr>`}).join('')}</tbody>`;
   const W=520,H=150,min=110,max=250,x=i=>8+(W-16)*(i/(n-1)),y=v=>H-8-(H-16)*((v-min)/(max-min)),path=s=>s.map((v,i)=>(i?'L':'M')+x(i).toFixed(1)+' '+y(v).toFixed(1)).join('');
   tab.innerHTML=`<div class="kp"><div><small>Ventas de septiembre</small><b>$${E.ventas[u]} M</b> <i>▲ ${c(100*(E.ventas[u]/E.ventas[u-1]-1))}%</i></div><div><small>Margen bruto</small><b>${c(E.margen[u])}%</b> <i>▲ ${c(E.margen[u]-E.margen[u-1])} pts</i></div><div><small>Cobranzas pendientes</small><b>$${E.cobranzasPendientes} M</b></div></div><figure class="gr" style="margin:0"><figcaption><span>Ventas y costos, 12 meses</span><span>$ M</span></figcaption><svg viewBox="0 0 ${W} ${H}"><path d="${path(E.costos)}" fill="none" stroke="#7A8099" stroke-width="1.6"/><path d="${path(E.ventas)}" fill="none" stroke="#F3F4F8" stroke-width="2.4"/><circle cx="${x(u)}" cy="${y(E.ventas[u])}" r="4" fill="#5C84FF"/></svg></figure><div class="alerta">Aviso automático. Línea B: el margen cayó 4,1 puntos en dos meses con ventas en alza. Revisar lista de precios.</div>`;
   const sl=document.getElementById('slider'),capa=document.getElementById('capab'),man=document.getElementById('manija');
-  let pos=50,arr=false;
-  const setPos=p=>{pos=Math.max(4,Math.min(96,p));capa.style.clipPath=`inset(0 0 0 ${pos}%)`;man.style.left=pos+'%';man.setAttribute('aria-valuenow',Math.round(pos));};
+  let pos=50,arr=false,primera=true;
+  const toco=modo=>{if(primera){primera=false;medir('comparador_interaccion',{modo});}};
+  const setPos=p=>{pos=Math.max(4,Math.min(96,p));capa.style.clipPath=`inset(0 0 0 ${pos}%)`;man.style.left=pos+'%';man.setAttribute('aria-valuenow',Math.round(pos));man.setAttribute('aria-valuetext',pos<40?'Se ve sobre todo el después':pos>60?'Se ve sobre todo el antes':'Mitad antes, mitad después');};
   const fromEvent=e=>{const r=sl.getBoundingClientRect();setPos((e.clientX-r.left)/r.width*100);};
-  sl.addEventListener('pointerdown',e=>{arr=true;sl.setPointerCapture(e.pointerId);fromEvent(e);});
-  sl.addEventListener('pointermove',e=>{if(arr)fromEvent(e);});
-  sl.addEventListener('pointerup',()=>arr=false);sl.addEventListener('pointercancel',()=>arr=false);
-  man.addEventListener('keydown',e=>{if(e.key==='ArrowLeft')setPos(pos-4);if(e.key==='ArrowRight')setPos(pos+4);});
+  man.addEventListener('pointerdown',e=>{arr=true;man.setPointerCapture(e.pointerId);toco('arrastre');e.preventDefault();});
+  man.addEventListener('pointermove',e=>{if(arr)fromEvent(e);});
+  man.addEventListener('pointerup',()=>arr=false);man.addEventListener('pointercancel',()=>arr=false);
+  sl.addEventListener('click',e=>{if(e.target.closest('.manija'))return;fromEvent(e);toco('click');});
+  man.addEventListener('keydown',e=>{const k=e.key;if(k==='ArrowLeft'||k==='ArrowRight'||k==='Home'||k==='End'){e.preventDefault();toco('teclado');setPos(k==='ArrowLeft'?pos-4:k==='ArrowRight'?pos+4:k==='Home'?4:96);}});
   if(!REDUCIDO) ScrollTrigger.create({trigger:sl,start:'top 70%',once:true,onEnter:()=>{const o={p:50};gsap.fromTo(o,{p:96},{p:34,duration:1.6,ease:'power3.inOut',onUpdate:()=>setPos(o.p)});}});
 }
 
-/* Casos: zoom parallax */
-if(!REDUCIDO) document.querySelectorAll('.caso').forEach(c=>gsap.to(c.querySelector('.img img'),{scale:1,ease:'none',scrollTrigger:{trigger:c,start:'top bottom',end:'bottom top',scrub:true}}));
+/* Preguntas frecuentes y secciones alcanzadas: medición */
+document.querySelectorAll('.faq details').forEach(d=>d.addEventListener('toggle',()=>{if(d.open)medir('faq_open',{pregunta:d.querySelector('summary').textContent.trim()});}));
+document.querySelectorAll('main section[id]').forEach(s=>ScrollTrigger.create({trigger:s,start:'top 60%',once:true,onEnter:()=>medir('scroll_seccion',{seccion:s.id})}));
 
 /* Botones magnéticos */
 if(matchMedia('(hover:hover) and (pointer:fine)').matches && !REDUCIDO){
   document.querySelectorAll('.mag').forEach(b=>{
-    b.addEventListener('pointermove',e=>{const r=b.getBoundingClientRect();gsap.to(b,{x:(e.clientX-r.left-r.width/2)*.25,y:(e.clientY-r.top-r.height/2)*.25,duration:.35,ease:'power3.out'});});
+    b.addEventListener('pointermove',e=>{const r=b.getBoundingClientRect();gsap.to(b,{x:(e.clientX-r.left-r.width/2)*.18,y:(e.clientY-r.top-r.height/2)*.18,duration:.35,ease:'power3.out'});});
     b.addEventListener('pointerleave',()=>gsap.to(b,{x:0,y:0,duration:.5,ease:'elastic.out(1,.5)'}));
   });
 }
+setPuerta(COMUN.puerta(),false);
 addEventListener('load',()=>ScrollTrigger.refresh());
 </script>
 </body>

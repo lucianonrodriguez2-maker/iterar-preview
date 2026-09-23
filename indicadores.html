@@ -7,12 +7,13 @@
 <title>Indicadores para decidir. ITERAR Consulting</title>
 <meta name="description" content="Dólar, inflación, riesgo país, UVA y tasas de plazo fijo, en vivo desde fuentes públicas. Los números que mira una pyme argentina antes de decidir.">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://iterarconsulting.com.ar/indicadores">
 <link rel="apple-touch-icon" href="icono-180.png">
 <link rel="manifest" href="site.webmanifest">
 <meta name="theme-color" content="#2340E8">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="ITERAR Consulting">
-<meta property="og:title" content="ITERAR Consulting. Tu empresa mejora por vueltas.">
+<meta property="og:title" content="Indicadores para decidir · ITERAR Consulting">
 <meta property="og:description" content="Inteligencia artificial, tableros de control y análisis financiero implementados en ciclos cortos, para pymes y grandes empresas. Buenos Aires.">
 <meta property="og:image" content="og-image.png">
 <meta property="og:locale" content="es_AR">
@@ -44,6 +45,13 @@ header.top a.v{font-size:14.5px;color:var(--tx-2);text-decoration:none;border-bo
 .cab p{color:var(--tx-2);font-size:18px;max-width:40em;margin:18px 0 0}
 .estado{font-size:13.5px;color:var(--tx-3);margin-top:14px}
 .estado b{color:var(--cielo);font-weight:600}
+.cta{display:inline-flex;align-items:center;gap:10px;background:var(--tx);color:var(--fondo);text-decoration:none;font-weight:600;padding:13px 20px;border-radius:999px;min-height:46px}
+.cta:hover{background:#fff}
+.cta small{font-weight:400;opacity:.7}
+.puerta{margin:0 0 70px;background:var(--panel);border:1px solid var(--linea);border-radius:14px;padding:clamp(22px,3vw,36px);display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap}
+.puerta h2{font-size:clamp(22px,2.6vw,32px);max-width:18em}
+.puerta p{margin:8px 0 0;color:var(--tx-2);max-width:34em}
+:focus-visible{outline:2px solid var(--cielo);outline-offset:3px;border-radius:6px}
 
 .grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:14px;padding-bottom:70px}
 .c{background:var(--panel);border:1px solid var(--linea);border-radius:12px;padding:20px 22px;min-width:0;display:flex;flex-direction:column;gap:10px}
@@ -102,6 +110,7 @@ footer{padding:20px 0 50px;font-size:13px;color:var(--tx-3);border-top:1px solid
     <section class="c s12"><header><h2>Plazo fijo a 30 días: las mejores tasas para clientes</h2><small>TNA</small></header><div id="t-pf"></div><div class="fuente">Fuente: BCRA vía argentinadatos.com. Tasas informadas por cada entidad; verificá antes de decidir.</div></section>
   </div>
 </main>
+<section class="w"><div class="puerta"><div><h2>Estos son los números del país. ¿Y los de tu empresa?</h2><p>Un tablero así, pero con tus ventas, tu margen y tu caja, conectado a tus datos. El diagnóstico te dice por dónde empezar.</p></div><a class="cta ctad" href="autoevaluacion.html">Hacer el diagnóstico <small>5 min, gratis</small></a></div></section>
 <footer><div class="w">ITERAR Consulting · Buenos Aires · Los datos se leen al cargar la página; si una fuente no responde, el número no se muestra.</div></footer>
 
 <script src="marks.js"></script>
@@ -109,6 +118,7 @@ footer{padding:20px 0 50px;font-size:13px;color:var(--tx-3);border-top:1px solid
 <script>
 document.querySelectorAll('.lg').forEach(e=>e.outerHTML=COMUN.logo('A'));
 document.querySelectorAll('.logo-mark').forEach(s=>s.style.setProperty('--accent','#8FB0FF'));
+document.querySelectorAll('.ctad').forEach(a=>{a.href=COMUN.linkDiagnostico('indicadores');a.addEventListener('click',()=>COMUN.medir('indicadores_cta_click'));});COMUN.medir('indicadores_view');
 const $=id=>document.getElementById(id);
 const fAR=(n,d=0)=>n.toLocaleString('es-AR',{minimumFractionDigits:d,maximumFractionDigits:d});
 const fecha=s=>new Date(s+'T12:00:00').toLocaleDateString('es-AR',{day:'numeric',month:'short',year:'2-digit'});
